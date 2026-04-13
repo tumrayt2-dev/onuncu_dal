@@ -719,73 +719,83 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: const Color(0xFF4CAF50).withValues(alpha: 0.4)),
       ),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('🧪', style: TextStyle(fontSize: 28)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'İksir',
-                  style: TextStyle(
-                    color: AppColors.textPrimary,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
+          Row(
+            children: [
+              const Text('🧪', style: TextStyle(fontSize: 22)),
+              const SizedBox(width: 8),
+              const Text(
+                'İksir',
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const Spacer(),
+              // Stok göstergesi
+              Row(
+                children: List.generate(
+                  3,
+                  (i) => Padding(
+                    padding: const EdgeInsets.only(left: 4),
+                    child: Icon(
+                      i < potions ? Icons.circle : Icons.circle_outlined,
+                      color: i < potions
+                          ? const Color(0xFF4CAF50)
+                          : AppColors.textDim,
+                      size: 12,
+                    ),
                   ),
                 ),
-                Text(
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
                   'HP\'nin %${PlayerNotifier.potionHealPercent}\'ini iyileştirir  •  ${PlayerNotifier.potionCost} 💰',
                   style: const TextStyle(
                     color: AppColors.textSecondary,
                     fontSize: 11,
                   ),
                 ),
-              ],
-            ),
-          ),
-          // Stok göstergesi
-          Row(
-            children: List.generate(
-              3,
-              (i) => Padding(
-                padding: const EdgeInsets.only(right: 3),
-                child: Icon(
-                  i < potions ? Icons.circle : Icons.circle_outlined,
-                  color: i < potions
-                      ? const Color(0xFF4CAF50)
-                      : AppColors.textDim,
-                  size: 10,
+              ),
+              const SizedBox(width: 8),
+              SizedBox(
+                width: 64,
+                child: ElevatedButton(
+                  onPressed: canBuy
+                      ? () async {
+                          final ok = await ref
+                              .read(playerProvider.notifier)
+                              .buyPotion();
+                          if (ok && context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('İksir satın alındı!'),
+                                duration: Duration(seconds: 1),
+                              ),
+                            );
+                          }
+                        }
+                      : null,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF2E7D32),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                    minimumSize: const Size(0, 32),
+                  ),
+                  child: Text(
+                    potions >= 3 ? 'Dolu' : 'Al',
+                    style: const TextStyle(fontSize: 12),
+                  ),
                 ),
               ),
-            ),
-          ),
-          const SizedBox(width: 8),
-          ElevatedButton(
-            onPressed: canBuy
-                ? () async {
-                    final ok = await ref
-                        .read(playerProvider.notifier)
-                        .buyPotion();
-                    if (ok && context.mounted) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('İksir satın alındı!'),
-                          duration: Duration(seconds: 1),
-                        ),
-                      );
-                    }
-                  }
-                : null,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF2E7D32),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            ),
-            child: Text(
-              potions >= 3 ? 'Dolu' : 'Al',
-              style: const TextStyle(fontSize: 13),
-            ),
+            ],
           ),
         ],
       ),

@@ -504,6 +504,14 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
     return newAffix;
   }
 
+  /// Sadece currentStage'i değiştir (harita seçimi için, maxStage değişmez)
+  Future<void> setCurrentStage(int stage) async {
+    final hero = state;
+    if (hero == null) return;
+    state = hero.copyWith(currentStage: stage);
+    await _autoSave();
+  }
+
   /// Stage ilerlemesi güncelle
   Future<void> updateStage(int stage, int worldId) async {
     final hero = state;

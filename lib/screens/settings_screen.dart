@@ -32,7 +32,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         title: Text(l10n.settings),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: AppColors.gold),
-          onPressed: () => context.go('/'),
+          onPressed: () => context.canPop() ? context.pop() : context.go('/'),
         ),
       ),
       body: ListView(

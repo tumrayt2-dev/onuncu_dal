@@ -47,7 +47,7 @@ class BottomNav extends ConsumerWidget {
                 icon: Icons.settings_outlined,
                 label: l10n.settings,
                 active: currentIndex == 3,
-                onTap: () => context.go('/settings'),
+                onTap: () => context.push('/settings'),
               ),
             ],
           ),

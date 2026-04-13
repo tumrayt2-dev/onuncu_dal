@@ -82,8 +82,6 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   Color _lootColor = Colors.grey;
   bool _lootIsRarePlus = false;
 
-  // Quick-equip popup
-  Item? _quickEquipItem;
 
   @override
   void initState() {
@@ -222,16 +220,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         _lootItemName = item.nameKey;
         _lootColor = Color(item.rarity.colorHex);
         _lootIsRarePlus = isRarePlus;
-        // Quick-equip: sadece rare+ itemlerde göster
-        if (isRarePlus) _quickEquipItem = item;
-      });
+        });
       Future.delayed(Duration(milliseconds: isRarePlus ? 2500 : 1500), () {
-        if (mounted) {
-          setState(() {
-            _lootItemName = null;
-            if (_quickEquipItem?.id == item.id) _quickEquipItem = null;
-          });
-        }
+        if (mounted) setState(() => _lootItemName = null);
       });
     };
     _game.onSpecialActivated = (name) {
@@ -328,7 +319,6 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _lootItemName = null;
       _lootColor = Colors.grey;
       _lootIsRarePlus = false;
-      _quickEquipItem = null;
       _initGame();
     });
   }
@@ -987,94 +977,6 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
               ),
             ),
 
-          // Quick-equip popup (rare+ item düştüğünde)
-          if (_quickEquipItem != null)
-            Positioned(
-              bottom: 110,
-              left: 16,
-              right: 16,
-              child: Builder(builder: (context) {
-                final item = _quickEquipItem!;
-                final hero = ref.read(playerProvider);
-                final color = Color(item.rarity.colorHex);
-                final equipped = hero?.equipment[item.slot];
-                return Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: color, width: 2),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.4),
-                        blurRadius: 12,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.auto_awesome, color: color, size: 20),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              _itemL10n(l10n, item.nameKey),
-                              style: TextStyle(
-                                color: color,
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            if (equipped != null)
-                              Text(
-                                'Slot: ${_itemL10n(l10n, equipped.nameKey)}',
-                                style: const TextStyle(
-                                  color: AppColors.textSecondary,
-                                  fontSize: 10,
-                                ),
-                              ),
-                          ],
-                        ),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          setState(() => _quickEquipItem = null);
-                        },
-                        style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                        ),
-                        child: const Text('✕',
-                            style: TextStyle(color: AppColors.textDim)),
-                      ),
-                      ElevatedButton(
-                        onPressed: () async {
-                          final notifier = ref.read(playerProvider.notifier);
-                          // Önce envantere ekle (henüz eklenmemiş olabilir —
-                          // _earnedItems'ta bekliyor; direkt ekleyelim ve listeden çıkaralım)
-                          _earnedItems.remove(item);
-                          await notifier.addItem(item);
-                          await notifier.equipItem(item, item.slot);
-                          if (mounted) {
-                            setState(() => _quickEquipItem = null);
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: color.withValues(alpha: 0.8),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 6),
-                        ),
-                        child: Text(l10n.equip,
-                            style: const TextStyle(fontSize: 12)),
-                      ),
-                    ],
-                  ),
-                );
-              }),
-            ),
-
           // Pause overlay
           if (_isPaused && !_isDefeated && !_stageComplete)
             Container(
@@ -1263,6 +1165,17 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                           _restartBattle();
                         },
                         child: Text('${l10n.continueText} ($_countdown)'),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: 200,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          _countdownTimer?.cancel();
+                          context.go('/game');
+                        },
+                        child: Text(l10n.goBack),
                       ),
                     ),
                   ],

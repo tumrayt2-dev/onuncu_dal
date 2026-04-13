@@ -129,6 +129,8 @@ class _StageMapScreenState extends ConsumerState<StageMapScreen> {
                 onPressed: canFight
                     ? () {
                         Navigator.of(ctx).pop();
+                        // Seçilen stage'i aktif yap, sonra savaşa git
+                        ref.read(playerProvider.notifier).setCurrentStage(stage);
                         context.go('/battle');
                       }
                     : null,

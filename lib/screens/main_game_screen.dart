@@ -43,7 +43,7 @@ class MainGameScreen extends ConsumerWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.settings, color: AppColors.textSecondary),
-            onPressed: () => context.go('/settings'),
+            onPressed: () => context.push('/settings'),
           ),
         ],
       ),

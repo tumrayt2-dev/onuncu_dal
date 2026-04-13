@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../l10n/generated/app_localizations.dart';
@@ -116,12 +115,7 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen> {
                 const SizedBox(height: AppSizes.paddingM),
                 _MenuButton(
                   label: l10n.settings,
-                  onPressed: () => context.go('/settings'),
-                ),
-                const SizedBox(height: AppSizes.paddingM),
-                _MenuButton(
-                  label: l10n.exit,
-                  onPressed: () => SystemNavigator.pop(),
+                  onPressed: () => context.push('/settings'),
                 ),
                 const Spacer(flex: 2),
               ],
