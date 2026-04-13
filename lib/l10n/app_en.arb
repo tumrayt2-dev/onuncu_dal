@@ -63,5 +63,14 @@
   "stars": "Stars",
   "continueText": "Continue",
   "levelUp": "Level Up!",
-  "wave": "Wave"
+  "wave": "Wave",
+  "stage": "Stage",
+  "paused": "PAUSED",
+  "autoMode": "Idle",
+  "level": "Lv",
+  "specialDemirKalkan": "Iron Shield",
+  "specialKurtFormu": "Wolf Form",
+  "specialRuhFirtinasi": "Spirit Storm",
+  "specialKartalGoz": "Eagle Eye",
+  "specialGolgeBicagi": "Shadow Blade"
 }

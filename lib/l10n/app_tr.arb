@@ -63,5 +63,14 @@
   "stars": "Yildiz",
   "continueText": "Devam",
   "levelUp": "Seviye Atladi!",
-  "wave": "Dalga"
+  "wave": "Dalga",
+  "stage": "Bolum",
+  "paused": "DURAKLADI",
+  "autoMode": "OTO",
+  "level": "Sv",
+  "specialDemirKalkan": "Demir Kalkan",
+  "specialKurtFormu": "Kurt Formu",
+  "specialRuhFirtinasi": "Ruh Firtinasi",
+  "specialKartalGoz": "Kartal Goz",
+  "specialGolgeBicagi": "Golge Bicagi"
 }

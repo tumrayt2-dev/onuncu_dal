@@ -190,4 +190,31 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get wave => 'Dalga';
+
+  @override
+  String get stage => 'Bolum';
+
+  @override
+  String get paused => 'DURAKLADI';
+
+  @override
+  String get autoMode => 'OTO';
+
+  @override
+  String get level => 'Sv';
+
+  @override
+  String get specialDemirKalkan => 'Demir Kalkan';
+
+  @override
+  String get specialKurtFormu => 'Kurt Formu';
+
+  @override
+  String get specialRuhFirtinasi => 'Ruh Firtinasi';
+
+  @override
+  String get specialKartalGoz => 'Kartal Goz';
+
+  @override
+  String get specialGolgeBicagi => 'Golge Bicagi';
 }

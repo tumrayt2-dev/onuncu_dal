@@ -189,4 +189,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wave => 'Wave';
+
+  @override
+  String get stage => 'Stage';
+
+  @override
+  String get paused => 'PAUSED';
+
+  @override
+  String get autoMode => 'Idle';
+
+  @override
+  String get level => 'Lv';
+
+  @override
+  String get specialDemirKalkan => 'Iron Shield';
+
+  @override
+  String get specialKurtFormu => 'Wolf Form';
+
+  @override
+  String get specialRuhFirtinasi => 'Spirit Storm';
+
+  @override
+  String get specialKartalGoz => 'Eagle Eye';
+
+  @override
+  String get specialGolgeBicagi => 'Shadow Blade';
 }

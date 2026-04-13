@@ -3,10 +3,13 @@ import 'dart:ui' as ui;
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:flutter/painting.dart';
 
 import '../models/enums.dart';
 import '../models/stats.dart';
 import '../services/combat_service.dart';
+import '../services/combo_service.dart';
+import '../services/resource_service.dart';
 import '../services/wave_service.dart';
 import 'hero_component.dart';
 import 'enemy_component.dart';
@@ -20,7 +23,8 @@ class BattleGame extends FlameGame with TapCallbacks {
     required this.heroStats,
     this.stageId = 1,
     this.worldId = 1,
-  });
+  })  : comboService = ComboService(),
+        resourceService = ResourceService(heroClass: heroClass);
 
   final HeroClass heroClass;
   final Stats heroStats;
@@ -28,8 +32,11 @@ class BattleGame extends FlameGame with TapCallbacks {
   final int worldId;
 
   late LaneSystem laneSystem;
+  late _LaneIndicator _laneIndicator;
   late HeroComponent heroComponent;
   late WaveService waveService;
+  final ComboService comboService;
+  final ResourceService resourceService;
   Lane _currentLane = Lane.middle;
 
   int _totalXp = 0;
@@ -55,6 +62,9 @@ class BattleGame extends FlameGame with TapCallbacks {
   void Function(int newLevel)? onLevelUp;
   void Function(Map<Lane, int> counts, Lane? bufferLane)? onLaneInfoChanged;
   void Function(Lane damageLane)? onSideDamageFlash;
+  void Function(int combo, ui.Color color, String bonusLabel)? onComboChanged;
+  void Function(double current, double max, bool specialReady, bool specialActive)? onResourceChanged;
+  void Function(String specialKey)? onSpecialActivated;
 
   Lane get currentLane => _currentLane;
   bool get isPaused => _isPaused;
@@ -73,7 +83,8 @@ class BattleGame extends FlameGame with TapCallbacks {
     laneSystem = LaneSystem(gameHeight: size.y);
 
     add(_BackgroundComponent(gameSize: size));
-    add(_LaneIndicator(laneSystem: laneSystem, gameSize: size));
+    _laneIndicator = _LaneIndicator(laneSystem: laneSystem, gameSize: size);
+    add(_laneIndicator);
 
     heroComponent = HeroComponent(
       heroClass: heroClass,
@@ -95,6 +106,28 @@ class BattleGame extends FlameGame with TapCallbacks {
 
     _battleTimer += dt;
     _laneSwitchCooldown = (_laneSwitchCooldown - dt).clamp(0, _laneSwitchCooldownMax);
+
+    // Combo + Resource guncelle
+    final oldCombo = comboService.combo;
+    comboService.update(dt);
+    resourceService.update(dt);
+
+    // Combo sifirlaninca UI'i guncelle
+    if (oldCombo > 0 && comboService.combo == 0) {
+      onComboChanged?.call(0, comboService.color, '');
+    }
+
+    onResourceChanged?.call(
+      resourceService.current,
+      resourceService.max,
+      resourceService.specialReady,
+      resourceService.specialActive,
+    );
+
+    // Special ability otomatik tetikleme
+    if (resourceService.specialReady) {
+      _triggerSpecialAbility();
+    }
 
     final enemies = children
         .whereType<EnemyComponent>()
@@ -141,6 +174,15 @@ class BattleGame extends FlameGame with TapCallbacks {
     }
     onLaneInfoChanged?.call(laneCounts, bufferLane);
 
+    // Lane indicator guncelle
+    _laneIndicator.activeLane = _currentLane;
+    _laneIndicator.laneMobCounts = laneCounts;
+    final bufferMap = <Lane, bool>{};
+    for (final lane in Lane.values) {
+      bufferMap[lane] = visibleEnemies.any((e) => e.lane == lane && e.isBufferOrHealer);
+    }
+    _laneIndicator.laneHasBuffer = bufferMap;
+
     // AFK AI — otomatik serit degistirme (sadece aciksa)
     if (afkEnabled) {
       _afkCheckTimer += dt;
@@ -159,8 +201,19 @@ class BattleGame extends FlameGame with TapCallbacks {
         sameLane.sort((a, b) => a.position.x.compareTo(b.position.x));
         final target = sameLane.first;
 
+        // Resource + combo carpanlari
+        final atkBoost = resourceService.atkMultiplier;
+        final backstab = resourceService.backstabMultiplier;
+        final comboBoost = comboService.damageMultiplier;
+        final forceCrit = resourceService.guaranteedCrit;
+
+        final boostedStats = heroStats.copyWith(
+          atk: heroStats.atk * atkBoost * backstab * comboBoost,
+          crit: forceCrit ? 100 : heroStats.crit,
+        );
+
         final result = CombatService.calculateDamage(
-          attacker: heroStats,
+          attacker: boostedStats,
           defender: Stats(
             def: target.scaledDef,
             dodge: target.enemyData.baseStats.dodge,
@@ -172,6 +225,10 @@ class BattleGame extends FlameGame with TapCallbacks {
               color: const ui.Color(0xFF888888), fontSize: 14);
         } else {
           target.takeDamage(result.damage);
+          comboService.onHit();
+          resourceService.onDealDamage();
+          onComboChanged?.call(
+            comboService.combo, comboService.color, comboService.bonusLabel);
 
           if (result.isCrit) {
             _spawnFloatingText(
@@ -224,8 +281,12 @@ class BattleGame extends FlameGame with TapCallbacks {
           _spawnFloatingText('MISS', heroComponent.position,
               color: const ui.Color(0xFF888888), fontSize: 14);
         } else {
-          final finalDmg = result.damage * damageMultiplier;
+          // Resource: hasar azaltma (Kalkan-Er) + blok kaynak
+          final dmgReduction = resourceService.damageReduction;
+          final finalDmg = result.damage * damageMultiplier * dmgReduction;
           heroComponent.takeDamage(finalDmg);
+          resourceService.onTakeDamage();
+          if (result.isBlocked) resourceService.onBlock();
           onHeroHpChanged?.call(
               heroComponent.currentHp, heroComponent.maxHp);
 
@@ -313,13 +374,45 @@ class BattleGame extends FlameGame with TapCallbacks {
     }
   }
 
+  /// Special ability tetikle
+  void _triggerSpecialAbility() {
+    if (!resourceService.triggerSpecial()) return;
+    onSpecialActivated?.call(resourceService.specialKey);
+    // Floating text yok — l10n destekli flash UI tarafinda gosteriliyor
+
+    // Kam AoE: tum seritlerdeki tum dusmanlara hasar
+    if (heroClass == HeroClass.kam) {
+      final allEnemies = children
+          .whereType<EnemyComponent>()
+          .where((e) => !e.isDead)
+          .toList();
+      final aoeDmg = heroStats.atk * 1.5;
+      for (final enemy in allEnemies) {
+        enemy.takeDamage(aoeDmg);
+        _spawnFloatingText(
+          '${aoeDmg.toInt()}',
+          enemy.position,
+          color: const ui.Color(0xFF7E57C2),
+          fontSize: 18,
+        );
+        if (enemy.isDead || enemy.currentHp <= 0) {
+          _onEnemyKilled(enemy);
+        }
+      }
+    }
+  }
+
   void _onEnemyKilled(EnemyComponent enemy) {
     final loot = enemy.enemyData.lootTable;
-    final xp = loot.xp;
-    final gold = loot.goldMin +
+    final baseXp = loot.xp;
+    final baseGold = loot.goldMin +
         (loot.goldMax > loot.goldMin
             ? (loot.goldMin + (loot.goldMax - loot.goldMin) ~/ 2)
             : 0);
+
+    // Combo bonusu uygula
+    final xp = (baseXp * comboService.xpMultiplier).round();
+    final gold = (baseGold * comboService.goldMultiplier).round();
 
     _totalXp += xp;
     _totalGold += gold;
@@ -394,7 +487,7 @@ class _BackgroundComponent extends PositionComponent {
   }
 }
 
-/// Serit gostergesi
+/// Serit gostergesi + mob baloncuklari + aktif serit efekti
 class _LaneIndicator extends PositionComponent {
   _LaneIndicator({required this.laneSystem, required this.gameSize})
       : super(size: gameSize, position: Vector2.zero());
@@ -402,19 +495,112 @@ class _LaneIndicator extends PositionComponent {
   final LaneSystem laneSystem;
   final Vector2 gameSize;
 
+  // Disaridan guncellenen veriler
+  Lane activeLane = Lane.middle;
+  Map<Lane, int> laneMobCounts = {};
+  Map<Lane, bool> laneHasBuffer = {};
+
+  static const _bubbleRadius = 14.0;
+  static const _bubbleRightMargin = 28.0;
+
   @override
   void render(ui.Canvas canvas) {
-    final paint = ui.Paint()
-      ..color = const ui.Color(0x22FFFFFF)
-      ..strokeWidth = 1;
-
     for (final lane in Lane.values) {
       final y = laneSystem.laneY(lane);
-      canvas.drawLine(
-        ui.Offset(0, y),
-        ui.Offset(gameSize.x, y),
-        paint,
-      );
+      final isActive = lane == activeLane;
+
+      // Aktif serit: parlak cizgi + glow
+      if (isActive) {
+        // Glow efekti (genis, saydam)
+        final glowPaint = ui.Paint()
+          ..color = const ui.Color(0x18FFD700)
+          ..strokeWidth = 24
+          ..maskFilter = const ui.MaskFilter.blur(ui.BlurStyle.normal, 12);
+        canvas.drawLine(
+          ui.Offset(0, y),
+          ui.Offset(gameSize.x, y),
+          glowPaint,
+        );
+        // Parlak cizgi
+        final activePaint = ui.Paint()
+          ..color = const ui.Color(0x66FFD700)
+          ..strokeWidth = 2;
+        canvas.drawLine(
+          ui.Offset(0, y),
+          ui.Offset(gameSize.x, y),
+          activePaint,
+        );
+      } else {
+        // Pasif serit cizgisi
+        final paint = ui.Paint()
+          ..color = const ui.Color(0x18FFFFFF)
+          ..strokeWidth = 1;
+        canvas.drawLine(
+          ui.Offset(0, y),
+          ui.Offset(gameSize.x, y),
+          paint,
+        );
+      }
+
+      // Mob baloncugu — sag kenarda
+      final bubbleX = gameSize.x - _bubbleRightMargin;
+      final mobCount = laneMobCounts[lane] ?? 0;
+      final hasBuffer = laneHasBuffer[lane] ?? false;
+
+      // Buffer dis halka
+      if (hasBuffer) {
+        final bufferPaint = ui.Paint()
+          ..color = const ui.Color(0xFFFF6600)
+          ..style = ui.PaintingStyle.stroke
+          ..strokeWidth = 3;
+        canvas.drawCircle(
+          ui.Offset(bubbleX, y),
+          _bubbleRadius + 4,
+          bufferPaint,
+        );
+      }
+
+      // Ana baloncuk
+      if (mobCount > 0) {
+        // Kirmizi dolu daire
+        final bubblePaint = ui.Paint()
+          ..color = const ui.Color(0xCCCC2222);
+        canvas.drawCircle(
+          ui.Offset(bubbleX, y),
+          _bubbleRadius,
+          bubblePaint,
+        );
+        // Beyaz sayi
+        final textPainter = TextPainter(
+          text: TextSpan(
+            text: '$mobCount',
+            style: const TextStyle(
+              color: ui.Color(0xFFFFFFFF),
+              fontSize: 13,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          textDirection: ui.TextDirection.ltr,
+        )..layout();
+        textPainter.paint(
+          canvas,
+          ui.Offset(
+            bubbleX - textPainter.width / 2,
+            y - textPainter.height / 2,
+          ),
+        );
+      } else {
+        // Bos transparan daire
+        final emptyPaint = ui.Paint()
+          ..color = const ui.Color(0x22FFFFFF)
+          ..style = ui.PaintingStyle.stroke
+          ..strokeWidth = 1;
+        canvas.drawCircle(
+          ui.Offset(bubbleX, y),
+          _bubbleRadius,
+          emptyPaint,
+        );
+      }
     }
   }
 }

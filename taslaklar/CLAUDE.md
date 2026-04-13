@@ -97,8 +97,9 @@ Savaş alanı 3 yatay şerit:
 - Gerçek zamanlı otomatik savaş
 - Oyuncu müdahalesi: şerit değiştirme, skill sırası, hedef önceliği
 - Her stage: 8 normal dalga + 1 elit/mini-boss (stage 10,20,30,40) veya world boss (stage 50)
-- Combo meter: kesintisiz hasar → 10+ (%5 hasar), 25+ (%10 hasar, %5 XP), 50+ (%15/%10/%5), 100+ (%20/%15/%10/%5)
+- Combo meter: kesintisiz hasar → 5+ (%5 hasar), 10+ (%10 hasar, %5 XP), 20+ (%15/%10/%5), 50+ (%20/%15/%10)
 - 3sn hasar vermezsen combo sıfırlanır
+- Combo renk: beyaz(0)→yeşil(5+)→mavi(10+)→mor(20+)→altın(50+)
 
 ---
 

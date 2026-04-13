@@ -451,6 +451,60 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Dalga'**
   String get wave;
+
+  /// No description provided for @stage.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bolum'**
+  String get stage;
+
+  /// No description provided for @paused.
+  ///
+  /// In tr, this message translates to:
+  /// **'DURAKLADI'**
+  String get paused;
+
+  /// No description provided for @autoMode.
+  ///
+  /// In tr, this message translates to:
+  /// **'OTO'**
+  String get autoMode;
+
+  /// No description provided for @level.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sv'**
+  String get level;
+
+  /// No description provided for @specialDemirKalkan.
+  ///
+  /// In tr, this message translates to:
+  /// **'Demir Kalkan'**
+  String get specialDemirKalkan;
+
+  /// No description provided for @specialKurtFormu.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kurt Formu'**
+  String get specialKurtFormu;
+
+  /// No description provided for @specialRuhFirtinasi.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ruh Firtinasi'**
+  String get specialRuhFirtinasi;
+
+  /// No description provided for @specialKartalGoz.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kartal Goz'**
+  String get specialKartalGoz;
+
+  /// No description provided for @specialGolgeBicagi.
+  ///
+  /// In tr, this message translates to:
+  /// **'Golge Bicagi'**
+  String get specialGolgeBicagi;
 }
 
 class _AppLocalizationsDelegate

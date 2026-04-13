@@ -347,8 +347,8 @@ lib/services/combat_service.dart + Flame component güncellemeleri:
    - Kesintisiz hasar → combo sayacı artar
    - UI'da combo sayısı göstergesi (büyük rakam)
    - 3sn hasar vermezsen combo sıfırlanır
-   - Bonuslar: 10+ → +%5 hasar, 25+ → +%10 hasar +%5 XP, 50+ → +%15/+%10/+%5, 100+ → +%20/+%15/+%10/+%5
-   - Combo renk değişimi: beyaz→yeşil→mavi→mor→altın
+   - Bonuslar: 5+ → +%5 hasar, 10+ → +%10 hasar +%5 XP, 20+ → +%15/+%10/+%5, 50+ → +%20/+%15/+%10
+   - Combo renk değişimi: beyaz(0)→yeşil(5+)→mavi(10+)→mor(20+)→altın(50+)
 
 2. Kaynak sistemi (sınıfa göre):
    - Kalkan-Er: İrade (100 max). Blok başarılı → +10. Zamanla +2/sn.

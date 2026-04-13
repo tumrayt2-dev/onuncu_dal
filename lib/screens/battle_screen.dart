@@ -35,9 +35,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   bool _leveledUp = false;
   int _newLevel = 0;
 
-  // Lane info
-  Map<Lane, int> _laneCounts = {};
-  Lane? _bufferLane;
+  // Lane info (Flame canvas icinde gosteriliyor)
 
   // AFK AI toggle
   bool _afkEnabled = false;
@@ -45,6 +43,21 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   // Side damage flash
   double _topFlash = 0;
   double _bottomFlash = 0;
+
+  // Combo
+  int _combo = 0;
+  Color _comboColor = Colors.white;
+  String _comboBonusLabel = '';
+
+  // Resource
+  double _resCurrent = 0;
+  double _resMax = 100;
+  bool _specialReady = false;
+  bool _specialActive = false;
+
+  // Special ability flash
+  String? _specialFlashName;
+  double _specialFlashTimer = 0;
 
   @override
   void initState() {
@@ -89,17 +102,17 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
     _game.onHeroDied = () {
       _safeSetState(() => _isDefeated = true);
     };
+    _game.onRewardPopup = (xp, gold) {
+      // Anlik XP + gold ver (level atlama dahil)
+      ref.read(playerProvider.notifier).addXp(xp);
+      ref.read(playerProvider.notifier).addGold(gold);
+    };
     _game.onStageComplete = (xp, gold, hpPercent, time) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _onStageComplete(xp, gold, hpPercent, time);
       });
     };
-    _game.onLaneInfoChanged = (counts, bufferLane) {
-      _safeSetState(() {
-        _laneCounts = counts;
-        _bufferLane = bufferLane;
-      });
-    };
+    // Lane info artik Flame canvas icinde gosteriliyor
     _game.onSideDamageFlash = (lane) {
       _safeSetState(() {
         // Yan serit hasari: hero'nun ustundeki serit top flash, altindaki bottom flash
@@ -119,6 +132,35 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         }
       });
     };
+    _game.onComboChanged = (combo, color, bonusLabel) {
+      _safeSetState(() {
+        _combo = combo;
+        _comboColor = Color(color.toARGB32());
+        _comboBonusLabel = bonusLabel;
+      });
+    };
+    _game.onResourceChanged = (current, max, specialReady, specialActive) {
+      _safeSetState(() {
+        _resCurrent = current;
+        _resMax = max;
+        _specialReady = specialReady;
+        _specialActive = specialActive;
+      });
+    };
+    _game.onSpecialActivated = (name) {
+      _safeSetState(() {
+        _specialFlashName = name;
+        _specialFlashTimer = 1.5;
+      });
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (mounted) {
+          setState(() {
+            _specialFlashName = null;
+            _specialFlashTimer = 0;
+          });
+        }
+      });
+    };
   }
 
   void _onStageComplete(int xp, int gold, double hpPercent, double time) {
@@ -126,19 +168,14 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
     if (hpPercent >= 0.5) stars = 2;
     if (hpPercent >= 0.8) stars = 3;
 
-    final hero = ref.read(playerProvider);
-    final oldLevel = hero?.level ?? 1;
-
-    ref.read(playerProvider.notifier).addXp(xp);
-    ref.read(playerProvider.notifier).addGold(gold);
-
+    // XP + gold zaten onRewardPopup'ta anlik verildi, tekrar verme
     final updatedHero = ref.read(playerProvider);
-    final leveled = (updatedHero?.level ?? 1) > oldLevel;
+    final leveled = false; // Level atlama anlik takip ediliyor
 
-    final currentStage = hero?.currentStage ?? 1;
+    final currentStage = updatedHero?.currentStage ?? 1;
     ref.read(playerProvider.notifier).updateStage(
       currentStage + 1,
-      hero?.currentWorldId ?? 1,
+      updatedHero?.currentWorldId ?? 1,
     );
 
     setState(() {
@@ -164,16 +201,35 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _currentWave = 1;
       _currentLane = Lane.middle;
       _leveledUp = false;
-      _laneCounts = {};
-      _bufferLane = null;
+      _combo = 0;
+      _comboColor = Colors.white;
+      _comboBonusLabel = '';
+      _resCurrent = 0;
+      _resMax = 100;
+      _specialReady = false;
+      _specialActive = false;
+      _specialFlashName = null;
+      _specialFlashTimer = 0;
       _initGame();
     });
   }
 
-  String _laneName(AppLocalizations l10n, Lane lane) => switch (lane) {
-        Lane.top => 'UST',
-        Lane.middle => 'ORTA',
-        Lane.bottom => 'ALT',
+  String _specialL10n(AppLocalizations l10n, String key) => switch (key) {
+        'demirKalkan' => l10n.specialDemirKalkan,
+        'kurtFormu' => l10n.specialKurtFormu,
+        'ruhFirtinasi' => l10n.specialRuhFirtinasi,
+        'kartalGoz' => l10n.specialKartalGoz,
+        'golgeBicagi' => l10n.specialGolgeBicagi,
+        _ => key,
+      };
+
+  String _resourceL10n(AppLocalizations l10n, String key) => switch (key) {
+        'irade' => l10n.resourceIrade,
+        'ofke' => l10n.resourceOfke,
+        'ruh' => l10n.resourceRuh,
+        'soluk' => l10n.resourceSoluk,
+        'sir' => l10n.resourceSir,
+        _ => key,
       };
 
   @override
@@ -300,7 +356,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                               ),
                             ),
                             child: Text(
-                              'AFK',
+                              l10n.autoMode,
                               style: TextStyle(
                                 color: _afkEnabled
                                     ? const Color(0xFF4CAF50)
@@ -313,11 +369,31 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'Stage ${hero.currentStage}',
+                          '${l10n.stage} ${hero.currentStage}',
                           style: const TextStyle(
                             color: AppColors.gold,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF64B5F6).withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(6),
+                            border: Border.all(
+                              color: const Color(0xFF64B5F6).withValues(alpha: 0.5),
+                            ),
+                          ),
+                          child: Text(
+                            '${l10n.level} ${hero.level}',
+                            style: const TextStyle(
+                              color: Color(0xFF64B5F6),
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const Spacer(),
@@ -375,13 +451,76 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 6),
+                    // Kaynak bari
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 42,
+                          child: Text(
+                            _resourceL10n(l10n, _game.resourceService.resourceKey).toUpperCase(),
+                            style: TextStyle(
+                              color: Color(_game.resourceService.barColor.toARGB32()),
+                              fontSize: 11,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 10,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: const Color(0xFF222222),
+                              border: Border.all(
+                                color: _specialReady
+                                    ? Colors.white.withValues(alpha: 0.8)
+                                    : _specialActive
+                                        ? Colors.amber.withValues(alpha: 0.6)
+                                        : const Color(0xFF444444),
+                                width: _specialReady ? 1.5 : 1,
+                              ),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(4),
+                              child: FractionallySizedBox(
+                                alignment: Alignment.centerLeft,
+                                widthFactor: _resMax > 0 ? (_resCurrent / _resMax).clamp(0, 1).toDouble() : 0,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(_game.resourceService.barColor.toARGB32()),
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          '${_resCurrent.toInt()}/${_resMax.toInt()}',
+                          style: TextStyle(
+                            color: _specialReady
+                                ? Colors.white
+                                : AppColors.textSecondary,
+                            fontSize: 11,
+                            fontWeight: _specialReady ? FontWeight.bold : FontWeight.normal,
+                          ),
+                        ),
+                        if (_specialActive)
+                          const Padding(
+                            padding: EdgeInsets.only(left: 4),
+                            child: Icon(Icons.bolt, color: Colors.amber, size: 16),
+                          ),
+                      ],
+                    ),
                   ],
                 ),
               ),
             ),
           ),
 
-          // Alt UI — serit gostergesi + mob sayaci + skill
+          // Alt UI — skill butonlari
           Positioned(
             bottom: 0,
             left: 0,
@@ -402,77 +541,6 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Serit gostergesi + mob sayaci
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: Lane.values.map((lane) {
-                        final isActive = lane == _currentLane;
-                        final mobCount = _laneCounts[lane] ?? 0;
-                        final hasBuffer = _bufferLane == lane;
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 4),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 6),
-                          decoration: BoxDecoration(
-                            color: isActive
-                                ? AppColors.gold.withValues(alpha: 0.3)
-                                : AppColors.surface.withValues(alpha: 0.5),
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: isActive
-                                  ? AppColors.gold
-                                  : hasBuffer
-                                      ? const Color(0xFFFF6600)
-                                      : Colors.transparent,
-                              width: hasBuffer ? 2 : 1,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              if (hasBuffer)
-                                const Padding(
-                                  padding: EdgeInsets.only(right: 4),
-                                  child: Icon(Icons.warning_amber,
-                                      color: Color(0xFFFF6600), size: 12),
-                                ),
-                              Text(
-                                _laneName(l10n, lane),
-                                style: TextStyle(
-                                  color: isActive
-                                      ? AppColors.gold
-                                      : AppColors.textDim,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              if (mobCount > 0) ...[
-                                const SizedBox(width: 4),
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 4, vertical: 1),
-                                  decoration: BoxDecoration(
-                                    color: mobCount > 3
-                                        ? const Color(0xFFFF4444)
-                                        : const Color(0xFF666666),
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: Text(
-                                    '$mobCount',
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ],
-                          ),
-                        );
-                      }).toList(),
-                    ),
-                    const SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: List.generate(4, (i) {
@@ -502,6 +570,79 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
             ),
           ),
 
+          // Combo gostergesi — baloncuklarin solunda
+          if (_combo > 0)
+            Positioned(
+              right: 52,
+              top: MediaQuery.of(context).size.height * 0.15,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text(
+                    '$_combo',
+                    style: TextStyle(
+                      color: _comboColor,
+                      fontSize: _combo >= 50 ? 40 : _combo >= 20 ? 34 : 26,
+                      fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(
+                          color: _comboColor.withValues(alpha: 0.5),
+                          blurRadius: 12,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Text(
+                    'COMBO',
+                    style: TextStyle(
+                      color: _comboColor.withValues(alpha: 0.7),
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  if (_comboBonusLabel.isNotEmpty)
+                    Container(
+                      margin: const EdgeInsets.only(top: 4),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 6, vertical: 2),
+                      decoration: BoxDecoration(
+                        color: _comboColor.withValues(alpha: 0.2),
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Text(
+                        _comboBonusLabel,
+                        style: TextStyle(
+                          color: _comboColor,
+                          fontSize: 9,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+
+          // Special ability flash
+          if (_specialFlashName != null)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: Center(
+                  child: Text(
+                    _specialL10n(l10n, _specialFlashName!),
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: _specialFlashTimer > 0 ? 1.0 : 0.0),
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      shadows: const [
+                        Shadow(color: Colors.amber, blurRadius: 20),
+                        Shadow(color: Colors.amber, blurRadius: 40),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
           // Pause overlay
           if (_isPaused && !_isDefeated && !_stageComplete)
             Container(
@@ -513,9 +654,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                     const Icon(Icons.pause_circle_outline,
                         color: AppColors.gold, size: 64),
                     const SizedBox(height: 16),
-                    const Text(
-                      'DURAKLADI',
-                      style: TextStyle(
+                    Text(
+                      l10n.paused,
+                      style: const TextStyle(
                         color: AppColors.gold,
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
