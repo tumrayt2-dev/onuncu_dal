@@ -114,5 +114,46 @@
       "gold": { "type": "String" }
     }
   },
-  "leaveBattle": "Savastan Cik"
+  "leaveBattle": "Savastan Cik",
+  "inventory": "Envanter",
+  "emptyInventory": "Envanter bos",
+  "itemDetail": "Item Detay",
+  "equip": "Kusan",
+  "unequip": "Cikar",
+  "sell": "Sat",
+  "sellConfirm": "{gold} altina sat?",
+  "@sellConfirm": {
+    "placeholders": {
+      "gold": { "type": "String" }
+    }
+  },
+  "iLevel": "iSv",
+  "upgrade": "Guclendir",
+  "slotWeapon": "Silah",
+  "slotHelmet": "Kask",
+  "slotChest": "Gogus",
+  "slotGloves": "Eldiven",
+  "slotPants": "Pantolon",
+  "slotBoots": "Cizme",
+  "slotRing1": "Yuzuk I",
+  "slotRing2": "Yuzuk II",
+  "slotAmulet": "Kolye",
+  "rarityCommon": "Siradan",
+  "rarityUncommon": "Yesil",
+  "rarityRare": "Nadir",
+  "rarityEpic": "Destansi",
+  "rarityLegendary": "Efsanevi",
+  "rarityMythic": "Mitik",
+  "affixAtkPercent": "Saldiri",
+  "affixHpFlat": "Can",
+  "affixCritPercent": "Kritik Sans",
+  "affixCritDmgPercent": "Kritik Hasar",
+  "affixLifestealPercent": "Can Cekme",
+  "affixSpdFlat": "Hiz",
+  "affixGoldFindPercent": "Altin Bulma",
+  "affixMagicFindPercent": "Buyulu Bulma",
+  "affixDodgePercent": "Kacinma",
+  "affixResistPercent": "Direnme",
+  "affixHpRegenFlat": "Can Yenileme",
+  "affixElementDmgPercent": "Element Hasari"
 }

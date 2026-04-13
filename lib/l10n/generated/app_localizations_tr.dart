@@ -328,4 +328,114 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get leaveBattle => 'Savastan Cik';
+
+  @override
+  String get inventory => 'Envanter';
+
+  @override
+  String get emptyInventory => 'Envanter bos';
+
+  @override
+  String get itemDetail => 'Item Detay';
+
+  @override
+  String get equip => 'Kusan';
+
+  @override
+  String get unequip => 'Cikar';
+
+  @override
+  String get sell => 'Sat';
+
+  @override
+  String sellConfirm(String gold) {
+    return '$gold altina sat?';
+  }
+
+  @override
+  String get iLevel => 'iSv';
+
+  @override
+  String get upgrade => 'Guclendir';
+
+  @override
+  String get slotWeapon => 'Silah';
+
+  @override
+  String get slotHelmet => 'Kask';
+
+  @override
+  String get slotChest => 'Gogus';
+
+  @override
+  String get slotGloves => 'Eldiven';
+
+  @override
+  String get slotPants => 'Pantolon';
+
+  @override
+  String get slotBoots => 'Cizme';
+
+  @override
+  String get slotRing1 => 'Yuzuk I';
+
+  @override
+  String get slotRing2 => 'Yuzuk II';
+
+  @override
+  String get slotAmulet => 'Kolye';
+
+  @override
+  String get rarityCommon => 'Siradan';
+
+  @override
+  String get rarityUncommon => 'Yesil';
+
+  @override
+  String get rarityRare => 'Nadir';
+
+  @override
+  String get rarityEpic => 'Destansi';
+
+  @override
+  String get rarityLegendary => 'Efsanevi';
+
+  @override
+  String get rarityMythic => 'Mitik';
+
+  @override
+  String get affixAtkPercent => 'Saldiri';
+
+  @override
+  String get affixHpFlat => 'Can';
+
+  @override
+  String get affixCritPercent => 'Kritik Sans';
+
+  @override
+  String get affixCritDmgPercent => 'Kritik Hasar';
+
+  @override
+  String get affixLifestealPercent => 'Can Cekme';
+
+  @override
+  String get affixSpdFlat => 'Hiz';
+
+  @override
+  String get affixGoldFindPercent => 'Altin Bulma';
+
+  @override
+  String get affixMagicFindPercent => 'Buyulu Bulma';
+
+  @override
+  String get affixDodgePercent => 'Kacinma';
+
+  @override
+  String get affixResistPercent => 'Direnme';
+
+  @override
+  String get affixHpRegenFlat => 'Can Yenileme';
+
+  @override
+  String get affixElementDmgPercent => 'Element Hasari';
 }

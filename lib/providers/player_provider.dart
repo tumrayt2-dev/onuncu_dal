@@ -77,6 +77,36 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
     await _autoSave();
   }
 
+  /// Item sat (rarity'ye göre altın: Common:10, Uncommon:50, Rare:200, Epic:1000, Legendary:5000, Mythic:20000)
+  Future<void> sellItem(Item item) async {
+    final hero = state;
+    if (hero == null) return;
+    final goldValue = switch (item.rarity) {
+      Rarity.common => 10,
+      Rarity.uncommon => 50,
+      Rarity.rare => 200,
+      Rarity.epic => 1000,
+      Rarity.legendary => 5000,
+      Rarity.mythic => 20000,
+    };
+    final newInventory = List<Item>.from(hero.inventory)..remove(item);
+    state = hero.copyWith(
+      inventory: newInventory,
+      gold: hero.gold + goldValue,
+    );
+    await _autoSave();
+  }
+
+  /// Satış fiyatı hesapla
+  static int sellPrice(Rarity rarity) => switch (rarity) {
+        Rarity.common => 10,
+        Rarity.uncommon => 50,
+        Rarity.rare => 200,
+        Rarity.epic => 1000,
+        Rarity.legendary => 5000,
+        Rarity.mythic => 20000,
+      };
+
   /// Item kuşan
   Future<void> equipItem(Item item, EquipmentSlot slot) async {
     final hero = state;

@@ -327,4 +327,114 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get leaveBattle => 'Leave Battle';
+
+  @override
+  String get inventory => 'Inventory';
+
+  @override
+  String get emptyInventory => 'Inventory is empty';
+
+  @override
+  String get itemDetail => 'Item Detail';
+
+  @override
+  String get equip => 'Equip';
+
+  @override
+  String get unequip => 'Unequip';
+
+  @override
+  String get sell => 'Sell';
+
+  @override
+  String sellConfirm(String gold) {
+    return 'Sell for $gold gold?';
+  }
+
+  @override
+  String get iLevel => 'iLv';
+
+  @override
+  String get upgrade => 'Upgrade';
+
+  @override
+  String get slotWeapon => 'Weapon';
+
+  @override
+  String get slotHelmet => 'Helmet';
+
+  @override
+  String get slotChest => 'Chest';
+
+  @override
+  String get slotGloves => 'Gloves';
+
+  @override
+  String get slotPants => 'Pants';
+
+  @override
+  String get slotBoots => 'Boots';
+
+  @override
+  String get slotRing1 => 'Ring I';
+
+  @override
+  String get slotRing2 => 'Ring II';
+
+  @override
+  String get slotAmulet => 'Amulet';
+
+  @override
+  String get rarityCommon => 'Common';
+
+  @override
+  String get rarityUncommon => 'Uncommon';
+
+  @override
+  String get rarityRare => 'Rare';
+
+  @override
+  String get rarityEpic => 'Epic';
+
+  @override
+  String get rarityLegendary => 'Legendary';
+
+  @override
+  String get rarityMythic => 'Mythic';
+
+  @override
+  String get affixAtkPercent => 'Attack';
+
+  @override
+  String get affixHpFlat => 'Health';
+
+  @override
+  String get affixCritPercent => 'Crit Chance';
+
+  @override
+  String get affixCritDmgPercent => 'Crit Damage';
+
+  @override
+  String get affixLifestealPercent => 'Lifesteal';
+
+  @override
+  String get affixSpdFlat => 'Speed';
+
+  @override
+  String get affixGoldFindPercent => 'Gold Find';
+
+  @override
+  String get affixMagicFindPercent => 'Magic Find';
+
+  @override
+  String get affixDodgePercent => 'Dodge';
+
+  @override
+  String get affixResistPercent => 'Resist';
+
+  @override
+  String get affixHpRegenFlat => 'HP Regen';
+
+  @override
+  String get affixElementDmgPercent => 'Elemental Dmg';
 }

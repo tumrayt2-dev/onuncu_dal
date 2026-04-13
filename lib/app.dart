@@ -10,6 +10,7 @@ import 'screens/hero_select_screen.dart';
 import 'screens/main_game_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/battle_screen.dart';
+import 'screens/inventory_screen.dart';
 
 final _router = GoRouter(
   initialLocation: '/',
@@ -33,6 +34,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/battle',
       builder: (context, state) => const BattleScreen(),
+    ),
+    GoRoute(
+      path: '/inventory',
+      builder: (context, state) => const InventoryScreen(),
     ),
   ],
 );

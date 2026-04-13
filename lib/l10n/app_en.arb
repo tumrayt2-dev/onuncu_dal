@@ -114,5 +114,46 @@
       "gold": { "type": "String" }
     }
   },
-  "leaveBattle": "Leave Battle"
+  "leaveBattle": "Leave Battle",
+  "inventory": "Inventory",
+  "emptyInventory": "Inventory is empty",
+  "itemDetail": "Item Detail",
+  "equip": "Equip",
+  "unequip": "Unequip",
+  "sell": "Sell",
+  "sellConfirm": "Sell for {gold} gold?",
+  "@sellConfirm": {
+    "placeholders": {
+      "gold": { "type": "String" }
+    }
+  },
+  "iLevel": "iLv",
+  "upgrade": "Upgrade",
+  "slotWeapon": "Weapon",
+  "slotHelmet": "Helmet",
+  "slotChest": "Chest",
+  "slotGloves": "Gloves",
+  "slotPants": "Pants",
+  "slotBoots": "Boots",
+  "slotRing1": "Ring I",
+  "slotRing2": "Ring II",
+  "slotAmulet": "Amulet",
+  "rarityCommon": "Common",
+  "rarityUncommon": "Uncommon",
+  "rarityRare": "Rare",
+  "rarityEpic": "Epic",
+  "rarityLegendary": "Legendary",
+  "rarityMythic": "Mythic",
+  "affixAtkPercent": "Attack",
+  "affixHpFlat": "Health",
+  "affixCritPercent": "Crit Chance",
+  "affixCritDmgPercent": "Crit Damage",
+  "affixLifestealPercent": "Lifesteal",
+  "affixSpdFlat": "Speed",
+  "affixGoldFindPercent": "Gold Find",
+  "affixMagicFindPercent": "Magic Find",
+  "affixDodgePercent": "Dodge",
+  "affixResistPercent": "Resist",
+  "affixHpRegenFlat": "HP Regen",
+  "affixElementDmgPercent": "Elemental Dmg"
 }

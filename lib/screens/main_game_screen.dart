@@ -96,6 +96,15 @@ class MainGameScreen extends ConsumerWidget {
                 child: Text('Stage ${hero.currentStage}'),
               ),
             ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: 200,
+              child: OutlinedButton.icon(
+                onPressed: () => context.go('/inventory'),
+                icon: const Icon(Icons.backpack_outlined),
+                label: Text(l10n.inventory),
+              ),
+            ),
           ],
         ),
       ),

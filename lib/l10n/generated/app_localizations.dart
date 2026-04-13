@@ -721,6 +721,222 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Savastan Cik'**
   String get leaveBattle;
+
+  /// No description provided for @inventory.
+  ///
+  /// In tr, this message translates to:
+  /// **'Envanter'**
+  String get inventory;
+
+  /// No description provided for @emptyInventory.
+  ///
+  /// In tr, this message translates to:
+  /// **'Envanter bos'**
+  String get emptyInventory;
+
+  /// No description provided for @itemDetail.
+  ///
+  /// In tr, this message translates to:
+  /// **'Item Detay'**
+  String get itemDetail;
+
+  /// No description provided for @equip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kusan'**
+  String get equip;
+
+  /// No description provided for @unequip.
+  ///
+  /// In tr, this message translates to:
+  /// **'Cikar'**
+  String get unequip;
+
+  /// No description provided for @sell.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sat'**
+  String get sell;
+
+  /// No description provided for @sellConfirm.
+  ///
+  /// In tr, this message translates to:
+  /// **'{gold} altina sat?'**
+  String sellConfirm(String gold);
+
+  /// No description provided for @iLevel.
+  ///
+  /// In tr, this message translates to:
+  /// **'iSv'**
+  String get iLevel;
+
+  /// No description provided for @upgrade.
+  ///
+  /// In tr, this message translates to:
+  /// **'Guclendir'**
+  String get upgrade;
+
+  /// No description provided for @slotWeapon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Silah'**
+  String get slotWeapon;
+
+  /// No description provided for @slotHelmet.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kask'**
+  String get slotHelmet;
+
+  /// No description provided for @slotChest.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gogus'**
+  String get slotChest;
+
+  /// No description provided for @slotGloves.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eldiven'**
+  String get slotGloves;
+
+  /// No description provided for @slotPants.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pantolon'**
+  String get slotPants;
+
+  /// No description provided for @slotBoots.
+  ///
+  /// In tr, this message translates to:
+  /// **'Cizme'**
+  String get slotBoots;
+
+  /// No description provided for @slotRing1.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yuzuk I'**
+  String get slotRing1;
+
+  /// No description provided for @slotRing2.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yuzuk II'**
+  String get slotRing2;
+
+  /// No description provided for @slotAmulet.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kolye'**
+  String get slotAmulet;
+
+  /// No description provided for @rarityCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Siradan'**
+  String get rarityCommon;
+
+  /// No description provided for @rarityUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yesil'**
+  String get rarityUncommon;
+
+  /// No description provided for @rarityRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Nadir'**
+  String get rarityRare;
+
+  /// No description provided for @rarityEpic.
+  ///
+  /// In tr, this message translates to:
+  /// **'Destansi'**
+  String get rarityEpic;
+
+  /// No description provided for @rarityLegendary.
+  ///
+  /// In tr, this message translates to:
+  /// **'Efsanevi'**
+  String get rarityLegendary;
+
+  /// No description provided for @rarityMythic.
+  ///
+  /// In tr, this message translates to:
+  /// **'Mitik'**
+  String get rarityMythic;
+
+  /// No description provided for @affixAtkPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Saldiri'**
+  String get affixAtkPercent;
+
+  /// No description provided for @affixHpFlat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Can'**
+  String get affixHpFlat;
+
+  /// No description provided for @affixCritPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kritik Sans'**
+  String get affixCritPercent;
+
+  /// No description provided for @affixCritDmgPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kritik Hasar'**
+  String get affixCritDmgPercent;
+
+  /// No description provided for @affixLifestealPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Can Cekme'**
+  String get affixLifestealPercent;
+
+  /// No description provided for @affixSpdFlat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Hiz'**
+  String get affixSpdFlat;
+
+  /// No description provided for @affixGoldFindPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Altin Bulma'**
+  String get affixGoldFindPercent;
+
+  /// No description provided for @affixMagicFindPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Buyulu Bulma'**
+  String get affixMagicFindPercent;
+
+  /// No description provided for @affixDodgePercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kacinma'**
+  String get affixDodgePercent;
+
+  /// No description provided for @affixResistPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Direnme'**
+  String get affixResistPercent;
+
+  /// No description provided for @affixHpRegenFlat.
+  ///
+  /// In tr, this message translates to:
+  /// **'Can Yenileme'**
+  String get affixHpRegenFlat;
+
+  /// No description provided for @affixElementDmgPercent.
+  ///
+  /// In tr, this message translates to:
+  /// **'Element Hasari'**
+  String get affixElementDmgPercent;
 }
 
 class _AppLocalizationsDelegate
