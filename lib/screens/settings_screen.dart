@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../core/constants.dart';
+import '../models/enums.dart';
 import '../providers/locale_provider.dart';
 import '../providers/player_provider.dart';
 
@@ -81,6 +82,42 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             activeTrackColor: AppColors.gold,
             onChanged: (v) => setState(() => _notifEnabled = v),
           ),
+          const SizedBox(height: AppSizes.paddingL),
+          // Otomatik Satış
+          _SectionTitle('Otomatik Satış'),
+          Builder(builder: (context) {
+            final hero = ref.watch(playerProvider);
+            return Column(
+              children: [
+                SwitchListTile(
+                  title: const Text('Sıradan (Common) otomatik sat',
+                      style: TextStyle(color: AppColors.textPrimary)),
+                  subtitle: const Text('+10 Altın/item',
+                      style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+                  value: hero?.autoSellCommon ?? false,
+                  activeTrackColor: AppColors.gold,
+                  onChanged: hero == null
+                      ? null
+                      : (v) => ref
+                          .read(playerProvider.notifier)
+                          .setAutoSell(Rarity.common, v),
+                ),
+                SwitchListTile(
+                  title: const Text('Yeşil (Uncommon) otomatik sat',
+                      style: TextStyle(color: AppColors.textPrimary)),
+                  subtitle: const Text('+50 Altın/item',
+                      style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+                  value: hero?.autoSellUncommon ?? false,
+                  activeTrackColor: AppColors.gold,
+                  onChanged: hero == null
+                      ? null
+                      : (v) => ref
+                          .read(playerProvider.notifier)
+                          .setAutoSell(Rarity.uncommon, v),
+                ),
+              ],
+            );
+          }),
           // Debug panel — sadece debug modda gorunur
           if (kDebugMode) ...[
             const SizedBox(height: AppSizes.paddingL),

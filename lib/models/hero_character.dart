@@ -27,6 +27,9 @@ class HeroCharacter {
     this.currentStage = 1,
     this.maxStage = 1,
     this.currentWorldId = 1,
+    this.potions = 0,
+    this.autoSellCommon = false,
+    this.autoSellUncommon = false,
   });
 
   final String id;
@@ -48,6 +51,9 @@ class HeroCharacter {
   final int currentStage;
   final int maxStage;
   final int currentWorldId;
+  final int potions; // max 3
+  final bool autoSellCommon;
+  final bool autoSellUncommon;
 
   /// Sonraki level icin gereken XP: floor(100 * pow(level, 1.6))
   int get xpToNextLevel => (100 * math.pow(level, 1.6)).floor();
@@ -94,6 +100,9 @@ class HeroCharacter {
     int? currentStage,
     int? maxStage,
     int? currentWorldId,
+    int? potions,
+    bool? autoSellCommon,
+    bool? autoSellUncommon,
   }) {
     return HeroCharacter(
       id: id ?? this.id,
@@ -115,6 +124,9 @@ class HeroCharacter {
       currentStage: currentStage ?? this.currentStage,
       maxStage: maxStage ?? this.maxStage,
       currentWorldId: currentWorldId ?? this.currentWorldId,
+      potions: potions ?? this.potions,
+      autoSellCommon: autoSellCommon ?? this.autoSellCommon,
+      autoSellUncommon: autoSellUncommon ?? this.autoSellUncommon,
     );
   }
 
@@ -141,6 +153,9 @@ class HeroCharacter {
       'currentStage': currentStage,
       'maxStage': maxStage,
       'currentWorldId': currentWorldId,
+      'potions': potions,
+      'autoSellCommon': autoSellCommon,
+      'autoSellUncommon': autoSellUncommon,
     };
   }
 
@@ -181,6 +196,9 @@ class HeroCharacter {
       currentStage: json['currentStage'] as int? ?? 1,
       maxStage: json['maxStage'] as int? ?? 1,
       currentWorldId: json['currentWorldId'] as int? ?? 1,
+      potions: json['potions'] as int? ?? 0,
+      autoSellCommon: json['autoSellCommon'] as bool? ?? false,
+      autoSellUncommon: json['autoSellUncommon'] as bool? ?? false,
     );
   }
 

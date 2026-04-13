@@ -71,13 +71,65 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
     await _autoSave();
   }
 
-  /// Envantere item ekle
-  Future<void> addItem(Item item) async {
+  /// Envantere item ekle (otomatik satış filtresi uygulanır)
+  /// Döndürür: true = envantere eklendi, false = otomatik satıldı
+  Future<bool> addItem(Item item) async {
     final hero = state;
-    if (hero == null) return;
+    if (hero == null) return false;
+
+    // Otomatik satış kontrolü
+    if (hero.autoSellCommon && item.rarity == Rarity.common) {
+      await addGold(sellPrice(item.rarity));
+      return false;
+    }
+    if (hero.autoSellUncommon && item.rarity == Rarity.uncommon) {
+      await addGold(sellPrice(item.rarity));
+      return false;
+    }
+
     final newInventory = List<Item>.from(hero.inventory)..add(item);
     state = hero.copyWith(inventory: newInventory);
     await _autoSave();
+    return true;
+  }
+
+  /// Otomatik satış ayarını değiştir
+  Future<void> setAutoSell(Rarity rarity, bool value) async {
+    final hero = state;
+    if (hero == null) return;
+    if (rarity == Rarity.common) {
+      state = hero.copyWith(autoSellCommon: value);
+    } else if (rarity == Rarity.uncommon) {
+      state = hero.copyWith(autoSellUncommon: value);
+    }
+    await _autoSave();
+  }
+
+  /// İksir satın al (1 iksir = 200 altın, max 3)
+  static const int potionCost = 200;
+  static const int potionHealPercent = 30; // HP'nin %30'unu iyileştirir
+
+  Future<bool> buyPotion() async {
+    final hero = state;
+    if (hero == null) return false;
+    if (hero.potions >= 3) return false;
+    if (hero.gold < potionCost) return false;
+    state = hero.copyWith(
+      gold: hero.gold - potionCost,
+      potions: hero.potions + 1,
+    );
+    await _autoSave();
+    return true;
+  }
+
+  /// İksir kullan (savaşta)
+  Future<bool> usePotion() async {
+    final hero = state;
+    if (hero == null) return false;
+    if (hero.potions <= 0) return false;
+    state = hero.copyWith(potions: hero.potions - 1);
+    await _autoSave();
+    return true;
   }
 
   /// Item sat (rarity'ye göre altın: Common:10, Uncommon:50, Rare:200, Epic:1000, Legendary:5000, Mythic:20000)

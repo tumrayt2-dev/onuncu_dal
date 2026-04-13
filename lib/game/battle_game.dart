@@ -84,6 +84,12 @@ class BattleGame extends FlameGame with TapCallbacks {
     _isPaused = !_isPaused;
   }
 
+  void healHero(double amount) {
+    if (heroComponent.isDead) return;
+    heroComponent.heal(amount);
+    onHeroHpChanged?.call(heroComponent.currentHp, heroComponent.maxHp);
+  }
+
   @override
   ui.Color backgroundColor() => const ui.Color(0xFF0F0F1A);
 

@@ -82,6 +82,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   Color _lootColor = Colors.grey;
   bool _lootIsRarePlus = false;
 
+  // Quick-equip popup
+  Item? _quickEquipItem;
+
   @override
   void initState() {
     super.initState();
@@ -219,11 +222,14 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         _lootItemName = item.nameKey;
         _lootColor = Color(item.rarity.colorHex);
         _lootIsRarePlus = isRarePlus;
+        // Quick-equip: sadece rare+ itemlerde göster
+        if (isRarePlus) _quickEquipItem = item;
       });
       Future.delayed(Duration(milliseconds: isRarePlus ? 2500 : 1500), () {
         if (mounted) {
           setState(() {
             _lootItemName = null;
+            if (_quickEquipItem?.id == item.id) _quickEquipItem = null;
           });
         }
       });
@@ -322,6 +328,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _lootItemName = null;
       _lootColor = Colors.grey;
       _lootIsRarePlus = false;
+      _quickEquipItem = null;
       _initGame();
     });
   }
@@ -686,6 +693,57 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                             fontSize: 12,
                           ),
                         ),
+                        const SizedBox(width: 6),
+                        // İksir butonu
+                        GestureDetector(
+                          onTap: hero.potions > 0
+                              ? () async {
+                                  final ok = await ref
+                                      .read(playerProvider.notifier)
+                                      .usePotion();
+                                  if (ok) {
+                                    final healAmount = (_heroMaxHp *
+                                            PlayerNotifier.potionHealPercent /
+                                            100)
+                                        .round();
+                                    _game.healHero(healAmount.toDouble());
+                                  }
+                                }
+                              : null,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: hero.potions > 0
+                                  ? const Color(0xFF4CAF50).withValues(alpha: 0.3)
+                                  : AppColors.surface.withValues(alpha: 0.5),
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
+                                color: hero.potions > 0
+                                    ? const Color(0xFF4CAF50)
+                                    : AppColors.textDim,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Text('🧪',
+                                    style: TextStyle(fontSize: 10)),
+                                const SizedBox(width: 2),
+                                Text(
+                                  '${hero.potions}',
+                                  style: TextStyle(
+                                    color: hero.potions > 0
+                                        ? const Color(0xFF4CAF50)
+                                        : AppColors.textDim,
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(height: 6),
@@ -927,6 +985,94 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                   ),
                 ),
               ),
+            ),
+
+          // Quick-equip popup (rare+ item düştüğünde)
+          if (_quickEquipItem != null)
+            Positioned(
+              bottom: 110,
+              left: 16,
+              right: 16,
+              child: Builder(builder: (context) {
+                final item = _quickEquipItem!;
+                final hero = ref.read(playerProvider);
+                final color = Color(item.rarity.colorHex);
+                final equipped = hero?.equipment[item.slot];
+                return Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.9),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: color, width: 2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: color.withValues(alpha: 0.4),
+                        blurRadius: 12,
+                        spreadRadius: 1,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.auto_awesome, color: color, size: 20),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              _itemL10n(l10n, item.nameKey),
+                              style: TextStyle(
+                                color: color,
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            if (equipped != null)
+                              Text(
+                                'Slot: ${_itemL10n(l10n, equipped.nameKey)}',
+                                style: const TextStyle(
+                                  color: AppColors.textSecondary,
+                                  fontSize: 10,
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          setState(() => _quickEquipItem = null);
+                        },
+                        style: TextButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                        ),
+                        child: const Text('✕',
+                            style: TextStyle(color: AppColors.textDim)),
+                      ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          final notifier = ref.read(playerProvider.notifier);
+                          // Önce envantere ekle (henüz eklenmemiş olabilir —
+                          // _earnedItems'ta bekliyor; direkt ekleyelim ve listeden çıkaralım)
+                          _earnedItems.remove(item);
+                          await notifier.addItem(item);
+                          await notifier.equipItem(item, item.slot);
+                          if (mounted) {
+                            setState(() => _quickEquipItem = null);
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: color.withValues(alpha: 0.8),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 6),
+                        ),
+                        child: Text(l10n.equip,
+                            style: const TextStyle(fontSize: 12)),
+                      ),
+                    ],
+                  ),
+                );
+              }),
             ),
 
           // Pause overlay
