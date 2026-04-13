@@ -155,5 +155,35 @@
   "affixDodgePercent": "Dodge",
   "affixResistPercent": "Resist",
   "affixHpRegenFlat": "HP Regen",
-  "affixElementDmgPercent": "Elemental Dmg"
+  "affixElementDmgPercent": "Elemental Dmg",
+  "character": "Hero",
+  "equipment": "Equipment",
+  "emptySlot": "Empty",
+  "statPoints": "Stat Points",
+  "statPointsAvailable": "{count} points available",
+  "@statPointsAvailable": {
+    "placeholders": {
+      "count": { "type": "String" }
+    }
+  },
+  "distribute": "Apply",
+  "autoDistribute": "Auto",
+  "resetPoints": "Reset",
+  "totalStats": "Total Stats",
+  "baseStats": "Base",
+  "equipBonus": "Gear",
+  "change": "Change",
+  "noItemForSlot": "No item for this slot",
+  "critShort": "CRIT",
+  "critDmgShort": "CRIT DMG",
+  "dodgeShort": "DODGE",
+  "blockShort": "BLOCK",
+  "lifestealShort": "LIFESTEAL",
+  "resistShort": "RESIST",
+  "magicFindShort": "MAGIC FIND",
+  "hpRegenShort": "HP REGEN",
+  "sortByRarity": "Rarity",
+  "sortByLevel": "Level",
+  "equipped": "Equipped",
+  "comparing": "Comparison"
 }

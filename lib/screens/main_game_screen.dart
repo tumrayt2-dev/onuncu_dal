@@ -100,9 +100,9 @@ class MainGameScreen extends ConsumerWidget {
             SizedBox(
               width: 200,
               child: OutlinedButton.icon(
-                onPressed: () => context.go('/inventory'),
-                icon: const Icon(Icons.backpack_outlined),
-                label: Text(l10n.inventory),
+                onPressed: () => context.go('/character'),
+                icon: const Icon(Icons.person_outline),
+                label: Text(l10n.character),
               ),
             ),
           ],

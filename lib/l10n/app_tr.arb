@@ -155,5 +155,35 @@
   "affixDodgePercent": "Kacinma",
   "affixResistPercent": "Direnme",
   "affixHpRegenFlat": "Can Yenileme",
-  "affixElementDmgPercent": "Element Hasari"
+  "affixElementDmgPercent": "Element Hasari",
+  "character": "Kahraman",
+  "equipment": "Ekipman",
+  "emptySlot": "Bos",
+  "statPoints": "Stat Puani",
+  "statPointsAvailable": "{count} puan dagitilmamis",
+  "@statPointsAvailable": {
+    "placeholders": {
+      "count": { "type": "String" }
+    }
+  },
+  "distribute": "Dagit",
+  "autoDistribute": "Otomatik",
+  "resetPoints": "Sifirla",
+  "totalStats": "Toplam Statlar",
+  "baseStats": "Temel",
+  "equipBonus": "Ekipman",
+  "change": "Degistir",
+  "noItemForSlot": "Bu slot icin item yok",
+  "critShort": "KRIT",
+  "critDmgShort": "KRIT HS",
+  "dodgeShort": "KACINMA",
+  "blockShort": "BLOK",
+  "lifestealShort": "CAN CEKME",
+  "resistShort": "DIRENC",
+  "magicFindShort": "BUYULU B.",
+  "hpRegenShort": "CAN YEN.",
+  "sortByRarity": "Nadirlik",
+  "sortByLevel": "Seviye",
+  "equipped": "Giyili",
+  "comparing": "Karsilastirma"
 }

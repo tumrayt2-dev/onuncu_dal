@@ -437,4 +437,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get affixElementDmgPercent => 'Elemental Dmg';
+
+  @override
+  String get character => 'Hero';
+
+  @override
+  String get equipment => 'Equipment';
+
+  @override
+  String get emptySlot => 'Empty';
+
+  @override
+  String get statPoints => 'Stat Points';
+
+  @override
+  String statPointsAvailable(String count) {
+    return '$count points available';
+  }
+
+  @override
+  String get distribute => 'Apply';
+
+  @override
+  String get autoDistribute => 'Auto';
+
+  @override
+  String get resetPoints => 'Reset';
+
+  @override
+  String get totalStats => 'Total Stats';
+
+  @override
+  String get baseStats => 'Base';
+
+  @override
+  String get equipBonus => 'Gear';
+
+  @override
+  String get change => 'Change';
+
+  @override
+  String get noItemForSlot => 'No item for this slot';
+
+  @override
+  String get critShort => 'CRIT';
+
+  @override
+  String get critDmgShort => 'CRIT DMG';
+
+  @override
+  String get dodgeShort => 'DODGE';
+
+  @override
+  String get blockShort => 'BLOCK';
+
+  @override
+  String get lifestealShort => 'LIFESTEAL';
+
+  @override
+  String get resistShort => 'RESIST';
+
+  @override
+  String get magicFindShort => 'MAGIC FIND';
+
+  @override
+  String get hpRegenShort => 'HP REGEN';
+
+  @override
+  String get sortByRarity => 'Rarity';
+
+  @override
+  String get sortByLevel => 'Level';
+
+  @override
+  String get equipped => 'Equipped';
+
+  @override
+  String get comparing => 'Comparison';
 }

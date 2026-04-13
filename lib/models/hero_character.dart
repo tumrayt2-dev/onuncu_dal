@@ -16,6 +16,7 @@ class HeroCharacter {
     this.statPoints = 0,
     this.skillPoints = 0,
     required this.baseStats,
+    this.distributedStats = const Stats(),
     this.equipment = const {},
     this.inventory = const [],
     this.skills = const [],
@@ -36,6 +37,7 @@ class HeroCharacter {
   final int statPoints;
   final int skillPoints;
   final Stats baseStats;
+  final Stats distributedStats; // Oyuncunun dağıttığı stat puanları
   final Map<EquipmentSlot, Item> equipment;
   final List<Item> inventory;
   final List<Skill> skills;
@@ -50,25 +52,25 @@ class HeroCharacter {
   /// Sonraki level icin gereken XP: floor(100 * pow(level, 1.6))
   int get xpToNextLevel => (100 * math.pow(level, 1.6)).floor();
 
-  /// Level bazli efektif statlar: baseStats + (level-1) * perLevel
+  /// Level bazli efektif statlar: baseStats + (level-1) * perLevel + distributedStats
   /// perLevel verisi JsonLoader'dan alinir
   Stats effectiveStats(Stats perLevel) {
     final lvl = level - 1; // level 1'de bonus yok
     return Stats(
-      hp: baseStats.hp + perLevel.hp * lvl,
-      mp: baseStats.mp + perLevel.mp * lvl,
-      atk: baseStats.atk + perLevel.atk * lvl,
-      def: baseStats.def + perLevel.def * lvl,
-      spd: baseStats.spd + perLevel.spd * lvl,
-      crit: baseStats.crit + perLevel.crit * lvl,
-      critDmg: baseStats.critDmg + perLevel.critDmg * lvl,
-      dodge: baseStats.dodge + perLevel.dodge * lvl,
-      block: baseStats.block + perLevel.block * lvl,
-      lifesteal: baseStats.lifesteal + perLevel.lifesteal * lvl,
-      hpRegen: baseStats.hpRegen + perLevel.hpRegen * lvl,
-      accuracy: baseStats.accuracy + perLevel.accuracy * lvl,
-      resist: baseStats.resist + perLevel.resist * lvl,
-      magicFind: baseStats.magicFind + perLevel.magicFind * lvl,
+      hp: baseStats.hp + perLevel.hp * lvl + distributedStats.hp,
+      mp: baseStats.mp + perLevel.mp * lvl + distributedStats.mp,
+      atk: baseStats.atk + perLevel.atk * lvl + distributedStats.atk,
+      def: baseStats.def + perLevel.def * lvl + distributedStats.def,
+      spd: baseStats.spd + perLevel.spd * lvl + distributedStats.spd,
+      crit: baseStats.crit + perLevel.crit * lvl + distributedStats.crit,
+      critDmg: baseStats.critDmg + perLevel.critDmg * lvl + distributedStats.critDmg,
+      dodge: baseStats.dodge + perLevel.dodge * lvl + distributedStats.dodge,
+      block: baseStats.block + perLevel.block * lvl + distributedStats.block,
+      lifesteal: baseStats.lifesteal + perLevel.lifesteal * lvl + distributedStats.lifesteal,
+      hpRegen: baseStats.hpRegen + perLevel.hpRegen * lvl + distributedStats.hpRegen,
+      accuracy: baseStats.accuracy + perLevel.accuracy * lvl + distributedStats.accuracy,
+      resist: baseStats.resist + perLevel.resist * lvl + distributedStats.resist,
+      magicFind: baseStats.magicFind + perLevel.magicFind * lvl + distributedStats.magicFind,
     );
   }
 
@@ -81,6 +83,7 @@ class HeroCharacter {
     int? statPoints,
     int? skillPoints,
     Stats? baseStats,
+    Stats? distributedStats,
     Map<EquipmentSlot, Item>? equipment,
     List<Item>? inventory,
     List<Skill>? skills,
@@ -101,6 +104,7 @@ class HeroCharacter {
       statPoints: statPoints ?? this.statPoints,
       skillPoints: skillPoints ?? this.skillPoints,
       baseStats: baseStats ?? this.baseStats,
+      distributedStats: distributedStats ?? this.distributedStats,
       equipment: equipment ?? this.equipment,
       inventory: inventory ?? this.inventory,
       skills: skills ?? this.skills,
@@ -124,6 +128,7 @@ class HeroCharacter {
       'statPoints': statPoints,
       'skillPoints': skillPoints,
       'baseStats': baseStats.toJson(),
+      'distributedStats': distributedStats.toJson(),
       'equipment': equipment.map(
         (k, v) => MapEntry(k.name, v.toJson()),
       ),
@@ -157,6 +162,9 @@ class HeroCharacter {
       statPoints: json['statPoints'] as int? ?? 0,
       skillPoints: json['skillPoints'] as int? ?? 0,
       baseStats: Stats.fromJson(json['baseStats'] as Map<String, dynamic>),
+      distributedStats: json['distributedStats'] != null
+          ? Stats.fromJson(json['distributedStats'] as Map<String, dynamic>)
+          : const Stats(),
       equipment: equipMap,
       inventory: (json['inventory'] as List<dynamic>?)
               ?.map((i) => Item.fromJson(i as Map<String, dynamic>))

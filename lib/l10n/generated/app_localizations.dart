@@ -937,6 +937,156 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Element Hasari'**
   String get affixElementDmgPercent;
+
+  /// No description provided for @character.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kahraman'**
+  String get character;
+
+  /// No description provided for @equipment.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekipman'**
+  String get equipment;
+
+  /// No description provided for @emptySlot.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bos'**
+  String get emptySlot;
+
+  /// No description provided for @statPoints.
+  ///
+  /// In tr, this message translates to:
+  /// **'Stat Puani'**
+  String get statPoints;
+
+  /// No description provided for @statPointsAvailable.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} puan dagitilmamis'**
+  String statPointsAvailable(String count);
+
+  /// No description provided for @distribute.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dagit'**
+  String get distribute;
+
+  /// No description provided for @autoDistribute.
+  ///
+  /// In tr, this message translates to:
+  /// **'Otomatik'**
+  String get autoDistribute;
+
+  /// No description provided for @resetPoints.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sifirla'**
+  String get resetPoints;
+
+  /// No description provided for @totalStats.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Statlar'**
+  String get totalStats;
+
+  /// No description provided for @baseStats.
+  ///
+  /// In tr, this message translates to:
+  /// **'Temel'**
+  String get baseStats;
+
+  /// No description provided for @equipBonus.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ekipman'**
+  String get equipBonus;
+
+  /// No description provided for @change.
+  ///
+  /// In tr, this message translates to:
+  /// **'Degistir'**
+  String get change;
+
+  /// No description provided for @noItemForSlot.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bu slot icin item yok'**
+  String get noItemForSlot;
+
+  /// No description provided for @critShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'KRIT'**
+  String get critShort;
+
+  /// No description provided for @critDmgShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'KRIT HS'**
+  String get critDmgShort;
+
+  /// No description provided for @dodgeShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'KACINMA'**
+  String get dodgeShort;
+
+  /// No description provided for @blockShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'BLOK'**
+  String get blockShort;
+
+  /// No description provided for @lifestealShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'CAN CEKME'**
+  String get lifestealShort;
+
+  /// No description provided for @resistShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'DIRENC'**
+  String get resistShort;
+
+  /// No description provided for @magicFindShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'BUYULU B.'**
+  String get magicFindShort;
+
+  /// No description provided for @hpRegenShort.
+  ///
+  /// In tr, this message translates to:
+  /// **'CAN YEN.'**
+  String get hpRegenShort;
+
+  /// No description provided for @sortByRarity.
+  ///
+  /// In tr, this message translates to:
+  /// **'Nadirlik'**
+  String get sortByRarity;
+
+  /// No description provided for @sortByLevel.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye'**
+  String get sortByLevel;
+
+  /// No description provided for @equipped.
+  ///
+  /// In tr, this message translates to:
+  /// **'Giyili'**
+  String get equipped;
+
+  /// No description provided for @comparing.
+  ///
+  /// In tr, this message translates to:
+  /// **'Karsilastirma'**
+  String get comparing;
 }
 
 class _AppLocalizationsDelegate

@@ -438,4 +438,81 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get affixElementDmgPercent => 'Element Hasari';
+
+  @override
+  String get character => 'Kahraman';
+
+  @override
+  String get equipment => 'Ekipman';
+
+  @override
+  String get emptySlot => 'Bos';
+
+  @override
+  String get statPoints => 'Stat Puani';
+
+  @override
+  String statPointsAvailable(String count) {
+    return '$count puan dagitilmamis';
+  }
+
+  @override
+  String get distribute => 'Dagit';
+
+  @override
+  String get autoDistribute => 'Otomatik';
+
+  @override
+  String get resetPoints => 'Sifirla';
+
+  @override
+  String get totalStats => 'Toplam Statlar';
+
+  @override
+  String get baseStats => 'Temel';
+
+  @override
+  String get equipBonus => 'Ekipman';
+
+  @override
+  String get change => 'Degistir';
+
+  @override
+  String get noItemForSlot => 'Bu slot icin item yok';
+
+  @override
+  String get critShort => 'KRIT';
+
+  @override
+  String get critDmgShort => 'KRIT HS';
+
+  @override
+  String get dodgeShort => 'KACINMA';
+
+  @override
+  String get blockShort => 'BLOK';
+
+  @override
+  String get lifestealShort => 'CAN CEKME';
+
+  @override
+  String get resistShort => 'DIRENC';
+
+  @override
+  String get magicFindShort => 'BUYULU B.';
+
+  @override
+  String get hpRegenShort => 'CAN YEN.';
+
+  @override
+  String get sortByRarity => 'Nadirlik';
+
+  @override
+  String get sortByLevel => 'Seviye';
+
+  @override
+  String get equipped => 'Giyili';
+
+  @override
+  String get comparing => 'Karsilastirma';
 }

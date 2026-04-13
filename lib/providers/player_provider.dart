@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/enums.dart';
 import '../models/hero_character.dart';
 import '../models/item.dart';
+import '../models/stats.dart';
 import '../services/save_service.dart';
 
 /// Oyuncu state'ini yöneten Riverpod StateNotifier
@@ -151,6 +152,91 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
       inventory: newInventory,
     );
     await _autoSave();
+  }
+
+  /// Stat puanı dağıt (belirli bir stat'a belirli miktarda)
+  Future<void> distributeStatPoints(Map<String, int> allocation) async {
+    final hero = state;
+    if (hero == null) return;
+
+    int totalUsed = 0;
+    for (final v in allocation.values) {
+      totalUsed += v;
+    }
+    if (totalUsed <= 0 || totalUsed > hero.statPoints) return;
+
+    final d = hero.distributedStats;
+    state = hero.copyWith(
+      statPoints: hero.statPoints - totalUsed,
+      distributedStats: d.copyWith(
+        hp: d.hp + (allocation['hp'] ?? 0) * 10, // Her puan +10 HP
+        atk: d.atk + (allocation['atk'] ?? 0) * 2, // Her puan +2 ATK
+        def: d.def + (allocation['def'] ?? 0) * 2, // Her puan +2 DEF
+        spd: d.spd + (allocation['spd'] ?? 0) * 0.01, // Her puan +0.01 SPD
+        crit: d.crit + (allocation['crit'] ?? 0) * 0.5, // Her puan +0.5% CRIT
+      ),
+    );
+    await _autoSave();
+  }
+
+  /// Stat puanlarını sıfırla (tümünü geri al)
+  Future<void> resetStatPoints() async {
+    final hero = state;
+    if (hero == null) return;
+
+    // Dağıtılmış puanları geri hesapla
+    final d = hero.distributedStats;
+    final hpPoints = (d.hp / 10).round();
+    final atkPoints = (d.atk / 2).round();
+    final defPoints = (d.def / 2).round();
+    final spdPoints = (d.spd / 0.01).round();
+    final critPoints = (d.crit / 0.5).round();
+    final totalRecovered = hpPoints + atkPoints + defPoints + spdPoints + critPoints;
+
+    state = hero.copyWith(
+      statPoints: hero.statPoints + totalRecovered,
+      distributedStats: const Stats(),
+    );
+    await _autoSave();
+  }
+
+  /// Otomatik stat dağıtımı (sınıfa göre optimal)
+  Future<void> autoDistributeStats() async {
+    final hero = state;
+    if (hero == null || hero.statPoints <= 0) return;
+
+    final points = hero.statPoints;
+    final allocation = <String, int>{};
+
+    switch (hero.heroClass) {
+      case HeroClass.kalkanEr: // Tank: HP %40, DEF %30, ATK %20, CRIT %10
+        allocation['hp'] = (points * 0.4).round();
+        allocation['def'] = (points * 0.3).round();
+        allocation['atk'] = (points * 0.2).round();
+        allocation['crit'] = points - allocation['hp']! - allocation['def']! - allocation['atk']!;
+      case HeroClass.kurtBoru: // Melee DPS: ATK %40, CRIT %25, HP %20, DEF %15
+        allocation['atk'] = (points * 0.4).round();
+        allocation['crit'] = (points * 0.25).round();
+        allocation['hp'] = (points * 0.2).round();
+        allocation['def'] = points - allocation['atk']! - allocation['crit']! - allocation['hp']!;
+      case HeroClass.kam: // Caster: ATK %45, HP %25, CRIT %20, DEF %10
+        allocation['atk'] = (points * 0.45).round();
+        allocation['hp'] = (points * 0.25).round();
+        allocation['crit'] = (points * 0.2).round();
+        allocation['def'] = points - allocation['atk']! - allocation['hp']! - allocation['crit']!;
+      case HeroClass.yayCi: // Ranged: ATK %35, CRIT %30, SPD %20, HP %15
+        allocation['atk'] = (points * 0.35).round();
+        allocation['crit'] = (points * 0.3).round();
+        allocation['spd'] = (points * 0.2).round();
+        allocation['hp'] = points - allocation['atk']! - allocation['crit']! - allocation['spd']!;
+      case HeroClass.golgeBek: // Assassin: CRIT %35, ATK %35, SPD %20, HP %10
+        allocation['crit'] = (points * 0.35).round();
+        allocation['atk'] = (points * 0.35).round();
+        allocation['spd'] = (points * 0.2).round();
+        allocation['hp'] = points - allocation['crit']! - allocation['atk']! - allocation['spd']!;
+    }
+
+    await distributeStatPoints(allocation);
   }
 
   /// Stage ilerlemesi güncelle
