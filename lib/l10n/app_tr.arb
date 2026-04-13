@@ -56,5 +56,12 @@
   "back": "Geri",
   "defeated": "Yenildin!",
   "retry": "Tekrar Dene",
-  "goBack": "Geri Don"
+  "goBack": "Geri Don",
+  "stageComplete": "Stage Tamamlandi!",
+  "totalXp": "Toplam XP",
+  "totalGold": "Toplam Altin",
+  "stars": "Yildiz",
+  "continueText": "Devam",
+  "levelUp": "Seviye Atladi!",
+  "wave": "Dalga"
 }

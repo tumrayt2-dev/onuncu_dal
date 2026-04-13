@@ -409,6 +409,48 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Geri Don'**
   String get goBack;
+
+  /// No description provided for @stageComplete.
+  ///
+  /// In tr, this message translates to:
+  /// **'Stage Tamamlandi!'**
+  String get stageComplete;
+
+  /// No description provided for @totalXp.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam XP'**
+  String get totalXp;
+
+  /// No description provided for @totalGold.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Altin'**
+  String get totalGold;
+
+  /// No description provided for @stars.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yildiz'**
+  String get stars;
+
+  /// No description provided for @continueText.
+  ///
+  /// In tr, this message translates to:
+  /// **'Devam'**
+  String get continueText;
+
+  /// No description provided for @levelUp.
+  ///
+  /// In tr, this message translates to:
+  /// **'Seviye Atladi!'**
+  String get levelUp;
+
+  /// No description provided for @wave.
+  ///
+  /// In tr, this message translates to:
+  /// **'Dalga'**
+  String get wave;
 }
 
 class _AppLocalizationsDelegate

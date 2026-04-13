@@ -224,8 +224,14 @@ class _HeroSelectScreenState extends ConsumerState<HeroSelectScreen> {
       HeroClass.yayCi => 'yay_ci',
       HeroClass.golgeBek => 'golge_bek',
     };
-    final heroData = JsonLoader.instance.heroes
-        .firstWhere((h) => h['id'] == heroId);
+    final heroes = JsonLoader.instance.heroes;
+    if (heroes.isEmpty) {
+      return {'hp': 100, 'atk': 10, 'def': 5, 'spd': 1.0};
+    }
+    final heroData = heroes.firstWhere(
+      (h) => h['id'] == heroId,
+      orElse: () => heroes.first,
+    );
     final stats = heroData['baseStats'] as Map<String, dynamic>;
     return {
       'hp': (stats['hp'] as num).toDouble(),

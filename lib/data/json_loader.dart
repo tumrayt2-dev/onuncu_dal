@@ -87,13 +87,21 @@ class JsonLoader {
 
   /// Hero base stats'ı Stats objesine çevir
   Stats getHeroBaseStats(String heroId) {
-    final hero = heroes.firstWhere((h) => h['id'] == heroId);
+    if (heroes.isEmpty) return const Stats(hp: 100, atk: 10, def: 5, spd: 1.0);
+    final hero = heroes.firstWhere(
+      (h) => h['id'] == heroId,
+      orElse: () => heroes.first,
+    );
     return Stats.fromJson(hero['baseStats'] as Map<String, dynamic>);
   }
 
   /// Hero level-up artış oranları
   Stats getHeroPerLevel(String heroId) {
-    final hero = heroes.firstWhere((h) => h['id'] == heroId);
+    if (heroes.isEmpty) return const Stats(hp: 10, atk: 2, def: 1, spd: 0.01);
+    final hero = heroes.firstWhere(
+      (h) => h['id'] == heroId,
+      orElse: () => heroes.first,
+    );
     return Stats.fromJson(hero['perLevel'] as Map<String, dynamic>);
   }
 

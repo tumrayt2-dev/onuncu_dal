@@ -7,7 +7,7 @@ import '../models/enemy.dart';
 import '../models/enums.dart';
 import '../services/combat_service.dart';
 
-/// Dusman componenti — placeholder renkli dikdortgen + HP bar + AI
+/// Dusman componenti — tum seritlerde hareket eder
 class EnemyComponent extends PositionComponent {
   EnemyComponent({
     required this.enemyData,
@@ -36,6 +36,8 @@ class EnemyComponent extends PositionComponent {
   late final double _defScaled;
   late final double _attackInterval;
   double _attackTimer = 0;
+  bool _isAttacking = false;
+  double _attackAnimTimer = 0;
 
   bool isDead = false;
   bool _dying = false;
@@ -45,13 +47,11 @@ class EnemyComponent extends PositionComponent {
   /// Hareket hizi (piksel/sn)
   static const _moveSpeed = 60.0;
 
-  /// Saldiri menzili (piksel)
+  /// Saldiri menzili (piksel) — ana serit
   static const _attackRange = 100.0;
 
   double get hpPercent => _currentHp / _maxHp;
   double get currentHp => _currentHp;
-
-  /// Stage-scaled stats (combat icin)
   double get scaledAtk => _atkScaled;
   double get scaledDef => _defScaled;
 
@@ -67,33 +67,44 @@ class EnemyComponent extends PositionComponent {
     }
   }
 
-  /// Hero'ya dogru yuru ve saldiri zamanlayicisi
-  /// true donerse saldirmali
+  /// TUM seritlerde hero'ya dogru yuru.
+  /// Menzile girince dur ve saldir.
+  /// Ana serit: tam hasar. Yan serit: hasar cagiran taraf x0.5 uygular.
   bool updateAI(double dt, double heroX, Lane heroLane) {
     if (isDead || _dying) return false;
 
-    // Farkli seritteyse hareket etme (melee mob)
-    if (heroLane != lane) {
-      _attackTimer = 0;
-      return false;
-    }
+    final dist = position.x - heroX;
 
-    final dist = (position.x - heroX).abs();
-
-    // Menzile gir
+    // Menzile girmemisse yuru (tum seritler)
     if (dist > _attackRange) {
       position.x -= _moveSpeed * dt;
+      // Hero'yu gecmesini engelle
+      if (position.x < heroX + _attackRange * 0.5) {
+        position.x = heroX + _attackRange * 0.5;
+      }
       return false;
     }
+    // Menzildeyken de gecmesini engelle
+    if (position.x < heroX) {
+      position.x = heroX + _attackRange * 0.5;
+    }
 
-    // Menzildeyse saldir
+    // Menzilde — dur ve saldir
+    if (_isAttacking) return false; // animasyon sirasinda tekrar saldirma
     _attackTimer += dt;
     if (_attackTimer >= _attackInterval) {
       _attackTimer = 0;
+      _isAttacking = true;
+      _attackAnimTimer = 0;
       return true;
     }
     return false;
   }
+
+  /// Buffer/healer mob mu?
+  bool get isBufferOrHealer =>
+      enemyData.archetype == EnemyArchetype.buffer ||
+      enemyData.archetype == EnemyArchetype.caster;
 
   ui.Color get _color => switch (enemyData.archetype) {
         EnemyArchetype.melee => const ui.Color(0xFF8B0000),
@@ -111,6 +122,19 @@ class EnemyComponent extends PositionComponent {
   @override
   void update(double dt) {
     super.update(dt);
+
+    // Saldiri animasyonu — sola atilip geri don
+    if (_isAttacking) {
+      _attackAnimTimer += dt;
+      if (_attackAnimTimer < 0.1) {
+        position.x -= 150 * dt;
+      } else if (_attackAnimTimer < 0.2) {
+        position.x += 150 * dt;
+      } else {
+        _isAttacking = false;
+      }
+    }
+
     if (_dying) {
       _deathTimer += dt;
       if (_deathTimer >= _deathDuration) {
@@ -124,7 +148,6 @@ class EnemyComponent extends PositionComponent {
   void render(ui.Canvas canvas) {
     if (isDead) return;
 
-    // Olum animasyonu: kucul + soluk
     double deathScale = 1.0;
     double deathAlpha = 1.0;
     if (_dying) {

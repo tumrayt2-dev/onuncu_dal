@@ -169,4 +169,25 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get goBack => 'Geri Don';
+
+  @override
+  String get stageComplete => 'Stage Tamamlandi!';
+
+  @override
+  String get totalXp => 'Toplam XP';
+
+  @override
+  String get totalGold => 'Toplam Altin';
+
+  @override
+  String get stars => 'Yildiz';
+
+  @override
+  String get continueText => 'Devam';
+
+  @override
+  String get levelUp => 'Seviye Atladi!';
+
+  @override
+  String get wave => 'Dalga';
 }

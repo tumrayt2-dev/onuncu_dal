@@ -56,5 +56,12 @@
   "back": "Back",
   "defeated": "Defeated!",
   "retry": "Retry",
-  "goBack": "Go Back"
+  "goBack": "Go Back",
+  "stageComplete": "Stage Complete!",
+  "totalXp": "Total XP",
+  "totalGold": "Total Gold",
+  "stars": "Stars",
+  "continueText": "Continue",
+  "levelUp": "Level Up!",
+  "wave": "Wave"
 }

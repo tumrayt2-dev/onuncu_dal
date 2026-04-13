@@ -168,4 +168,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get goBack => 'Go Back';
+
+  @override
+  String get stageComplete => 'Stage Complete!';
+
+  @override
+  String get totalXp => 'Total XP';
+
+  @override
+  String get totalGold => 'Total Gold';
+
+  @override
+  String get stars => 'Stars';
+
+  @override
+  String get continueText => 'Continue';
+
+  @override
+  String get levelUp => 'Level Up!';
+
+  @override
+  String get wave => 'Wave';
 }
