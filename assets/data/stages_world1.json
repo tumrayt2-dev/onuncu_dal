@@ -1,0 +1,7082 @@
+[
+  {
+    "worldId": 1,
+    "stageId": 1,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 20,
+      "goldMax": 30,
+      "xp": 28,
+      "firstClearGold": 60,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 2,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 25,
+      "goldMax": 37,
+      "xp": 36,
+      "firstClearGold": 75,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 3,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 30,
+      "goldMax": 45,
+      "xp": 44,
+      "firstClearGold": 90,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 4,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 35,
+      "goldMax": 52,
+      "xp": 52,
+      "firstClearGold": 105,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 5,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 40,
+      "goldMax": 60,
+      "xp": 60,
+      "firstClearGold": 120,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 6,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 45,
+      "goldMax": 67,
+      "xp": 68,
+      "firstClearGold": 135,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 7,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 50,
+      "goldMax": 75,
+      "xp": 76,
+      "firstClearGold": 150,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 8,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 55,
+      "goldMax": 82,
+      "xp": 84,
+      "firstClearGold": 165,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 9,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 60,
+      "goldMax": 90,
+      "xp": 92,
+      "firstClearGold": 180,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 10,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": "w1_boss_obur_yelbegen",
+    "rewards": {
+      "goldMin": 65,
+      "goldMax": 97,
+      "xp": 100,
+      "firstClearGold": 195,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 11,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 70,
+      "goldMax": 105,
+      "xp": 108,
+      "firstClearGold": 210,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 12,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 75,
+      "goldMax": 112,
+      "xp": 116,
+      "firstClearGold": 225,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 13,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 80,
+      "goldMax": 120,
+      "xp": 124,
+      "firstClearGold": 240,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 14,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 85,
+      "goldMax": 127,
+      "xp": 132,
+      "firstClearGold": 255,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 15,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 90,
+      "goldMax": 135,
+      "xp": 140,
+      "firstClearGold": 270,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 16,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 95,
+      "goldMax": 142,
+      "xp": 148,
+      "firstClearGold": 285,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 17,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 100,
+      "goldMax": 150,
+      "xp": 156,
+      "firstClearGold": 300,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 18,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 105,
+      "goldMax": 157,
+      "xp": 164,
+      "firstClearGold": 315,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 19,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 110,
+      "goldMax": 165,
+      "xp": 172,
+      "firstClearGold": 330,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 20,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": "w1_boss_arcura_ana",
+    "rewards": {
+      "goldMin": 115,
+      "goldMax": 172,
+      "xp": 180,
+      "firstClearGold": 345,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 21,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 120,
+      "goldMax": 180,
+      "xp": 188,
+      "firstClearGold": 360,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 22,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 125,
+      "goldMax": 187,
+      "xp": 196,
+      "firstClearGold": 375,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 23,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 130,
+      "goldMax": 195,
+      "xp": 204,
+      "firstClearGold": 390,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 24,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 135,
+      "goldMax": 202,
+      "xp": 212,
+      "firstClearGold": 405,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 25,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 140,
+      "goldMax": 210,
+      "xp": 220,
+      "firstClearGold": 420,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 26,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 145,
+      "goldMax": 217,
+      "xp": 228,
+      "firstClearGold": 435,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 27,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 150,
+      "goldMax": 225,
+      "xp": 236,
+      "firstClearGold": 450,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 28,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 155,
+      "goldMax": 232,
+      "xp": 244,
+      "firstClearGold": 465,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 29,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 160,
+      "goldMax": 240,
+      "xp": 252,
+      "firstClearGold": 480,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 30,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": "w1_boss_kara_dis",
+    "rewards": {
+      "goldMin": 165,
+      "goldMax": 247,
+      "xp": 260,
+      "firstClearGold": 495,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 31,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 170,
+      "goldMax": 255,
+      "xp": 268,
+      "firstClearGold": 510,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 32,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 175,
+      "goldMax": 262,
+      "xp": 276,
+      "firstClearGold": 525,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 33,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 180,
+      "goldMax": 270,
+      "xp": 284,
+      "firstClearGold": 540,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 34,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 185,
+      "goldMax": 277,
+      "xp": 292,
+      "firstClearGold": 555,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 35,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 190,
+      "goldMax": 285,
+      "xp": 300,
+      "firstClearGold": 570,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 36,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 195,
+      "goldMax": 292,
+      "xp": 308,
+      "firstClearGold": 585,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 37,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 200,
+      "goldMax": 300,
+      "xp": 316,
+      "firstClearGold": 600,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 38,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 205,
+      "goldMax": 307,
+      "xp": 324,
+      "firstClearGold": 615,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 39,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 210,
+      "goldMax": 315,
+      "xp": 332,
+      "firstClearGold": 630,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 40,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": "w1_boss_agac_ata",
+    "rewards": {
+      "goldMin": 215,
+      "goldMax": 322,
+      "xp": 340,
+      "firstClearGold": 645,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 41,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 220,
+      "goldMax": 330,
+      "xp": 348,
+      "firstClearGold": 660,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 42,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 225,
+      "goldMax": 337,
+      "xp": 356,
+      "firstClearGold": 675,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 43,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 230,
+      "goldMax": 345,
+      "xp": 364,
+      "firstClearGold": 690,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 44,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 235,
+      "goldMax": 352,
+      "xp": 372,
+      "firstClearGold": 705,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 45,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 240,
+      "goldMax": 360,
+      "xp": 380,
+      "firstClearGold": 720,
+      "firstClearGems": 5
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 46,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 245,
+      "goldMax": 367,
+      "xp": 388,
+      "firstClearGold": 735,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 47,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 250,
+      "goldMax": 375,
+      "xp": 396,
+      "firstClearGold": 750,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 48,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 255,
+      "goldMax": 382,
+      "xp": 404,
+      "firstClearGold": 765,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 49,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": null,
+    "rewards": {
+      "goldMin": 260,
+      "goldMax": 390,
+      "xp": 412,
+      "firstClearGold": 780,
+      "firstClearGems": 0
+    }
+  },
+  {
+    "worldId": 1,
+    "stageId": 50,
+    "waves": [
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_agac_adam",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_orman_borusu",
+          "count": 3
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_albis_perisi",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_yaban_yunani",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_kara_kuzgun",
+          "count": 1
+        }
+      ],
+      [
+        {
+          "enemyId": "w1_jek_cini",
+          "count": 1
+        },
+        {
+          "enemyId": "w1_yelbegen_yavrusu",
+          "count": 2
+        },
+        {
+          "enemyId": "w1_arcura_fidani",
+          "count": 1
+        }
+      ]
+    ],
+    "bossId": "w1_boss_yelbegen",
+    "rewards": {
+      "goldMin": 265,
+      "goldMax": 397,
+      "xp": 420,
+      "firstClearGold": 795,
+      "firstClearGems": 5
+    }
+  }
+]

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistemler | ALP Wiki</title>
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="sidebar-logo"><h1>⚔️ ALP</h1><div class="version">Uluğ Kayın'ın Düşüşü</div></div>
+<nav>
+<div class="nav-section">ANA</div>
+<a href="index.html">🏠 Ana Sayfa</a>
+<a href="systems.html" class="active">⚙️ Sistemler</a>
+<a href="story.html">📖 Hikaye & NPC'ler</a>
+<a href="sequels.html">🔮 Oyun 2 & 3</a>
+
+<div class="nav-section">DÜNYALAR</div>
+<a href="world-1-kayin-vadisi.html">🌲 1. Kayın Vadisi</a>
+<a href="world-2-kor-magaralar.html">🕳️ 2. Kör Mağaralar</a>
+<a href="world-3-sarikum-denizi.html">🏜️ 3. Sarıkum Denizi</a>
+<a href="world-4-ayaz-doruk.html">❄️ 4. Ayaz Doruk</a>
+<a href="world-5-andar-ocaklari.html">🔥 5. Andar Ocakları</a>
+<a href="world-6-ak-yayik-gokleri.html">☁️ 6. Ak Yayık Gökleri</a>
+<a href="world-7-yutpa-derinlikleri.html">🌊 7. Yutpa Derinlikleri</a>
+<a href="world-8-toybodim-nehri.html">⚰️ 8. Toybodım Nehri</a>
+<a href="world-9-kara-demir-sarayi.html">👑 9. Kara Demir Sarayı</a>
+<a href="world-10-bosluk-tengiz.html">🌌 10. Boşluk Tengiz</a>
+
+<div class="nav-section">BU SAYFA</div>
+<a href="#stats">📊 Stat Sistemi</a>
+<a href="#combat">⚔️ Savaş Mekaniği</a>
+<a href="#lanes">🛤️ Şerit Sistemi</a>
+<a href="#classes">🛡️ Alp Sınıfları</a>
+<a href="#skills">✨ Skill Sistemi</a>
+<a href="#items">🎒 Item & Ekipman</a>
+<a href="#stage-farm">🗺️ Stage & Farm</a>
+<a href="#afk">🌙 AFK Sistemi</a>
+<a href="#dungeons">🏰 Günlük Zindanlar</a>
+<a href="#pets">🐾 Pet Sistemi</a>
+<a href="#prestige">🔄 Prestige</a>
+<a href="#quests">📜 Quest Sistemi</a>
+<a href="#currencies">💰 Para Birimleri</a>
+<a href="#world-effects">🌍 Dünya Etkileri</a>
+<a href="#boss-hints">💡 Boss Rehber Sistemi</a>
+</nav>
+</aside>
+
+<main class="main">
+<h1 class="title">⚙️ Sistemler</h1>
+<p class="subtitle">Tüm oyun mekanikleri, formüller, dengeler — tek sayfada</p>
+
+<!-- ============================================================ -->
+<!-- STAT SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="stats">
+<h2>📊 Stat Sistemi</h2>
+
+<h3>Ana Statlar</h3>
+<table>
+<tr><th>Stat</th><th>Kısaltma</th><th>Açıklama</th></tr>
+<tr><td><b>Can Puanı</b></td><td>HP</td><td>Sıfırlanırsa ölüm. Ekipman, level, buff ile artar.</td></tr>
+<tr><td><b>Kaynak</b></td><td>MP / Öfke / Soluk / Ruh / Sır</td><td>Sınıfa göre değişir. Skill kullanmak için harcanır.</td></tr>
+<tr><td><b>Saldırı Gücü</b></td><td>ATK</td><td>Hasar hesabının temeli.</td></tr>
+<tr><td><b>Savunma</b></td><td>DEF</td><td>Gelen hasarı azaltır.</td></tr>
+<tr><td><b>Hız</b></td><td>SPD</td><td>Saldırı hızı çarpanı. 1.0 = normal, 1.5 = %50 daha hızlı.</td></tr>
+</table>
+
+<h3>İkincil Statlar</h3>
+<table>
+<tr><th>Stat</th><th>Varsayılan</th><th>Max</th><th>Açıklama</th></tr>
+<tr><td>CRIT %</td><td>%5</td><td>%75</td><td>Kritik vuruş şansı</td></tr>
+<tr><td>CRIT DMG</td><td>%150</td><td>%500</td><td>Kritik hasar çarpanı</td></tr>
+<tr><td>DODGE %</td><td>%0</td><td>%40</td><td>Saldırıdan kaçınma şansı</td></tr>
+<tr><td>BLOCK %</td><td>%0</td><td>%60</td><td>Kalkan bloğu (sadece Kalkan-Er). Hasar %50 azalır.</td></tr>
+<tr><td>LIFESTEAL %</td><td>%0</td><td>%25</td><td>Verdiğin hasarın X%'si kadar HP kazan</td></tr>
+<tr><td>HP REGEN</td><td>0</td><td>—</td><td>Saniye başına HP yenilenmesi</td></tr>
+<tr><td>ACCURACY</td><td>%100</td><td>%150</td><td>İsabet oranı (dodge'a karşı)</td></tr>
+<tr><td>RESIST</td><td>%0</td><td>%50</td><td>Büyü/element hasarı azaltma</td></tr>
+<tr><td>MAGIC FIND</td><td>%0</td><td>%300</td><td>Item drop şansı ve nadirlik artışı</td></tr>
+</table>
+
+<h3>Hasar Formülü</h3>
+<pre><code>damage = max(1, (ATK × skillMultiplier) − DEF × 0.5) × (isCrit ? CRIT_DMG : 1.0) × (1 ± %10 random)
+
+Dodge kontrolü:  hedef DODGE − saldıran ACCURACY fazlası > random(0,100) → MISS
+Block kontrolü:  Kalkan-Er BLOCK % > random(0,100) → hasar × 0.5</code></pre>
+
+<h3>Level & XP</h3>
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Max Level</td><td>500 (Prestige için gerekli: 200+)</td></tr>
+<tr><td>XP Formülü</td><td><code>xpToNext = floor(100 × pow(level, 1.6))</code></td></tr>
+<tr><td>Level-up stat puanı</td><td>Her level → 5 stat puanı (oyuncu dağıtır veya auto-assign)</td></tr>
+<tr><td>Level-up skill puanı</td><td>Her 2 level → 1 skill puanı</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- SAVAŞ MEKANİĞİ -->
+<!-- ============================================================ -->
+<section id="combat">
+<h2>⚔️ Savaş Mekaniği</h2>
+<p>Savaş <b>gerçek zamanlı, otomatik</b> ilerler. Alp seçilen şeritte düşmanları hedefler, skill'leri AI öncelik sırasına göre kullanır. Oyuncunun doğrudan müdahalesi: <b>şerit değiştirme, skill sırası ayarlama, hedef önceliği</b>.</p>
+
+<h3>Savaş Akışı</h3>
+<div class="card">
+<p><b>1.</b> Stage başlar → mob dalgası spawn olur (3 şerite dağılır)</p>
+<p><b>2.</b> Alp otomatik saldırır (SPD'ye göre vuruş hızı)</p>
+<p><b>3.</b> Skill'ler cooldown dolunca otomatik tetiklenir (öncelik sırasına göre)</p>
+<p><b>4.</b> Oyuncu şerit değiştirir, hedef önceliğini yönlendirir</p>
+<p><b>5.</b> Tüm mob'lar ölünce → sonraki dalga</p>
+<p><b>6.</b> 8 normal dalga + 1 elit/mini-boss (veya world boss) = stage sonu</p>
+</div>
+
+<h3>Combo Meter</h3>
+<p>Kesintisiz hasar verdikçe combo sayacı artar. Combo bonusları:</p>
+<table>
+<tr><th>Combo</th><th>Bonus</th></tr>
+<tr><td>10+</td><td>+%5 hasar</td></tr>
+<tr><td>25+</td><td>+%10 hasar, +%5 XP</td></tr>
+<tr><td>50+</td><td>+%15 hasar, +%10 XP, +%5 altın</td></tr>
+<tr><td>100+</td><td>+%20 hasar, +%15 XP, +%10 altın, +%5 drop</td></tr>
+</table>
+<p>3 saniye hasar vermezsen combo sıfırlanır. Şerit değiştirme combo'yu bozmaz.</p>
+
+<h3>Timing Sistemi</h3>
+<p>Bazı düşman saldırıları <b>uyarı göstergesi</b> ile gelir (1-2 sn önceden kırmızı alan). Oyuncu şerit değiştirerek kaçınabilir. Bu, AFK'dan daha aktif bir oynama stilini ödüllendirir.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- ŞERİT SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="lanes">
+<h2>🛤️ Şerit (Lane) Sistemi</h2>
+<p>Savaş alanı <b>3 yatay şerit</b>ten oluşur. Alp ve düşmanlar bu şeritlerde konumlanır.</p>
+
+<table>
+<tr><th>Şerit</th><th>Konum</th><th>Özellik</th></tr>
+<tr><td><span class="lane-ust">Üst Şerit</span></td><td>Ekranın üstü</td><td>Uçan mob'lar burada. Ranged skill/ok şart.</td></tr>
+<tr><td><span class="lane-orta">Orta Şerit</span></td><td>Ekranın ortası</td><td>Varsayılan konum. Çoğu mob burada spawn olur.</td></tr>
+<tr><td><span class="lane-alt">Alt Şerit</span></td><td>Ekranın altı</td><td>Sürü (pack) mob'ları ve charger'lar burada.</td></tr>
+</table>
+
+<div class="note"><b>Şerit Değiştirme:</b> Oyuncu tek dokunuşla/tıkla şerit değiştirir. Değiştirme 0.3 sn sürer (bu sürede vurulamaz ama hasar da alabilir). Combo'yu bozmaz.</div>
+
+<p><b>Neden önemli?</b> Mini-boss'lar, world boss'lar ve bazı mob'lar (Jek Cini gibi) şerit mekaniğini kullanır. Tek şeritte durarak oyun geçilemez — özellikle Dünya 2'den sonra.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- ALP SINIFLARI -->
+<!-- ============================================================ -->
+<section id="classes">
+<h2>🛡️ 5 Alp Sınıfı — Detaylı</h2>
+
+<div class="card">
+<h3><span class="badge b-knight">TANK</span> Kalkan-Er</h3>
+<p>Demir iradesiyle direnen kalkan-kılıç savaşçısı. Gücünü "İrade" kaynağından alır.</p>
+<table>
+<tr><th>Base Stat</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>Kaynak</th></tr>
+<tr><td>Lv.1</td><td>200</td><td>18</td><td>15</td><td>0.8</td><td>İrade (100)</td></tr>
+<tr><td>Lv.artışı</td><td>+35</td><td>+3</td><td>+3</td><td>+0.005</td><td>+5/lv</td></tr>
+</table>
+<p><b>Mekanik:</b> İrade dolunca → <i>Demir Duvar</i> (taunt + %80 hasar azaltma, 5sn). Blok başarılı olunca İrade hızlı dolar.</p>
+<p><b>Oynanış:</b> Yavaş ama ölmez. Uzun savaşlarda avantajlı. Pet + AoE desteğiyle parlar.</p>
+</div>
+
+<div class="card">
+<h3><span class="badge b-berserker">DPS</span> Kurt-Börü</h3>
+<p>Börü soyundan gelen, savaşta kurda dönüşen berserker. Gücünü "Öfke" kaynağından alır.</p>
+<table>
+<tr><th>Base Stat</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>Kaynak</th></tr>
+<tr><td>Lv.1</td><td>150</td><td>28</td><td>8</td><td>1.1</td><td>Öfke (0→100)</td></tr>
+<tr><td>Lv.artışı</td><td>+25</td><td>+5</td><td>+1.5</td><td>+0.008</td><td>—</td></tr>
+</table>
+<p><b>Mekanik:</b> Hasar aldıkça/verdikçe Öfke birikir. 100'e ulaşınca → <i>Kurt Formu</i> (10sn: ATK +%40, SPD +%30, lifesteal +%10). Form bitince Öfke sıfırlanır.</p>
+<p><b>Oynanış:</b> Cam top — yüksek hasar ama kırılgan. Kurt formunda imba, form dışında dikkatli oynamalı.</p>
+</div>
+
+<div class="card">
+<h3><span class="badge b-mage">CASTER</span> Kam (Şaman)</h3>
+<p>Davuluyla ruhları çağıran şaman. Gücünü "Ruh" kaynağından alır.</p>
+<table>
+<tr><th>Base Stat</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>Kaynak</th></tr>
+<tr><td>Lv.1</td><td>110</td><td>32</td><td>5</td><td>0.9</td><td>Ruh (150)</td></tr>
+<tr><td>Lv.artışı</td><td>+18</td><td>+6</td><td>+1</td><td>+0.004</td><td>+8/lv</td></tr>
+</table>
+<p><b>Mekanik:</b> Skill'ler Ruh harcar. Ruh zamanla yenilenir (regen). 4 element: ateş (DoT), buz (yavaşlatma), yıldırım (AoE), rüzgar (itme). Element zayıflıklarını kullanınca +%50 hasar.</p>
+<p><b>Oynanış:</b> En yüksek AoE hasar. Ruh yönetimi kritik — boşa harcama, yoğun anlarda sakla.</p>
+</div>
+
+<div class="card">
+<h3><span class="badge b-archer">RANGED</span> Yay-Çı</h3>
+<p>Gökten ilham alan okçu. Gücünü "Soluk" (nefes) kaynağından alır.</p>
+<table>
+<tr><th>Base Stat</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>Kaynak</th></tr>
+<tr><td>Lv.1</td><td>120</td><td>24</td><td>7</td><td>1.2</td><td>Soluk (80)</td></tr>
+<tr><td>Lv.artışı</td><td>+20</td><td>+4.5</td><td>+1.5</td><td>+0.007</td><td>+4/lv</td></tr>
+</table>
+<p><b>Mekanik:</b> <i>Nefes Tut</i> — 2sn hareketsiz kalırsa sonraki ok CRIT garantili + CRIT DMG ×2. Uçan mob'lara (üst şerit) doğal avantajlı.</p>
+<p><b>Oynanış:</b> Hızlı, mesafeli, yüksek CRIT. Pozisyon önemli — şerit değiştirme zamanlama.</p>
+</div>
+
+<div class="card">
+<h3><span class="badge b-assassin">CRIT</span> Gölge-Bek</h3>
+<p>Geceden doğmuş suikastçı. Gücünü "Sır" (combo puanı) kaynağından alır.</p>
+<table>
+<tr><th>Base Stat</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>Kaynak</th></tr>
+<tr><td>Lv.1</td><td>100</td><td>22</td><td>6</td><td>1.4</td><td>Sır (0→5 stack)</td></tr>
+<tr><td>Lv.artışı</td><td>+15</td><td>+4</td><td>+1</td><td>+0.01</td><td>—</td></tr>
+</table>
+<p><b>Mekanik:</b> Her vuruşta 1 Sır stack birikir. 5 stack'te → <i>Kayıp Ol</i> (görünmez, teleport + backstab: %300 hasar). Backstab sonrası Sır sıfırlanır.</p>
+<p><b>Oynanış:</b> Burst kralı. Mini-boss'lara ve tek hedefe çok iyi. AoE'ye zayıf, sürü mob'larda zorlanır.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SKILL SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="skills">
+<h2>✨ Skill Sistemi</h2>
+<p>Her sınıfın <b>4 aktif + 6 pasif = 10 skill</b>'i var. Toplam 50 skill.</p>
+
+<h3>Aktif Skill'ler</h3>
+<p>Cooldown'lu, savaşta otomatik tetiklenir. Oyuncu öncelik sırasını UI'dan belirler. AI skill'leri sıraya göre çağırır — 1 numaralı skill her zaman önce kullanılır.</p>
+
+<h3>Pasif Skill'ler</h3>
+<p>Sürekli bonus verir (CRIT +%, lifesteal +%, HP regen vb). Her level artışında etki güçlenir.</p>
+
+<h3>Skill Puanı & Reset</h3>
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Kazanım</td><td>Her 2 level → 1 skill puanı</td></tr>
+<tr><td>Max skill level</td><td>Her skill 5 level</td></tr>
+<tr><td>Reset maliyeti</td><td>10 Ruh Cevheri (tüm skill puanları geri döner)</td></tr>
+</table>
+
+<div class="note"><b>Skill Öncelik UI:</b> Oyuncu 4 aktif skill'in sırasını sürükle-bırak ile ayarlar. Örn: Kalkan-Er için 1) Taunt → 2) Kalkan Çarpması → 3) Demir Duvar → 4) İyileşme. Bu sıra AFK'da da geçerli.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ITEM & EKİPMAN -->
+<!-- ============================================================ -->
+<section id="items">
+<h2>🎒 Item & Ekipman Sistemi</h2>
+
+<h3>Ekipman Slotları (9 adet)</h3>
+<table>
+<tr><th>Slot</th><th>Açıklama</th></tr>
+<tr><td>🗡️ Silah</td><td>Ana hasar kaynağı. Sınıfa göre: kılıç, pençe, asa, yay, hançer</td></tr>
+<tr><td>⛑️ Kask</td><td>HP + DEF</td></tr>
+<tr><td>🛡️ Göğüs</td><td>En yüksek DEF parçası</td></tr>
+<tr><td>🧤 Eldiven</td><td>ATK + CRIT</td></tr>
+<tr><td>👖 Pantolon</td><td>HP + resist</td></tr>
+<tr><td>🥾 Bot</td><td>SPD + dodge</td></tr>
+<tr><td>💍 Yüzük ×2</td><td>Serbest stat (2 slot)</td></tr>
+<tr><td>📿 Kolye</td><td>Serbest stat, genelde özel affix</td></tr>
+</table>
+
+<h3>Nadirlik (Rarity)</h3>
+<table>
+<tr><th>Nadirlik</th><th>Renk</th><th>Affix Sayısı</th><th>Drop Kaynağı</th></tr>
+<tr><td class="r-common">Common</td><td>Gri</td><td>0-1</td><td>Her mob</td></tr>
+<tr><td class="r-uncommon">Uncommon</td><td>Yeşil</td><td>1-2</td><td>Elite + mob</td></tr>
+<tr><td class="r-rare">Rare</td><td>Mavi</td><td>2-3</td><td>Mini-boss, quest</td></tr>
+<tr><td class="r-epic">Epic</td><td>Mor</td><td>3</td><td>World boss, zindan</td></tr>
+<tr><td class="r-legendary">Legendary</td><td>Turuncu</td><td>3-4 + soket</td><td>Prestige, özel boss</td></tr>
+<tr><td class="r-mythic">Mythic</td><td>Kırmızı</td><td>4 + 3 soket</td><td>Sadece Dünya 9-10 + prestige</td></tr>
+</table>
+
+<h3>Affix Sistemi</h3>
+<p>Her item'da base stat + rastgele affix'ler bulunur. Affix havuzundan çekilir:</p>
+<table>
+<tr><th>Affix</th><th>Tip</th><th>Aralık</th></tr>
+<tr><td>ATK +%</td><td>Yüzde</td><td>%3 — %25</td></tr>
+<tr><td>HP +flat</td><td>Sabit</td><td>+20 — +500</td></tr>
+<tr><td>CRIT +%</td><td>Yüzde</td><td>%1 — %15</td></tr>
+<tr><td>CRIT DMG +%</td><td>Yüzde</td><td>%5 — %50</td></tr>
+<tr><td>Lifesteal +%</td><td>Yüzde</td><td>%1 — %8</td></tr>
+<tr><td>SPD +flat</td><td>Sabit</td><td>+0.05 — +0.3</td></tr>
+<tr><td>Gold Find +%</td><td>Yüzde</td><td>%5 — %40</td></tr>
+<tr><td>Magic Find +%</td><td>Yüzde</td><td>%3 — %30</td></tr>
+<tr><td>Dodge +%</td><td>Yüzde</td><td>%1 — %10</td></tr>
+<tr><td>Resist +%</td><td>Yüzde</td><td>%2 — %15</td></tr>
+<tr><td>HP Regen +flat</td><td>Sabit</td><td>+2 — +30/sn</td></tr>
+<tr><td>Element DMG +%</td><td>Yüzde</td><td>%5 — %20 (ateş/buz/yıldırım)</td></tr>
+</table>
+
+<h3>Upgrade, Enchant, Soket</h3>
+<table>
+<tr><th>Sistem</th><th>Maliyet</th><th>Etki</th></tr>
+<tr><td><b>Upgrade (+0 → +20)</b></td><td>Altın + aynı rarity fodder item</td><td>Her + base stat'ı %5 artırır. +15'ten sonra başarısızlık şansı var (%20→%50)</td></tr>
+<tr><td><b>Enchant</b></td><td>Rune Stone</td><td>Item'a ekstra 1 affix ekler veya mevcut affix'i reroll eder</td></tr>
+<tr><td><b>Soket + Gem</b></td><td>Legendary+ item → 1-3 soket</td><td>Gem takınca sabit bonus: ATK gem, DEF gem, CRIT gem vb</td></tr>
+</table>
+
+<h3>Set Ekipman</h3>
+<p>Aynı setten 4 parça kuşanınca set bonusu aktif olur. Her dünyada 1 set düşer.</p>
+<div class="note"><b>Örnek — Kayın Savaşçı Seti (Dünya 1):</b> 2 parça → HP +%10. 4 parça → Tüm hasar +%12, savaş başında 5sn kalkan.</div>
+
+<h3>Envanter</h3>
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Başlangıç kapasitesi</td><td>60 slot</td></tr>
+<tr><td>Max kapasite</td><td>200 slot (elmasla genişletme: 10 slot = 50 elmas)</td></tr>
+<tr><td>Otomatik satış</td><td>Ayarlanabilir filtre: "Common otomatik sat", "Uncommon otomatik sat" vb</td></tr>
+</table>
+
+<h3>Pity Sistemi (Kötü Şans Koruması)</h3>
+<div class="ok"><b>50 savaş</b> boyunca Rare+ item almadıysan → sonraki savaşta <b>garantili Rare</b> drop. Bu sayaç her Rare+ drop'ta sıfırlanır.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STAGE & FARM -->
+<!-- ============================================================ -->
+<section id="stage-farm">
+<h2>🗺️ Stage & Farm Sistemi</h2>
+
+<h3>Stage Yapısı</h3>
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Toplam</td><td>10 dünya × 50 stage = 500 stage</td></tr>
+<tr><td>Her stage</td><td>8 normal dalga + 1 elit/mini-boss (10. 20. 30. 40.) veya world boss (50.)</td></tr>
+<tr><td>3 yıldız sistemi</td><td>⭐ Bitir · ⭐⭐ HP %80+ bitir · ⭐⭐⭐ 3dk altında bitir</td></tr>
+</table>
+
+<h3>3 Oynama Modu</h3>
+
+<div class="card">
+<h4>1. İlk Geçiş (Story Mode)</h4>
+<p>Stage'i ilk kez geçersin → hikaye açılır, ilk-geçiş bonusu (elmas, yeni item, unlock). Cutscene varsa bir kez oynar. 3 yıldız sistemi kilitlenir — istediğin zaman geri dönüp 3 yıldız yapabilirsin.</p>
+</div>
+
+<div class="card">
+<h4>2. Manuel Tekrar (Farm Mode)</h4>
+<p>Geçtiğin stage'lere istediğin zaman geri dön. Normal ödüller alırsın. Cutscene oynamaz. Hızlı Savaş modu açılabilir.</p>
+</div>
+
+<div class="card">
+<h4>3. AFK / Idle Mode</h4>
+<p>Seçtiğin bir stage'de sürekli otomatik farm. Oyunu kapatsan bile offline kazanç sağlar. Detay: <a href="#afk">AFK Sistemi</a></p>
+</div>
+
+<h3>x2 Hızlı Savaş</h3>
+<div class="note"><b>Açılma şartı:</b> Toplam 25 stage geçtikten sonra x2 hız tüm geçilmiş stage'ler için aktif olur. Ücretsiz, kalıcı.</div>
+
+<h3>Level Fark Cezası (Anti-Farm)</h3>
+<p>Çok düşük stage'de takılıp efsanevi item almasın diye:</p>
+<table>
+<tr><th>Level Farkı</th><th>Drop Etkisi</th></tr>
+<tr><td>0-9 stage altı</td><td>%100 normal</td></tr>
+<tr><td>10-19 stage altı</td><td>Drop rate <b>-%50</b></td></tr>
+<tr><td>20-29 stage altı</td><td>Drop rate <b>-%80</b></td></tr>
+<tr><td>30+ stage altı</td><td>Sadece altın, <b>item yok</b></td></tr>
+</table>
+
+<h3>Diminishing Returns (Azalan Getiri)</h3>
+<p>Aynı stage'i çok tekrar edersen azalan ödül — oyuncuyu çeşitli stage'lere yöneltir ve düşündürür:</p>
+<table>
+<tr><th>Tekrar Sayısı</th><th>Ödül Oranı</th></tr>
+<tr><td>İlk 5 tekrar</td><td>%100</td></tr>
+<tr><td>6-15 tekrar</td><td>%80</td></tr>
+<tr><td>16+ tekrar</td><td>%60</td></tr>
+<tr><td>24 saat sonra</td><td>Sıfırlanır → tekrar %100</td></tr>
+</table>
+<div class="warn"><b>Not:</b> AFK farm'da diminishing returns UYGULANMAZ. Çünkü AFK zaten oyunun kalbi.</div>
+
+<h3>Stage Seçim Ekranı — Oyun İçi UI</h3>
+<p>Her stage ikonunda <b>farm göstergeleri</b> bulunur:</p>
+<table>
+<tr><th>İkon</th><th>Anlam</th></tr>
+<tr><td>💰</td><td>Bu stage altın farm'ı için ideal</td></tr>
+<tr><td>⭐</td><td>XP farm'ı için ideal</td></tr>
+<tr><td>💎</td><td>Item drop farm'ı için ideal</td></tr>
+<tr><td>🧪</td><td>Crafting malzemesi farm'ı için ideal</td></tr>
+</table>
+<p>Stage'e tıklayınca detay paneli açılır: önerilen farm tipi, altın/XP/item puanı, geçiş sayısı, hızlı savaş durumu, olası drop listesi.</p>
+
+<h3>Drop Azalma Uyarısı (Oyun İçi)</h3>
+<div class="card" style="border-color:#ef5350">
+<p>Eğer oyuncu level'ine göre çok düşük stage'e girmeye kalkarsa:</p>
+<pre><code>⚠️ UYARI: Bu stage level'ine göre çok düşük.
+Item drop şansı -%80, sadece altın farm önerilir.
+Yine de gir?
+[İptal] [Evet, Altın Farm]</code></pre>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- AFK SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="afk">
+<h2>🌙 AFK / Idle Sistemi</h2>
+<p>Oyunun kalbi. Oyun kapalıyken bile ilerleme sağlar.</p>
+
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Offline farm</td><td>Son seçilen stage'de otomatik savaş</td></tr>
+<tr><td>Max offline süre</td><td>12 saat (Prestige ile 24 saate çıkar)</td></tr>
+<tr><td>Geri dönüş</td><td>"Yokluğunda kazandın!" pop-up, tek tıkla topla</td></tr>
+<tr><td>Fast-Forward</td><td>4 saatlik offline kazancı anında al (günde 2 kez ücretsiz)</td></tr>
+<tr><td>Diminishing returns</td><td>AFK'da uygulanmaz</td></tr>
+</table>
+
+<h3>AFK Stage Seçimi — Oyun İçi UI</h3>
+<p>AFK butonuna basınca seçim ekranı açılır. Default: <b>en son bulunduğun stage</b>. Oyuncu istediği geçilmiş stage'i manuel seçebilir.</p>
+<div class="card">
+<pre><code>🌙 AFK FARM İÇİN STAGE SEÇ
+─────────────────────────────
+Şu an:           Stage 38 (son stage)
+Altın odaklı:    Stage 35 💰💰💰
+XP odaklı:       Stage 40 ⭐⭐⭐
+Item odaklı:     Stage 30 💎💎💎💎
+─────────────────────────────
+Tahmini 1 saat kazanç:
+  💰 ~12.400 altın
+  ⭐ ~890 XP
+  💎 %23 item drop</code></pre>
+</div>
+
+<h3>AFK Tutorial İpucu (Oyun İçi)</h3>
+<div class="lore">Dünya 1 tamamlandığında Kam Börteçin'in diyaloğu: <i>"Yolun uzun, yiğit. Bazen geri dönmek de ilerlemektir. Güçlenmek için geçtiğin dallara bir kez daha uğra. Uluğ Kayın zamanla yetişir — sabırla."</i></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- GÜNLÜK ZİNDANLAR -->
+<!-- ============================================================ -->
+<section id="dungeons">
+<h2>🏰 Günlük Zindanlar</h2>
+<p>AFK'nın yanında aktif oynama sebebi. Her zindan belirli günlerde açılır, özel ödüller verir.</p>
+
+<table>
+<tr><th>Zindan</th><th>Açık Gün</th><th>Açıklama</th><th>Ödül</th></tr>
+<tr><td>💰 <b>Altın Zindanı</b></td><td>Pzt, Per</td><td>10 dalga, artan altın düşer, boss = altın sandığı</td><td>Büyük altın + altın iksiri</td></tr>
+<tr><td>⭐ <b>Tecrübe Zindanı</b></td><td>Sal, Cum</td><td>10 dalga, sadece XP yüksek, altın düşük</td><td>Büyük XP + XP boost iksiri</td></tr>
+<tr><td>🔨 <b>Malzeme Zindanı</b></td><td>Çar, Cmt</td><td>Upgrade malzemesi farm</td><td>Rune Stone, Essence, gem parçaları</td></tr>
+<tr><td>🐾 <b>Pet Zindanı</b></td><td>Pazar</td><td>Pet yemi + düşük % pet yumurtası</td><td>Pet yemi bolca + %5 pet egg</td></tr>
+<tr><td>🏆 <b>Haftalık Meydan</b></td><td>Her hafta (Pzt reset)</td><td>Sınırlı deneme, zorluk artan</td><td>Pet yumurtası, legendary parça</td></tr>
+</table>
+
+<h3>Zindan Kuralları</h3>
+<table>
+<tr><th>Kural</th><th>Değer</th></tr>
+<tr><td>Günlük giriş</td><td>2 ücretsiz</td></tr>
+<tr><td>Ek giriş</td><td>+1 giriş = 50 elmas veya reklam izle</td></tr>
+<tr><td>Süre</td><td>2-3 dakika (stage'den kısa)</td></tr>
+<tr><td>Instant Sweep</td><td>Zindanı 3-yıldızla geçince sonraki girişlerde "Anında Bitir" açılır (günde 2 sweep)</td></tr>
+<tr><td>Açıklık</td><td>Sadece ilgili günde açık → oyuncuya günlük rutin yaratır</td></tr>
+</table>
+
+<div class="note"><b>Haftalık Meydan</b> farklıdır: Pazartesi sıfırlanır, haftada 5 deneme hakkı. Her deneme daha zor (dalga sayısı artar). Leaderboard'da en yüksek dalga sıralaması. Ödül hafta sonu dağıtılır.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PET SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="pets">
+<h2>🐾 Pet Sistemi</h2>
+<p>Pet'ler savaşta Alp'e yardım eder. Her pet 1 aktif + 1 pasif yetenek taşır.</p>
+
+<h3>Pet Edinme Yolları</h3>
+<table>
+<tr><th>Kaynak</th><th>Örnek</th></tr>
+<tr><td>Boss drop</td><td>Börü Reisi → %40 Börü Yavrusu yumurtası</td></tr>
+<tr><td>World boss ilk geçiş</td><td>Yelbegen → Garantili Yeşil Ejder Yavrusu</td></tr>
+<tr><td>Pet zindanı</td><td>Her Pazar %5 yumurta şansı</td></tr>
+<tr><td>Quest ödülü</td><td>Belirli quest zincirlerinden</td></tr>
+<tr><td>Prestige dükkanı</td><td>Ruh Taşı ile özel pet</td></tr>
+</table>
+
+<h3>Pet Koleksiyonu (10 Pet)</h3>
+<table>
+<tr><th>Pet</th><th>Mitoloji</th><th>Pasif</th><th>Aktif</th></tr>
+<tr><td>🐺 Börü Yavrusu</td><td>Kurt (Türk atası)</td><td>+%15 ATK</td><td>Uluma → düşman korkutma (2sn)</td></tr>
+<tr><td>🕊️ Hüma Kuşu</td><td>Cennet kuşu</td><td>—</td><td>1 kere ölümden dirilme (her savaş)</td></tr>
+<tr><td>🐂 Kök Boğa</td><td>Gök boğası</td><td>+%20 HP</td><td>Charge saldırısı (AoE)</td></tr>
+<tr><td>🐴 Tulpar</td><td>Kanatlı at</td><td>+%15 SPD</td><td>Acil kaçış (3sn dokunulmazlık)</td></tr>
+<tr><td>🦅 Şahin</td><td>Şaman refakatçisi</td><td>+%10 CRIT</td><td>Hava keşfi (gizli mob göster)</td></tr>
+<tr><td>🐉 Ejder Yavrusu</td><td>Evren (Türk ejderi)</td><td>+%10 ATK</td><td>Ateş nefesi (AoE DoT)</td></tr>
+<tr><td>🦊 Ak Tilki</td><td>Ruh taşıyıcı</td><td>Gold Find +%30</td><td>Gizli altın keşfi</td></tr>
+<tr><td>🐢 Kaplumbağa Ata</td><td>Dünya taşıyıcı</td><td>+%25 DEF</td><td>Kabuk kalkanı (5sn hasar emme)</td></tr>
+<tr><td>🐟 Su Ata</td><td>Su iyesi</td><td>HP regen +5/sn</td><td>Şifa dalgası (HP %15 yenileme)</td></tr>
+<tr><td>🦅 Kartal-Ana</td><td>Yakut şaman rehberi</td><td>Tüm stat +%5</td><td>Gök gözü (tüm mob'ları 5sn görünür yap)</td></tr>
+</table>
+
+<h3>Pet Kuralları</h3>
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Aynı anda aktif</td><td>3 pet</td></tr>
+<tr><td>Level</td><td>Pet yemi ile level (max 30)</td></tr>
+<tr><td>Evrim</td><td>3 aşama: Yavru → Genç → Ulu (level 10/20/30'da)</td></tr>
+<tr><td>Kalıcılık</td><td>Pet koleksiyonu prestige'de SİLİNMEZ</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- PRESTIGE -->
+<!-- ============================================================ -->
+<section id="prestige">
+<h2>🔄 Prestige (Yeniden Doğuş)</h2>
+
+<h3>Açılma Koşulu</h3>
+<p>Level 200+ ve Dünya 5 (Andar Ocakları) bitince açılır.</p>
+
+<h3>Prestige Yapınca</h3>
+<table>
+<tr><th>Sıfırlanan</th><th>Kalıcı</th></tr>
+<tr><td>Level → 1</td><td>Pet koleksiyonu</td></tr>
+<tr><td>Ekipman → silindi</td><td>Achievement'ler</td></tr>
+<tr><td>Altın → 0</td><td>Cosmetic'ler</td></tr>
+<tr><td>Elmas → 0</td><td>Ruh Taşı sayısı</td></tr>
+<tr><td>Stage ilerlemesi → 0</td><td>Prestige tree upgrade'leri</td></tr>
+</table>
+
+<h3>Karşılık: Ruh Taşı</h3>
+<p>İlerlemeye göre Ruh Taşı kazanılır. Daha ileriye gittiğinde daha çok taş:</p>
+<pre><code>ruhTasi = floor(sqrt(toplamStage × level / 100))</code></pre>
+
+<h3>Prestige Tree</h3>
+<p>Ruh Taşı ile kalıcı upgrade'ler satın alınır:</p>
+<table>
+<tr><th>Upgrade</th><th>Maliyet</th><th>Etki</th></tr>
+<tr><td>Alp'in Mirası</td><td>5 RT</td><td>+%10 tüm hasar (kalıcı)</td></tr>
+<tr><td>Bilge Ruh</td><td>3 RT</td><td>+%15 XP kazanımı</td></tr>
+<tr><td>Altın Kaynağı</td><td>3 RT</td><td>+%15 altın kazanımı</td></tr>
+<tr><td>Şanslı El</td><td>8 RT</td><td>+%10 drop şansı</td></tr>
+<tr><td>Uzun Uyku</td><td>10 RT</td><td>AFK süre 12→18→24 saat</td></tr>
+<tr><td>Kök Hafıza</td><td>15 RT</td><td>Yeni aktif skill slotu (+1)</td></tr>
+<tr><td>Gök Bereket</td><td>20 RT</td><td>Başlangıç rarity: Common → Uncommon</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- QUEST SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="quests">
+<h2>📜 Quest Sistemi</h2>
+
+<table>
+<tr><th>Tip</th><th>Sayı</th><th>Yenilenme</th><th>Örnek</th></tr>
+<tr><td><b>Ana Quest</b></td><td>Dünya başına 1</td><td>Tek seferlik</td><td>"Yelbegen'i yen", "Kayın Tohumu'nu bul"</td></tr>
+<tr><td><b>Yan Quest</b></td><td>Dünya başına 2-3</td><td>Tek seferlik</td><td>"10 Börü Dişi topla", "Ağaç-Ata'yı CRIT ile öldür"</td></tr>
+<tr><td><b>Günlük Quest</b></td><td>5 adet</td><td>Her gün</td><td>"50 mob öldür", "3 stage bitir", "1 item upgrade yap"</td></tr>
+<tr><td><b>Haftalık Quest</b></td><td>3 adet</td><td>Her Pzt</td><td>"200 mob öldür", "1 mini-boss yen", "10.000 altın harca"</td></tr>
+<tr><td><b>Achievement</b></td><td>100+</td><td>Kalıcı</td><td>"İlk Kırık Dal", "100 Combo", "Tüm pet'leri topla"</td></tr>
+</table>
+
+<h3>Günlük Giriş Ödülü</h3>
+<p>30 günlük döngü. 7. ve 30. gün büyük ödül (epic item, pet yumurtası). Sıralı giriş bozulursa döngü sıfırlanmaz, kaldığı yerden devam eder.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- PARA BİRİMLERİ -->
+<!-- ============================================================ -->
+<section id="currencies">
+<h2>💰 Para Birimleri</h2>
+
+<table>
+<tr><th>Para</th><th>Kazanım</th><th>Harcama</th><th>Prestige'de</th></tr>
+<tr><td>💰 <b>Altın</b></td><td>Mob, satış, quest, AFK</td><td>Upgrade, potion, dükkan, skill reset</td><td>Sıfırlanır</td></tr>
+<tr><td>💎 <b>Elmas</b></td><td>Boss drop, achievement, günlük giriş, 3-yıldız bonus</td><td>Envanter genişletme, zindan ekstra giriş, cosmetic</td><td>Sıfırlanır</td></tr>
+<tr><td>🔮 <b>Ruh Taşı</b></td><td>Prestige yapınca</td><td>Prestige tree upgrade</td><td>KALICI</td></tr>
+<tr><td>✨ <b>Ruh Cevheri</b></td><td>Nadir drop, zindan, achievement</td><td>Skill reset, rün crafting</td><td>Sıfırlanır</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- DÜNYA ETKİLERİ -->
+<!-- ============================================================ -->
+<section id="world-effects">
+<h2>🌍 Dünya Özel Durum Etkileri</h2>
+<p>Her dünya savaş alanına özel bir etki uygular. Bu, her dünyanın farklı hissettirmesini sağlar ve tek bir stratejiyle 10 dünya geçmeyi engeller.</p>
+
+<table>
+<tr><th>Dünya</th><th>Etki Adı</th><th>Açıklama</th><th>Strateji Etkisi</th></tr>
+<tr><td>🌲 1. Kayın Vadisi</td><td>Sakin</td><td>Özel etki yok (başlangıç dünyası)</td><td>Tutorial dünyası, saf öğrenme</td></tr>
+<tr><td>🕳️ 2. Kör Mağaralar</td><td><b>Karanlık</b></td><td>Mob'lar siluet olarak görünür, sadece saldırırken kısa parıltı</td><td>Hedefleme zorlaşır, sürekli dikkat gerek</td></tr>
+<tr><td>🏜️ 3. Sarıkum Denizi</td><td><b>Sıcak Çarpması</b></td><td>Her 30sn tüm karakterler 3sn boyunca -%20 SPD</td><td>Yavaşlama anlarını hesaba kat</td></tr>
+<tr><td>❄️ 4. Ayaz Doruk</td><td><b>Buzlu Zemin</b></td><td>Alp rastgele kayabilir → şerit istemeden değişir</td><td>Şerit kontrolü zorlaşır, pozisyon odaklı</td></tr>
+<tr><td>🔥 5. Andar Ocakları</td><td><b>Lav Patlaması</b></td><td>Her 20sn rastgele bir şeritte 2sn'lik lav alanı (hasar verir)</td><td>Şerit kaçışı refleksi, zamanlama</td></tr>
+<tr><td>☁️ 6. Ak Yayık Gökleri</td><td><b>Rüzgar Sapması</b></td><td>Ranged saldırılar %20 saparak yan şeride gider</td><td>Yay-Çı ve Kam dezavantajlı, melee avantajlı</td></tr>
+<tr><td>🌊 7. Yutpa Derinlikleri</td><td><b>Su Direnci</b></td><td>Tüm SPD -%30 ama mana/enerji regen +%100</td><td>Yavaş ama skill-yoğun savaş</td></tr>
+<tr><td>⚰️ 8. Toybodım Nehri</td><td><b>Sürekli Yağmur</b></td><td>Ateş hasarı -%40, elektrik hasarı +%30</td><td>Element seçimi çok önemli</td></tr>
+<tr><td>👑 9. Kara Demir Sarayı</td><td><b>Erlik'in Gözetimi</b></td><td>Boss HP %50'de tüm mob'lar "cesaret buff" alır (+%25 ATK)</td><td>Boss'u hızlı geçme baskısı</td></tr>
+<tr><td>🌌 10. Boşluk Tengiz</td><td><b>Kaos</b></td><td>Şeritler rastgele yer değiştirir, ekran ara sıra ters döner</td><td>Tüm alışkanlıklar bozulur, adaptasyon</td></tr>
+</table>
+
+<h3>Oyun İçi Gösterim</h3>
+<p>Her dünyanın ilk stage'inde <b>"Dünya Etkisi" bilgilendirme kartı</b> açılır. İkon + kısa açıklama + "Anladım" butonu. Stage seçim ekranında dünya ikonunun yanında etki ikonu gösterilir.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- BOSS REHBER SİSTEMİ -->
+<!-- ============================================================ -->
+<section id="boss-hints">
+<h2>💡 Boss Rehber Sistemi (Savaş İpucu)</h2>
+<p>Her mini-boss bir mekanik öğretir. Oyuncunun bunu <b>fark etmesini</b> sağlamak için oyun içi rehber sistemi var.</p>
+
+<h3>Tasarım Prensibi</h3>
+<div class="destan">
+<p>Her mini-boss, oyuncuyu o zamana kadar gerçekten kullanmadığı bir sistemi zorla kullandırır. Ders kitabı gibi "şeridi kullan" demiyoruz — boss'la savaşırken oyuncu bunu fark ediyor.</p>
+</div>
+
+<h3>3 Katmanlı Rehber Sistemi</h3>
+
+<div class="card">
+<h4>Katman 1 — Savaş Öncesi İpucu (Pasif)</h4>
+<p>Mini-boss stage'ine girmeden önce <b>NPC diyaloğu</b> açılır. Mergen veya dünyanın özel NPC'si kısa bir ipucu verir.</p>
+<p>Örnek (Stage 20 — Arçura Ana): Mergen der ki: <i>"Bu yaratık toprağa kök salıyor, yiğit. Bir yerde durarak onu yenemezsin..."</i></p>
+<p>Bu ipucu <b>doğrudan çözümü söylemez</b> ama düşündürür.</p>
+</div>
+
+<div class="card">
+<h4>Katman 2 — Savaş İçi Gösterge (Aktif)</h4>
+<p>Savaş sırasında <b>ilk 10 saniye</b> boyunca ekranda küçük bir ikon + kısa metin belirir:</p>
+<table>
+<tr><th>Durum</th><th>Gösterge</th></tr>
+<tr><td>Şerit değişimimi gerekiyorsa</td><td>🛤️ "Farklı şeritleri dene!"</td></tr>
+<tr><td>Add temizleme gerekiyorsa</td><td>👹 "Önce küçükleri temizle!"</td></tr>
+<tr><td>CRIT gerekiyorsa</td><td>⚡ "Bu zırh sert... Kritik dene!"</td></tr>
+<tr><td>Burst window varsa</td><td>🎯 "Doğru anı bekle!"</td></tr>
+<tr><td>Saklanmak gerekiyorsa</td><td>🛡️ "Bakışından kaç!"</td></tr>
+</table>
+<p>Bu gösterge <b>sadece ilk denemede</b> gösterilir. Tekrar denemelerde gösterilmez (oyuncu artık biliyor).</p>
+</div>
+
+<div class="card">
+<h4>Katman 3 — Yenilgi Sonrası Detaylı İpucu (Kurtarıcı)</h4>
+<p>Oyuncu mini-boss'a <b>3 kez üst üste kaybederse</b>, yenilgi ekranında detaylı strateji kartı açılır:</p>
+<pre><code>💀 YENİLDİN — AMA ÖĞRENDİN!
+─────────────────────────────
+🎯 Bu boss'un zayıflığı: CRIT hasarı
+📊 Senin CRIT oranın: %8 (çok düşük)
+💡 Tavsiye: Eldiven slotuna CRIT affix'li 
+   item kuşan. Ya da Şahin pet'ini aktifle.
+🔧 Demirci Kübey'den enchant dene!
+─────────────────────────────
+[Ekipmanıma Git] [Tekrar Dene] [Farm Yap]</code></pre>
+<p>Bu kart boss'un mekaniğine göre dinamik üretilir. Oyuncunun mevcut stat'larını kontrol eder ve eksik olanı gösterir.</p>
+</div>
+
+<h3>Dünya Bazlı Mini-Boss Öğretme Haritası</h3>
+<p>Her dünyada 4 mini-boss (Stage 10, 20, 30, 40), her biri farklı mekanik:</p>
+
+<table>
+<tr><th>Dünya</th><th>S.10 Mekaniği</th><th>S.20 Mekaniği</th><th>S.30 Mekaniği</th><th>S.40 Mekaniği</th></tr>
+<tr><td>🌲 D1</td><td>Add temizleme</td><td>Şerit zorunluluğu</td><td>Burst window</td><td>CRIT build</td></tr>
+<tr><td>🕳️ D2</td><td>Karanlıkta hedefleme</td><td>Işık kaynağı koruma</td><td>Ses tabanlı konum</td><td>Tek göz zayıflığı</td></tr>
+<tr><td>🏜️ D3</td><td>Sıcak yönetimi</td><td>Kum altı kaçınma</td><td>Hafıza (Mankurt) mekaniği</td><td>Çoklu form (Şahmaran hazırlık)</td></tr>
+<tr><td>❄️ D4</td><td>Hareket zorunluluğu</td><td>Donma kırma</td><td>Kayma kontrolü</td><td>Soğuk direnci build</td></tr>
+<tr><td>🔥 D5</td><td>Lav kaçınma</td><td>Yanma DoT yönetimi</td><td>Form değişim tanıma</td><td>Element zayıflık kullanımı</td></tr>
+<tr><td>☁️ D6</td><td>Rüzgar hesaplama</td><td>Uçan düşman önceliği</td><td>Kanat kırma mekaniği</td><td>Fırtına zamanlama</td></tr>
+<tr><td>🌊 D7</td><td>Yavaş hareket stratejisi</td><td>Kabuk kırma</td><td>Su akıntısı yönlendirme</td><td>Nefes sayacı (zamanlama)</td></tr>
+<tr><td>⚰️ D8</td><td>Hayalet avlama (görünmez)</td><td>Uyku direnci</td><td>Duygu kontrolü (debuff)</td><td>Yağmur element dönüşümü</td></tr>
+<tr><td>👑 D9</td><td>Erlik Oğlu 1-2 (duo fight)</td><td>Erlik Oğlu 3-4 (zırh kırma)</td><td>Erlik Oğlu 5-7 (trio fight)</td><td>Erlik Oğlu 8-9 (öfke yönetimi)</td></tr>
+<tr><td>🌌 D10</td><td>Kopya savaşı (ayna)</td><td>Şerit karmaşası (ters)</td><td>Hafıza parçası (dönüşüm)</td><td>Yokluk hazırlık (tüm mekanikler)</td></tr>
+</table>
+
+<div class="note"><b>Önemli:</b> Bu harita tüm dünyaların mini-boss tasarımında referans tablodur. Her dünya sayfasında ilgili 4 mini-boss detaylı yazılacak.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<div style="text-align:center;margin-top:60px;padding:30px;color:#666;border-top:1px solid #2a2a40">
+<p>⚔️ ALP — Uluğ Kayın'ın Düşüşü · Developer Wiki</p>
+<p style="font-size:.85em;margin-top:8px">← <a href="index.html">Ana Sayfa</a></p>
+</div>
+</main>
+</div>
+</body>
+</html>

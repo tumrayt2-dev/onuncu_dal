@@ -1,0 +1,14 @@
+[
+  { "id": "affix_atk_pct", "type": "atkPercent", "isPercent": true, "minValue": 3, "maxValue": 25 },
+  { "id": "affix_hp_flat", "type": "hpFlat", "isPercent": false, "minValue": 10, "maxValue": 200 },
+  { "id": "affix_crit_pct", "type": "critPercent", "isPercent": true, "minValue": 1, "maxValue": 10 },
+  { "id": "affix_crit_dmg_pct", "type": "critDmgPercent", "isPercent": true, "minValue": 5, "maxValue": 40 },
+  { "id": "affix_lifesteal_pct", "type": "lifestealPercent", "isPercent": true, "minValue": 1, "maxValue": 8 },
+  { "id": "affix_spd_flat", "type": "spdFlat", "isPercent": false, "minValue": 0.02, "maxValue": 0.15 },
+  { "id": "affix_gold_find_pct", "type": "goldFindPercent", "isPercent": true, "minValue": 5, "maxValue": 30 },
+  { "id": "affix_magic_find_pct", "type": "magicFindPercent", "isPercent": true, "minValue": 5, "maxValue": 25 },
+  { "id": "affix_dodge_pct", "type": "dodgePercent", "isPercent": true, "minValue": 1, "maxValue": 8 },
+  { "id": "affix_resist_pct", "type": "resistPercent", "isPercent": true, "minValue": 2, "maxValue": 12 },
+  { "id": "affix_hp_regen_flat", "type": "hpRegenFlat", "isPercent": false, "minValue": 0.5, "maxValue": 5 },
+  { "id": "affix_elem_dmg_pct", "type": "elementDmgPercent", "isPercent": true, "minValue": 3, "maxValue": 20 }
+]

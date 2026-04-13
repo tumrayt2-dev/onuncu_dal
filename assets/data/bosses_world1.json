@@ -1,0 +1,81 @@
+[
+  {
+    "id": "w1_boss_obur_yelbegen",
+    "nameKey": "bossOburYelbegen",
+    "archetype": "miniBoss",
+    "worldId": 1,
+    "stageId": 10,
+    "lane": "middle",
+    "baseStats": { "hp": 500, "atk": 22, "def": 5, "spd": 0.9 },
+    "lootTable": { "goldMin": 150, "goldMax": 250, "xp": 80, "itemDropChance": 0.30, "specialDrops": [{ "itemId": "ruh_cevheri", "chance": 1.0, "minStage": 10 }] },
+    "specialAbility": "summon_adds_at_50pct_hp_yutma",
+    "mechanic": "HP %50'de 2 Yelbegen Yavrusu cagirir. Yavrular oldurulmezse Obur onlari yutup +%30 HP geri kazanir.",
+    "rewards": { "gold": 200, "gems": 0, "soulEssence": 3, "guaranteedRarity": "rare" }
+  },
+  {
+    "id": "w1_boss_arcura_ana",
+    "nameKey": "bossArcuraAna",
+    "archetype": "miniBoss",
+    "worldId": 1,
+    "stageId": 20,
+    "lane": "middle",
+    "baseStats": { "hp": 900, "atk": 28, "def": 12, "spd": 0.6 },
+    "lootTable": { "goldMin": 350, "goldMax": 550, "xp": 150, "itemDropChance": 0.40, "specialDrops": [{ "itemId": "ruh_cevheri", "chance": 1.0, "minStage": 20 }] },
+    "specialAbility": "root_totems_3_lanes",
+    "mechanic": "Savas basinda 3 serite birer kok diker (150 HP). Kokler kirilmadan hasar almaz. Kokler kirilinca 10sn savunmasiz. Sonra yeni kok diker.",
+    "rewards": { "gold": 500, "gems": 50, "soulEssence": 5, "guaranteedRarity": "rare" }
+  },
+  {
+    "id": "w1_boss_kara_dis",
+    "nameKey": "bossKaraDis",
+    "archetype": "miniBoss",
+    "worldId": 1,
+    "stageId": 30,
+    "lane": "middle",
+    "baseStats": { "hp": 1400, "atk": 35, "def": 8, "spd": 1.2 },
+    "lootTable": { "goldMin": 600, "goldMax": 900, "xp": 250, "itemDropChance": 0.50, "specialDrops": [{ "itemId": "pet_egg_boru", "chance": 0.40, "minStage": 30 }] },
+    "specialAbility": "howl_summon_wolves_stun_rage",
+    "mechanic": "Her 15sn Uluma -> 4 Orman Borusu cagirir + Alp 2sn sersemler. HP %25'te Kudurma: SPD +%50, ATK +%30, 20sn.",
+    "rewards": { "gold": 800, "gems": 0, "soulEssence": 8, "guaranteedRarity": "rare" }
+  },
+  {
+    "id": "w1_boss_agac_ata",
+    "nameKey": "bossAgacAta",
+    "archetype": "miniBoss",
+    "worldId": 1,
+    "stageId": 40,
+    "lane": "middle",
+    "baseStats": { "hp": 2500, "atk": 15, "def": 25, "spd": 0.4 },
+    "lootTable": { "goldMin": 1200, "goldMax": 1800, "xp": 400, "itemDropChance": 0.60, "specialDrops": [{ "itemId": "yasli_kabuk_set", "chance": 1.0, "minStage": 40 }] },
+    "specialAbility": "crit_only_damage",
+    "mechanic": "Sadece CRIT hasar alir, normal vuruslar 1 hasar. Yaninda surekli 2 Arcura Fidani - oldugunde yenilenir.",
+    "rewards": { "gold": 1500, "gems": 0, "soulEssence": 15, "guaranteedRarity": "epic" }
+  },
+  {
+    "id": "w1_boss_yelbegen",
+    "nameKey": "bossYelbegen",
+    "archetype": "worldBoss",
+    "worldId": 1,
+    "stageId": 50,
+    "lane": "middle",
+    "baseStats": { "hp": 22400, "atk": 45, "def": 12, "spd": 0.8 },
+    "lootTable": { "goldMin": 12000, "goldMax": 18000, "xp": 1500, "itemDropChance": 1.0, "specialDrops": [{ "itemId": "kayin_tohumu_1", "chance": 1.0, "minStage": 50 }, { "itemId": "pet_egg_ejder", "chance": 1.0, "minStage": 50 }] },
+    "specialAbility": "seven_heads",
+    "mechanic": "7 basli dev yilan. Her bas 3200 HP, ayni anda 3 aktif. Bas yenilenme: 20sn sonra %40 HP, -%15 maks HP. 3 kez yenilenen bas tamamen olur. 2 bas ayni anda kesilirse 8sn vurulmaz ama ATK -%50.",
+    "heads": [
+      { "element": "fire", "hp": 3200 },
+      { "element": "fire", "hp": 3200 },
+      { "element": "ice", "hp": 3200 },
+      { "element": "ice", "hp": 3200 },
+      { "element": "lightning", "hp": 3200 },
+      { "element": "poison", "hp": 3200 },
+      { "element": "physical", "hp": 3200 }
+    ],
+    "phases": [
+      { "name": "Sakin", "condition": "start", "effect": "Normal" },
+      { "name": "Uyanis", "condition": "3_heads_dead", "effect": "Ekran kizirir, tempo +%20" },
+      { "name": "Cilginlik", "condition": "5_heads_dead", "effect": "Vignette, ayni anda 3 saldiri" }
+    ],
+    "rewards": { "gold": 15000, "gems": 200, "soulEssence": 30, "guaranteedRarity": "epic" }
+  }
+]

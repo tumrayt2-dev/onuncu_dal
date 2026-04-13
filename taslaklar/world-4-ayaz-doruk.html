@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dünya 4: Ayaz Doruk | ALP Wiki</title>
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="sidebar-logo"><h1>⚔️ ALP</h1><div class="version">Uluğ Kayın'ın Düşüşü</div></div>
+<nav>
+<div class="nav-section">ANA</div>
+<a href="index.html">🏠 Ana Sayfa</a>
+<a href="systems.html">⚙️ Sistemler</a>
+<a href="story.html">📖 Hikaye & NPC'ler</a>
+<a href="sequels.html">🔮 Oyun 2 & 3</a>
+
+<div class="nav-section">DÜNYALAR</div>
+<a href="world-1-kayin-vadisi.html">🌲 1. Kayın Vadisi</a>
+<a href="world-2-kor-magaralar.html">🕳️ 2. Kör Mağaralar</a>
+<a href="world-3-sarikum-denizi.html">🏜️ 3. Sarıkum Denizi</a>
+<a href="world-4-ayaz-doruk.html" class="active">❄️ 4. Ayaz Doruk</a>
+<a href="world-5-andar-ocaklari.html">🔥 5. Andar Ocakları</a>
+<a href="world-6-ak-yayik-gokleri.html">☁️ 6. Ak Yayık Gökleri</a>
+<a href="world-7-yutpa-derinlikleri.html">🌊 7. Yutpa Derinlikleri</a>
+<a href="world-8-toybodim-nehri.html">⚰️ 8. Toybodım Nehri</a>
+<a href="world-9-kara-demir-sarayi.html">👑 9. Kara Demir Sarayı</a>
+<a href="world-10-bosluk-tengiz.html">🌌 10. Boşluk Tengiz</a>
+
+<div class="nav-section">BU SAYFA</div>
+<a href="#story">🎬 Hikaye</a>
+<a href="#world-effect">❄️ Dünya Etkisi</a>
+<a href="#npcs">👤 NPC'ler</a>
+<a href="#env">🏔️ Ortam</a>
+<a href="#mobs">👹 Mob Listesi</a>
+<a href="#mini-bosses">⚔️ Mini-Boss'lar</a>
+<a href="#world-boss">🧊 Ayaz Ata</a>
+<a href="#rewards">🎁 Ödüller</a>
+<a href="#farm">🌾 Farm Tavsiyesi</a>
+<a href="#lore-role">🔗 Hikayedeki Yeri</a>
+</nav>
+</aside>
+
+<main class="main">
+<h1 class="title">❄️ Dünya 4 — Ayaz Doruk</h1>
+<p class="subtitle">Ebedi kış · Donmuş yalnızlık · Ayaz Ata'nın tahtı · Dördüncü Kayın Tohumu</p>
+
+<!-- ============================================================ -->
+<!-- HİKAYE -->
+<!-- ============================================================ -->
+<section id="story">
+<h2>🎬 Hikaye Kutusu</h2>
+<div class="destan">
+<p>Kumun sıcağından çıkıp buz rüzgarına tosladı. İlk adımda dizlerine kadar kara battı. İkinci adımda kirpikleri dondu. Üçüncü adımda... sessizliği duydu.</p>
+<p>Ayaz Doruk'ta ses yoktu. Rüzgar bile fısıldamıyordu — sadece kesiyordu. Her şey beyazdı, her şey uzaktı, her şey yalnızdı. Ve bu yalnızlık, Alp'in içindeki boşlukla örtüşüyordu.</p>
+<p>Dağın zirvesinde biri oturuyordu. Beyaz sakallı, buzdan taç, gözleri mavi-beyaz. Ayaz Ata. Kışın kendisi.</p>
+</div>
+<p>Ayaz Doruk, Uluğ Kayın'ın dördüncü dalının düştüğü yerdir. Dalın çarptığı dağ donmuş — ebedi kış, çözülmeyen buzullar, tipi. Burada yaşayan her şey soğuğa adaptasyon ya da lanet olarak var. Karakoncolos cüceleri taş kırıyor, donmuş mankurtlar ağır adımlarla dolaşıyor, Ayaz Ata'nın hizmetkârları her yeri gözetliyor.</p>
+<p>Alp'in görevi: zirveye tırman, Ayaz Ata'nın ebedi kışını kır, dördüncü Kayın Tohumu'nu kurtar.</p>
+<div class="lore"><b>Alp'in Hafızası:</b> Bu dünyada <b>üçüncü hafıza parçası</b> gelir. Stage 35 civarında flashback: Alp bir dağın tepesinde duruyor, aşağıda bir köy yanıyor. Yanında biri diyor ki: <i>"Git. Kurtulacak olan sensin. Biz... biz zaten gittik."</i> — Alp uyanır ve yüzünde donmuş gözyaşı izleri vardır. İlk kez suçluluk hisseder.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- DÜNYA ETKİSİ -->
+<!-- ============================================================ -->
+<section id="world-effect">
+<h2>❄️ Dünya Etkisi — Buzlu Zemin</h2>
+<div class="warn">
+<b>Ayaz Doruk'un özel savaş etkisi:</b> Zemin buzla kaplı. Alp şerit değiştirdiğinde <b>%25 şansla kayar</b> ve hedeflediği şerit yerine <b>rastgele bir şeride</b> düşer. Kayma animasyonu sırasında (0.5sn) savunmasız.
+</div>
+<h3>Buzlu Zemin Detayları</h3>
+<table>
+<tr><th>Özellik</th><th>Açıklama</th></tr>
+<tr><td>Tetiklenme</td><td>Her şerit değişiminde %25 kayma şansı</td></tr>
+<tr><td>Kayma süresi</td><td>0.5sn (bu sürede vurulamaz + hasar alabilir)</td></tr>
+<tr><td>Hedef şerit</td><td>Hedeflediğin yerine rastgele — orta istersen alta düşebilirsin</td></tr>
+<tr><td>Görsel</td><td>Buz kırığı parçacıkları, kayma sesi, Alp sendeleyerek durur</td></tr>
+<tr><td>Çivili Bot item</td><td>Stage 5'te Kübey'den alınır. Kullanınca 60sn boyunca kayma %0'a düşer (cooldown: 90sn)</td></tr>
+<tr><td>Stage ilerledikçe</td><td>Stage 30+ → kayma şansı %30'a çıkar. Stage 45+ → %35</td></tr>
+</table>
+<div class="note"><b>Strateji:</b> Şerit değişimlerini minimumda tut. Zorunlu olmadıkça şerit değiştirme. AMA bazı boss mekanikleri şerit değiştirmeyi zorunlu kılar → risk hesabı yap. Çivili Bot'u kritik anlarda kullan.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- NPC'LER -->
+<!-- ============================================================ -->
+<section id="npcs">
+<h2>👤 Bu Dünyanın NPC'leri</h2>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🔨</div>
+<div><div class="npc-name">Demirci Kübey</div><div class="npc-role">Ekipman / Upgrade NPC (Sabit)</div></div>
+</div>
+<p>Dağın eteğindeki bir mağaranın içine ocağını kurmuş. Ateş her zamankinden daha parlak yanıyor — burada ateş lüks.</p>
+<div class="npc-quote">"Soğuk demiri sertleştirir, yiğit. Ama kalpse... soğuk onu kırar. Gel, ellerini ısıt, sonra silahını ver."</div>
+<p><b>Özel:</b> Dünya 4'te Kübey <b>Çivili Bot</b> item'ını satar (200 altın). Ayrıca buz malzemelerinden (Ayaz Kristali, Don Pulu, Tipi Tozu) yeni enchant seçenekleri sunar: <b>Buz Direnci</b> enchant'ı (+%20 soğuk hasar azaltma) ve <b>Ateş Kaplama</b> enchant'ı (silaha +ateş DoT).</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">📜</div>
+<div><div class="npc-name">Gezgin Bilge Mergen</div><div class="npc-role">Anlatıcı / Quest Veren (Sabit)</div></div>
+</div>
+<p>Dağın yarısında, bir kaya çıkıntısının altında oturuyor. Etrafında bir sıcaklık halesi var — sanki soğuk ona dokunmuyor. Ya da dokunuyor ama aldırmıyor.</p>
+<div class="npc-quote">"Soğuk, cesedi değil ruhu öldürür. Kayın Vadisi'nde yalnızdın ama bilmiyordun. Burada yalnızlığı hissedeceksin. Bu iyi — çünkü hisseden canlıdır."</div>
+<p><b>Rolü:</b> 1 ana quest ("Ayaz Ata'nın Tahtını Erisinle") + 3 yan quest verir.</p>
+<p><b>Yan Quest'ler:</b></p>
+<table>
+<tr><th>Quest</th><th>Görev</th><th>Ödül</th></tr>
+<tr><td>Buzul Kıran</td><td>5 Donmuş Mankurt'u ateş hasarıyla öldür</td><td>1.000 altın + Ateş Kaplama enchant (ücretsiz)</td></tr>
+<tr><td>Tarakçı Avcısı</td><td>15 Karakoncolos öldür</td><td>5 Ruh Cevheri + rare item</td></tr>
+<tr><td>Kayıp Dağcı</td><td>Stage 28'deki donmuş dağcının eşyalarını bul ve Mergen'e getir</td><td>100 elmas + "Dağın Hafızası" cosmetic title + hikaye ipucu</td></tr>
+</table>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🐐</div>
+<div><div class="npc-name">Dağ-Kam Sübedey</div><div class="npc-role">Dünya 4 Özel — Dağ Şamanı / Sığınak NPC</div></div>
+</div>
+<p>Dağın orta bölgesinde küçük bir sığınak kurmuş. Keçi postu giyer, sakalında buz kristalleri var ama gülümsüyor. Dağın ruhlarıyla konuşur — ya da öyle iddia eder. Yanında her zaman sadık dağ keçisi "Boran" var.</p>
+<div class="npc-quote">"Ayaz Ata kötü değil, yiğit. Sadece üşüyor. Binlerce yıldır üşüyor. Belki biraz sıcaklık göstersen yumuşar — belki de seni dondurup raflara koyar. Bilemedim."</div>
+<p><b>Rolü:</b> Ayaz Ata hakkında bilgi verir. Sığınağı <b>güvenli bölge</b> — burada AFK bırakınca soğuk hasarı işlemez. Ayrıca <b>"Sıcak Çorba"</b> iksiri satar (20dk soğuk direnci +%30, yavaşlatma süreleri -%50).</p>
+<p><b>Mekanik katkısı:</b> Sübedey ile konuşunca <b>"Dağ Bilgisi"</b> pasif buff (30dk): buzlu zeminde kayma şansı %25→%15'e düşer. Kısa ama kritik avantaj.</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🧊</div>
+<div><div class="npc-name">Donmuş Yiğit Barlas</div><div class="npc-role">Dünya 4 Özel — Donmuş Savaşçı / Hikaye NPC</div></div>
+</div>
+<p>Dağın yamaçlarında buzun içinde donmuş bir savaşçı. Tam zırhıyla, kılıcıyla, savaş pozisyonunda — binlerce yıl önce dondurulmuş. Ama gözleri hâlâ açık ve Alp yanına geldiğinde buz çatırdayarak konuşmaya başlar.</p>
+<div class="npc-quote">"Ben... savaştım. Ata'ya karşı savaştım. Kaybettim. Ama ölmedim. Burada... bekliyorum. Birinin... bitirmesini."</div>
+<p><b>Rolü:</b> Hikaye NPC'si. Barlas, <b>eski bir Alp</b> — binlerce yıl önce Uluğ Kayın'ı korumaya çalışmış ama Ayaz Ata tarafından dondurulmuş. Bu, Alp'in <b>yalnız olmadığını</b> gösterir — ondan önce başkaları da denemiş ve başaramamış.</p>
+<p>3 kez ziyaret edilir (Stage 15, 30, 45). Her seferinde biraz daha çözülür. Son ziyarette tamamen çözülür ama yaşlanmış — ölmek üzere. Son sözü: <i>"Tohumu... dik. Benim yapamadığımı yap. Ve... unutma. Unutmak en soğuk ölüm."</i></p>
+<p><b>Mekanik katkısı:</b> Son ziyarette Barlas'ın kılıcını miras alırsın → <b>"Barlas'ın Kırık Kılıcı"</b> (legendary silah, ateş hasarı +%25, soğuk direnci +%15). Onarılması gerek — Kübey'e götür, 2.000 altın + 5 Ayaz Kristali ile onar.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ORTAM -->
+<!-- ============================================================ -->
+<section id="env">
+<h2>🏔️ Ortam & Atmosfer</h2>
+
+<h3>Parallax Arka Plan (3 Katman)</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td><b>Uzak</b></td><td>Gri-beyaz gökyüzü, uzak karlı zirve silüetleri, yavaş kayan bulutlar, ara sıra aurora borealis (yeşil-mor)</td></tr>
+<tr><td><b>Orta</b></td><td>Çam ağacı iskeletleri (buzla kaplı), buz sarkıtları, donmuş şelale, rüzgarda savrulan kar</td></tr>
+<tr><td><b>Yakın</b></td><td>Beyaz kar örtüsü, buz kristalleri parıltısı, ayak izleri (kısa süre kalır), nefes buharı efekti</td></tr>
+</table>
+
+<h3>Stage Bölgeleri (Görsel Değişim)</h3>
+<table>
+<tr><th>Stage</th><th>Bölge</th><th>Görsel</th></tr>
+<tr><td>1-15</td><td>Dağ Eteği</td><td>Karlı orman, donmuş dere yatakları, ahşap kalıntıları, kırağılı çalılar</td></tr>
+<tr><td>16-35</td><td>Buz Geçidi</td><td>Dar buzul vadisi, dev buz duvarları, buzun içinde donmuş yaratıklar (dekoratif), tipi yoğunlaşır</td></tr>
+<tr><td>36-50</td><td>Ayaz Tahtı</td><td>Dağ zirvesi, açık alan, buz sarayı kalıntıları, gökyüzünde aurora, Ayaz Ata'nın buzdan tahtı</td></tr>
+</table>
+
+<h3>Hava Durumu</h3>
+<table>
+<tr><th>Efekt</th><th>Stage</th><th>Açıklama</th></tr>
+<tr><td>🌨️ Hafif kar</td><td>Default</td><td>Sürekli kar yağışı, görüşü az etkiler</td></tr>
+<tr><td>🌬️ Tipi</td><td>Stage 20+</td><td>Rastgele (her 4 stage'de 1). Görüş çok azalır, tüm SPD -%10, ranged isabet -%10</td></tr>
+<tr><td>🧊 Buzul Fırtınası</td><td>Stage 40+</td><td>Ekranın kenarlarından buz kristalleri gelir, kenarda duran hasar alır (orta şerit güvenli)</td></tr>
+</table>
+
+<h3>Ses Ambiyansı</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td>Müzik</td><td>Morin khuur (at başlı keman) + uzun, titreyen notalar + düşük rüzgar drone. Yalnız, geniş, melankoli</td></tr>
+<tr><td>Ambiyans</td><td>Sürekli rüzgar uğultusu, buz çatırtısı, uzaktan kurt uluması, nefes buharı sesi</td></tr>
+<tr><td>Stage 16+</td><td>Rüzgar şiddetlenir, buz kırılma sesleri (daha sık), ayak sesleri karda</td></tr>
+<tr><td>Stage 40+</td><td>Rüzgar bir anda durur — tam sessizlik. Sonra Ayaz Ata'nın derin nefesi duyulur. Her şey titrer.</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- MOB LİSTESİ -->
+<!-- ============================================================ -->
+<section id="mobs">
+<h2>👹 Mob Listesi (8 adet)</h2>
+<p>Stage scaling: HP <code>×1.12/stage</code>, ATK <code>×1.09/stage</code>. Aşağıdaki stat'lar <b>Stage 1 base</b> (Dünya 4 Stage 1 = genel Stage 151).</p>
+
+<table>
+<tr><th>Mob</th><th>Arketip</th><th>Şerit</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>XP</th><th>Altın</th></tr>
+<tr><td>Karakoncolos</td><td>Melee/Swarm</td><td><span class="lane-alt">Alt</span></td><td>60</td><td>24</td><td>8</td><td>1.3</td><td>18</td><td>14-20</td></tr>
+<tr><td>Donmuş Mankurt</td><td>Tank</td><td><span class="lane-orta">Orta</span></td><td>220</td><td>18</td><td>25</td><td>0.4</td><td>26</td><td>18-26</td></tr>
+<tr><td>Buz Börüsü</td><td>Fast/Pack (2'li)</td><td><span class="lane-alt">Alt</span></td><td>75</td><td>26</td><td>6</td><td>1.5</td><td>20</td><td>14-22</td></tr>
+<tr><td>Tipi Ruhu</td><td>Caster</td><td><span class="lane-ust">Üst</span></td><td>55</td><td>34</td><td>3</td><td>0.9</td><td>25</td><td>18-28</td></tr>
+<tr><td>Kırağı Örümceği</td><td>Trapper</td><td><span class="lane-orta">Orta</span></td><td>65</td><td>20</td><td>10</td><td>0.8</td><td>19</td><td>14-20</td></tr>
+<tr><td>Buz Golemi</td><td>Super-Tank</td><td><span class="lane-orta">Orta</span></td><td>300</td><td>15</td><td>30</td><td>0.3</td><td>35</td><td>25-38</td></tr>
+<tr><td class="r-uncommon">Ayaz Hizmetkârı</td><td>Commander ⚠️</td><td><span class="lane-ust">Üst</span></td><td>90</td><td>22</td><td>12</td><td>0.7</td><td>32</td><td>24-34</td></tr>
+<tr><td>Kar Baykuşu</td><td>Flying/Scout</td><td><span class="lane-ust">Üst</span></td><td>40</td><td>18</td><td>4</td><td>1.6</td><td>16</td><td>12-18</td></tr>
+</table>
+
+<div class="mob-card">
+<h4>👹 Karakoncolos</h4>
+<p>Küçük, çirkin, kıllı cüceler. Ellerinde taş taraklar — bununla döverek saldırırlar. Gülünç görünür ama sürü halinde tehlikeli. Her zaman 2-3'lü gelir.</p>
+<p><b>Özel:</b> <i>Tarak Darbesi</i> — vuruşta %30 şansla Alp'in skill cooldown'larını <b>+2sn uzatır</b>. Birden fazla Karakoncolos varsa cooldown'lar inanılmaz yavaşlar.</p>
+<p><b>Drop:</b> %8 common, Taş Tarak (cosmetic, %5), Donmuş Tırnak (malzeme, %10). <b>Öğretir:</b> Cooldown uzaması yönetimi — sürüyü hızlı temizle.</p>
+</div>
+
+<div class="mob-card">
+<h4>🧟 Donmuş Mankurt</h4>
+<p>Sarıkum'daki Mankurtların donmuş versiyonu. Daha yavaş ama daha dayanıklı. Buz zırhı var — ateş hasarı zırhı eritir.</p>
+<p><b>Özel:</b> <i>Buz Kabuk</i> — ilk 3 vuruş hasar vermez (buz kırılması). 4. vuruştan itibaren normal hasar. Ateş hasarı buz kabuğu <b>anında kırar</b>.</p>
+<p><b>Drop:</b> %6 uncommon, Don Pulu (enchant malzemesi, %12), Mankurt Keçesi (cosmetic, %2). <b>Öğretir:</b> Ateş hasarının önemini pekiştirme (Dünya 3'ten Kübey'in ateş enchant'ı burada parlar).</p>
+</div>
+
+<div class="mob-card">
+<h4>🐺 Buz Börüsü</h4>
+<p>Beyaz tüylü dağ kurtları. Dünya 1'deki Orman Börüsü'nün buz versiyonu — daha hızlı, daha ölümcül. 2'li gelir.</p>
+<p><b>Özel:</b> <i>Buz Isırığı</i> — vuruşta %35 şansla <b>3sn yavaşlatma (-%30 SPD)</b>. İki kurt aynı anda vurursa yavaşlatma stacklenir → neredeyse durursun.</p>
+<p><b>Drop:</b> %7 uncommon, Buz Börü Kürkü (set malzemesi, %8). <b>Öğretir:</b> Yavaşlatma yönetimi + hızlıca sürüyü bölme.</p>
+</div>
+
+<div class="mob-card">
+<h4>🌪️ Tipi Ruhu</h4>
+<p>Kar fırtınasından doğmuş hayalet ruh. Üst şeritte süzülür, buz büyüsü atar. Yarı saydam, zor görünür.</p>
+<p><b>Özel:</b> <i>Tipi Çığlığı</i> — AoE buz dalgası (3 şerit), vurulan herkesi 1.5sn <b>dondurur</b> (hareketsiz + hasar alamaz). Dondurma süresi boyunca Alp hiçbir şey yapamaz. Çığlık öncesi 2sn uyarı (rüzgar yoğunlaşması).</p>
+<p><b>Drop:</b> %10 uncommon, Tipi Tozu (gem crafting, %8). <b>Öğretir:</b> Uyarıyı oku, zamanında şerit değiştir (ama buzlu zeminde kayma riski!).</p>
+</div>
+
+<div class="mob-card">
+<h4>🕸️ Kırağı Örümceği</h4>
+<p>Buz ağ atan beyaz örümcek. Ağları zemine yapışır — üzerine basarsan <b>kayma şansı %100</b>'e çıkar.</p>
+<p><b>Özel:</b> <i>Kırağı Ağı</i> — zemine buz ağ döşer (5sn kalır). Bu alandaki şerit değişiminde <b>garanti kayma</b>. Ağ döşemesi uyarısı: örümcek yukarı kalkar, ağ parıltısı.</p>
+<p><b>Drop:</b> %8 common, Kırağı İpliği (crafting, %15). <b>Öğretir:</b> Zemin okuma — ağ olan şeritten kaçın.</p>
+</div>
+
+<div class="mob-card">
+<h4>🧊 Buz Golemi</h4>
+<p>Devasa, kristal buz kütlesi. Oyundaki en yüksek DEF'e sahip normal mob. Çok yavaş, çok sağlam, çok can sıkıcı — ama ateşe karşı <b>eritilir</b>.</p>
+<p><b>Özel:</b> <i>Soğuk Hale</i> — yakınındaki tüm mob'lara <b>soğuk direnci +%20</b> verir (pasif aura). Ayrıca Alp yakınındayken <b>HP regen -%50</b>. Ateş hasarı ile vurulunca DEF her vuruşta -3 düşer (stacklenir).</p>
+<p><b>Drop:</b> %15 uncommon, %5 rare, Ayaz Kristali (değerli crafting, %10). <b>Öğretir:</b> Ateş build'in değeri + aura mob'unu önce öldür.</p>
+</div>
+
+<div class="mob-card" style="border-color:#64b5f6">
+<h4>⚜️ Ayaz Hizmetkârı <span class="badge" style="background:#1e3a5f;color:#64b5f6">ÖNCELİK</span></h4>
+<p>Ayaz Ata'nın seçkin askeri. Buzdan zırh, buz kılıç, soğuk bakışlar. Üst şeritte komut vererek diğer mob'ları <b>koordine eder</b>.</p>
+<p><b>Özel:</b> <i>Buz Emri</i> — hayattayken tüm mob'lar <b>organize hareket</b> eder: aynı anda aynı şerite saldırır (koordineli baskın). Hizmetkâr ölünce mob'lar tekrar dağılır, bireysel hareket eder.</p>
+<p><b>Ayrıca:</b> Her 10sn <b>"Donma Emri"</b> — rastgele bir mob'u buzla kaplar, o mob 3sn hasar almaz (koruma). Bu, Hizmetkâr'ı önce öldürmeyi daha da zorunlu kılar.</p>
+<p><b>Drop:</b> %15 uncommon, %10 rare, Buz Komutan Mührü (set parçası malzemesi). <b>Öğretir:</b> Komutan/koordinatör mob'u tanı ve önce öldür.</p>
+</div>
+
+<div class="mob-card">
+<h4>🦉 Kar Baykuşu</h4>
+<p>Sessiz kanat çırpışıyla üst şeritte süzülür. Gece görüşlü, karanlıkta (tipi sırasında) avantajlı. Alp'e dalış saldırısı yapar.</p>
+<p><b>Özel:</b> <i>Sessiz Dalış</i> — uyarı olmadan dalış → yüksek tek vuruş hasarı. Tipi sırasında dalış hasarı <b>×1.5</b>. Dalıştan sonra 2sn yere iner → kısa süre melee ile vurulabilir.</p>
+<p><b>Drop:</b> %6 common, Kar Baykuşu Tüyü (cosmetic, %4). <b>Öğretir:</b> Üst şerit tehdidine sürekli dikkat — dalış sonrası cezalandır.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MİNİ-BOSS'LAR -->
+<!-- ============================================================ -->
+<section id="mini-bosses">
+<h2>⚔️ Mini-Boss'lar</h2>
+<p>Her mini-boss, Ayaz Doruk'un buzlu/soğuk mekaniğini farklı bir açıdan öğretir.</p>
+
+<div class="boss-card">
+<h3>Stage 10 — Karakoncolos Kralı "Tarak-Han"</h3>
+<p>Diğer cücelerden iki kat büyük, taş tarağı yerine buzdan dev bir tarak taşır. Sürekli dans eder ve hareket eder — yerinde durmuyor.</p>
+<ul>
+<li><b>HP:</b> 1.500 · <b>ATK:</b> 38 · <b>DEF:</b> 10 · <b>SPD:</b> 1.4</li>
+<li><b>Mekanik — Hareket Zorunluluğu:</b> Tarak-Han her 5sn <b>bulunduğu şeride "Don Dairesi"</b> bırakır (4sn kalır). Don Dairesi içinde kalan <b>sürekli hasar alır + yavaşlar</b>. Alp sürekli şerit değiştirmek zorunda.</li>
+<li>Ama buzlu zemin! → şerit değiştirirken kayma riski. "Hareket et ama dikkatli" dengesi.</li>
+<li>HP %30'da 4 Karakoncolos çağırır → cooldown uzatma kabusu + Don Daireleri.</li>
+</ul>
+<p><b>Öğrettiği:</b> Hareketsiz kalmak = ölüm. Sürekli hareket et ama buzda kayma riskini yönet.</p>
+<p><b>Ödül:</b> 10 Ruh Cevheri · %40 rare · 800 altın · 1 Çivili Bot · "Dans Eden Cüce" achievement</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Sübedey der ki: <i>"O cüce dans eder, sen de dans et. Duran donar."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 20 — Buzul Cadısı Çıldık</h3>
+<p>Donmuş bir gölün ortasında duran yaşlı cadı. Etrafındaki her şey buz — ve o bu buzu kontrol ediyor.</p>
+<ul>
+<li><b>HP:</b> 2.200 · <b>ATK:</b> 30 · <b>DEF:</b> 18 · <b>SPD:</b> 0.6</li>
+<li><b>Mekanik — Donma Kırma:</b> Çıldık her 12sn Alp'i <b>tam dondurur</b> (3sn — hasar alamaz, hareket edemez, skill kullanamaz). Ekranda <b>"Kır!" butonu</b> belirir → hızlı tıklayarak (QTE) donmayı 1sn'ye düşürebilirsin.</li>
+<li>Donmuşken Çıldık yaklaşır ve büyük vuruş hazırlar. QTE'yi başarırsan kaçınabilirsin, başaramazsan tam yıkıcı vuruş yersin.</li>
+<li>HP %50'de <b>"Buzul Kalkanı"</b> — 5sn hasar almaz (buz bloğu). Bu sürede 3 Buz Golem'i çağırır.</li>
+</ul>
+<p><b>Öğrettiği:</b> Donma debuff'ını kırmak (QTE), zamanlama + refleks.</p>
+<p><b>Ödül:</b> 14 Ruh Cevheri · 1 garanti rare · 1.500 altın · 100 elmas (ilk geçiş) · Sıcak Çorba ×3</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Mergen der ki: <i>"Buz seni tuttuğunda teslim olma. Kır. İçindeki ateş dışarıdakinden güçlü."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 30 — Çığ Devesi "Ak-Kaya"</h3>
+<p>Dağ keçisi kadar büyük, taş gibi sert, çığ başlatan dev yaratık. Koşarken zemin sallanır.</p>
+<ul>
+<li><b>HP:</b> 3.000 · <b>ATK:</b> 42 · <b>DEF:</b> 20 · <b>SPD:</b> 1.1</li>
+<li><b>Mekanik — Kayma Kontrolü:</b> Ak-Kaya her 8sn <b>"Çığ Koşusu"</b> yapar — bir şeritten diğerine koşar, yolundaki her şeyi ezer. Koşu yönü 1.5sn önce kırmızı okla gösterilir.</li>
+<li>Çığ Koşusu buzlu zemine <b>ekstra buz bırakır</b> → o şeritte kayma şansı %100 olur (5sn). Alp bu şeritten kaçmalı.</li>
+<li>HP %25'te <b>"Tam Çığ"</b> — tüm şeritler buz kaplı olur, 6sn boyunca her yerde kayma %100. Çivili Bot kullan veya ortada kal ve tank et.</li>
+</ul>
+<p><b>Öğrettiği:</b> Kayma mekaniğini tam anlama — buz bölgelerini okuma, güvenli şerit bulma.</p>
+<p><b>Ödül:</b> 20 Ruh Cevheri · Pet Yumurtası (%35 Kök Boğa) · 2.200 altın · "Çığ Sörfçüsü" achievement</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Sübedey der ki: <i>"Çığ geldiğinde koşma — dur, tutun, kayma. Koşarsan o seçer nereye düşeceğini."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 40 — Kış Generali "Buz-Temir"</h3>
+<p>Ayaz Ata'nın sağ kolu, dev buzdan zırhlı savaşçı. Kılıcı her vuruşta soğuk yayar. Barlas gibi bir zamanlar insan olan, ama Ayaz Ata'nın hizmetine girmiş biri.</p>
+<ul>
+<li><b>HP:</b> 4.000 · <b>DEF:</b> 35 · <b>SPD:</b> 0.7</li>
+<li><b>Mekanik — Soğuk Direnci Build:</b> Buz-Temir her vuruşta <b>"Soğuk Birikimi"</b> stack'ı verir (max 10). Her stack: -%3 SPD + -%2 ATK. 10 stack'ta Alp <b>tamamen donar</b> (3sn).</li>
+<li><b>Çözüm:</b> Soğuk Direnci stat'ı yüksekse stack birikimi yavaşlar. Ateş hasarı her vuruşta 1 stack temizler. Sıcak Çorba iksiri tüm stack'ları sıfırlar.</li>
+<li>Buz-Temir ayrıca her 15sn <b>"Kış Çağrısı"</b> → 2 Buz Börüsü + 1 Karakoncolos spawn. Add'ler stack birikimine katkı yapar.</li>
+</ul>
+<p><b>Öğrettiği:</b> Soğuk direnci build'inin zorunlu olduğu durum. Enchant, iksir, stat yatırımı — hazırlık önemli.</p>
+<p><b>Ödül:</b> 28 Ruh Cevheri · garanti 1 epic · 3.000 altın · "Kış Savaşçı Zırhı" (set parçası) · Buz Direnci enchant tarifi</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Barlas der ki: <i>"Ben onu yenemeden bu hale geldim. Senin avantajın — ateşin var. Benim yoktu."</i></div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WORLD BOSS -->
+<!-- ============================================================ -->
+<section id="world-boss">
+<h2>🧊 World Boss — AYAZ ATA</h2>
+<div class="destan">
+<p>Zirveye vardığında rüzgar durdu. Kar durdu. Her şey durdu. Sessizliğin ortasında, buzdan bir tahtta oturan yaşlı bir adam. Beyaz sakalı dizlerine kadar uzanmış, gözleri buz mavisi — ama yorgun. Çok yorgun.</p>
+<p>Ayaz Ata ayağa kalktığında dağ titredi. "Bir konuğum daha. Hep geliyorlar. Hiç gidemiyorlar." Elini kaldırdı — ve dünya donmaya başladı.</p>
+</div>
+
+<div class="worldboss-card">
+<h3>⚔️ Boss Mekaniği</h3>
+<p><b>Kavram:</b> Kışın efendisi. Doğrudan savaşmaz — çevreyi dondurup Alp'i çevre ile öldürmeye çalışır. Melee saldırıları yavaş ama her vuruş dondurma stack'ı verir. Periyodik olarak ekranı dondurur.</p>
+
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Toplam HP</td><td>~20.000 (2 faz: Buz Tahtı 10.000, Kış Fırtınası 10.000)</td></tr>
+<tr><td>ATK</td><td>55</td></tr>
+<tr><td>DEF</td><td>22</td></tr>
+<tr><td>Ekran Dondurma</td><td>Her 30sn (Faz 1) / 20sn (Faz 2) — hareketsiz olanlar hasar alır</td></tr>
+<tr><td>Soğuk Birikimi</td><td>Her vuruşta +2 stack (Buz-Temir'den daha hızlı)</td></tr>
+</table>
+
+<h3>2 Faz Sistemi</h3>
+
+<div class="card">
+<h4>Faz 1 — Buz Tahtı (HP: 10.000)</h4>
+<p>Ayaz Ata tahtında oturur, etrafında buz halesi. Doğrudan melee saldırmaz — uzaktan buz büyüleri ve çevre saldırıları kullanır.</p>
+<p><b>Saldırılar:</b></p>
+<table>
+<tr><th>Saldırı</th><th>Açıklama</th></tr>
+<tr><td>Ekran Dondurma</td><td>Her 30sn ekranın kenarları donar, 3sn boyunca <b>hareketsiz olan herkes</b> saniyede 300 hasar alır. Hareket eden hasar almaz.</td></tr>
+<tr><td>Buz Sütunu</td><td>Rastgele şeritte yerden buz sütunu çıkar (1.5sn uyarı). Vurursa yüksek hasar + donma.</td></tr>
+<tr><td>Kış Neferi Çağrısı</td><td>Her 25sn 2 Ayaz Hizmetkârı + 1 Buz Golemi spawn</td></tr>
+</table>
+<p><b>Taht Mekaniği:</b> Ayaz Ata tahttayken <b>ateş hasarı -%50</b> alır (taht koruması). Tahta 3.000 hasar verilirse kırılır → Ayaz Ata ayağa kalkar, ateş direnci kalkar, Faz 2 başlar.</p>
+<p><b>Strateji:</b> Tahta odaklan (3.000 HP). Tahta vururken add'leri temizle. Ekran dondurma anlarında sürekli hareket et.</p>
+</div>
+
+<div class="card">
+<h4>Faz 2 — Kış Fırtınası (HP: 10.000)</h4>
+<p>Taht kırılır, Ayaz Ata öfkelenir. Ayağa kalkıp doğrudan savaşmaya başlar. Boyutu büyür (dev form), buz asası parlar.</p>
+<p><b>Saldırılar:</b></p>
+<table>
+<tr><th>Saldırı</th><th>Açıklama</th></tr>
+<tr><td>Buz Asası Vuruşu</td><td>Melee, yüksek hasar + 2 soğuk stack. Yavaş ama geniş alan.</td></tr>
+<tr><td>Ekran Dondurma (güçlü)</td><td>Her 20sn, hareketsizlik hasarı saniyede 500'e çıkar</td></tr>
+<tr><td>Buzul Çağrısı</td><td>HP %60'ta: Tüm zemin buzlanır — kayma %50 (5sn)</td></tr>
+<tr><td>Ebedi Kış</td><td>HP %30'da: Tipi başlar, görüş çok azalır + tüm şeritlerde dönen buz parçacıkları (sürekli düşük hasar)</td></tr>
+</table>
+<p><b>Zayıflık:</b> Ateş hasarı artık normal (×1). AMA soğuk birikimi 10 stack'a ulaşınca dondurma süresi <b>5sn</b>'ye çıkar (Faz 1'de 3sn idi). Ateş silahı/enchant çok önemli — her ateş vuruşu 2 stack temizler.</p>
+<p><b>"Ebedi Kış" Mekaniği:</b> HP %30'da Ayaz Ata son gücünü salar. Her yer tipi, buz, soğuk. Çözüm: <b>Çivili Bot + Sıcak Çorba + Ateş Enchant</b> üçlüsünü bu ana sakla. 30 saniye dayanırsan Ayaz Ata enerjisini tüketir, 5sn boyunca çöker (final burst penceresi).</p>
+</div>
+
+<h3>Strateji İpuçları</h3>
+<table>
+<tr><th>İpucu</th><th>Açıklama</th></tr>
+<tr><td>Ateş build hazırla</td><td>Ateş enchant + K'daai Koru (Dünya 2) + Ejder Yavrusu pet → soğuk stack'ı sürekli temizle</td></tr>
+<tr><td>Sürekli hareket et</td><td>Ekran dondurma anında durmak = ölüm</td></tr>
+<tr><td>Faz 1'de tahta odaklan</td><td>3.000 HP'lik taht kırılınca ateş direnci kalkar → büyük DPS artışı</td></tr>
+<tr><td>Consumable'ları sakla</td><td>Çivili Bot + Sıcak Çorba Faz 2 HP %30 için sakla</td></tr>
+<tr><td>Barlas'ın Kılıcı</td><td>Legendary silah, ateş +%25, soğuk direnci +%15 → bu boss için biçilmiş kaftan</td></tr>
+<tr><td>Add'leri hızlı temizle</td><td>Hizmetkâr koordinasyonu + Buz Golemi aurası birleşirse kabus</td></tr>
+</table>
+
+<h3>Çıldırma (Enrage)</h3>
+<p>Savaş <b>7 dakikayı</b> aşarsa Ayaz Ata "Çıldırma"ya girer: ekran sürekli donuk, buz sütunları her 3sn, soğuk birikimi otomatik +1 stack/2sn. Hızlı bitir ya da git.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ÖDÜLLER -->
+<!-- ============================================================ -->
+<section id="rewards">
+<h2>🎁 Ödüller & Unlock'lar</h2>
+
+<h3>Ayaz Ata İlk Geçiş Ödülü</h3>
+<ul>
+<li>💰 <b>45.000 altın</b></li>
+<li>💎 <b>500 elmas</b></li>
+<li>🌱 <b>Kayın Tohumu #4</b></li>
+<li>🥚 Pet Yumurtası — <b>%50 Tulpar, %35 Kök Boğa, %15 Kartal-Ana</b></li>
+<li>🗡️ 1 garanti epic + 1 garanti rare</li>
+<li>🏆 Achievement: "Kışı Yenen"</li>
+</ul>
+
+<h3>Dünya 4 Bitince Açılanlar</h3>
+<ul>
+<li>🗺️ <b>Dünya 5: Andar Ocakları</b> açılır</li>
+<li>🔄 <b>Prestige sistemi ön bilgilendirmesi</b> — Mergen der ki: "Beşinci dalda güçlü bir sınav seni bekliyor. Ama o dalda aynı zamanda... yeniden doğuş var."</li>
+<li>🧪 Yeni enchant tipleri: Buz Direnci, Ateş Kaplama (tüm dünyalarda geçerli)</li>
+<li>📜 Ana Quest Zinciri 5. bölüm</li>
+<li>⚔️ Haftalık Meydan'da yeni zorluk katmanı açılır</li>
+</ul>
+
+<h3>3 Yıldız Bonusu</h3>
+<ul>
+<li>⭐ Stage'i bitir: normal ödül</li>
+<li>⭐⭐ HP %80 üstünde bitir: +125 elmas (ilk kez)</li>
+<li>⭐⭐⭐ 3 dakika altında bitir: +250 elmas + rare item (ilk kez)</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- FARM TAVSİYESİ -->
+<!-- ============================================================ -->
+<section id="farm">
+<h2>🌾 Farm Tavsiyesi</h2>
+<table>
+<tr><th>Amaç</th><th>Önerilen Stage</th><th>Neden</th></tr>
+<tr><td>💰 <b>Altın Farm</b></td><td>Stage 15-20</td><td>Karakoncolos sürüleri çabuk ölür, hızlı döngü</td></tr>
+<tr><td>⭐ <b>XP Farm</b></td><td>Stage 35-40</td><td>Buz Golemi + Ayaz Hizmetkârı = yüksek XP değeri</td></tr>
+<tr><td>💎 <b>Item Farm</b></td><td>Stage 40 (Buz-Temir)</td><td>Epic garanti, "Kış Savaşçı Zırhı" set parçası</td></tr>
+<tr><td>🧪 <b>Malzeme Farm</b></td><td>Stage 25-30</td><td>Ayaz Kristali (Buz Golemi), Don Pulu (Donmuş Mankurt), Tipi Tozu</td></tr>
+<tr><td>🐾 <b>Pet Farm</b></td><td>Stage 30 (Ak-Kaya)</td><td>%35 Kök Boğa pet yumurtası (HP +%20 tank pet)</td></tr>
+<tr><td>⚔️ <b>Barlas Kılıcı</b></td><td>Barlas NPC (Stage 45)</td><td>Legendary silah — onarım malzemesi: 5 Ayaz Kristali gerekiyor</td></tr>
+</table>
+<div class="note"><b>AFK Tavsiyesi:</b> Dünya 4'te AFK farm için Stage 30-35 ideal. Buzlu zemin AFK'da basitleştirilir (kayma %10'a düşer). Ateş enchant'lı silahla Donmuş Mankurt + Buz Golemi eritme hızlı.</div>
+<div class="warn"><b>Uyarı:</b> Tipi stage'lerinde (Stage 20+, rastgele) Yay-Çı -%10 isabet kaybı yaşar. Kam sınıfı bu dünyada AFK farm için en uygun (ateş büyüsü + menzilli).</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HİKAYEDEKİ YERİ -->
+<!-- ============================================================ -->
+<section id="lore-role">
+<h2>🔗 Hikayedeki Yeri</h2>
+<p>Ayaz Doruk, oyunun <b>yalnızlık ve kayıp</b> dünyasıdır. Burada fiziksel zorluk (buz, soğuk) aynı zamanda duygusal bir metafordur — Alp'in iç dünyasındaki boşluk, soğukluk ve suçluluk.</p>
+
+<p>Alp burada:</p>
+<ul>
+<li>✅ <b>Üçüncü hafıza parçasını alır</b> (Stage 35 — yanan köy, "Sen gidersen kim korur bizi?" → suçluluk)</li>
+<li>✅ Donmuş Yiğit Barlas ile tanışır — <b>ondan önceki Alp'ler</b> olduğunu öğrenir (ilk kez)</li>
+<li>✅ Barlas'ın Kırık Kılıcı legendary silahı alır (ateş + soğuk direnci)</li>
+<li>✅ Buzlu zemin mekaniği sayesinde <b>risk yönetimi</b> konusunda ustalaşır</li>
+<li>✅ Prestige sistemi haberi alır (Dünya 5'te açılacak)</li>
+<li>✅ Dördüncü Kayın Tohumu'nu toplar</li>
+</ul>
+
+<div class="lore"><b>Hikaye İpucu:</b> Ayaz Ata yenildiğinde buzdan tahtı çatlar, altından sıcak ışık sızar. Yaşlı adam küçülür, normal boyutuna döner. Fısıldar: <i>"Ben de... sıcaktım bir zamanlar. Ağacın dallarında güneş vardı. Sonra düştüm ve... dondum. Seninle bir farkım var, yiğit — ben hatırlıyorum. Ve hatırlamak... donmaktan daha soğuk."</i></div>
+<p>Bu, Ayaz Ata'nın da Uluğ Kayın'ın kırılan dallarından biri olduğunu doğrular. World boss'lar rastgele canavarlar değil — hepsi <b>ağacın kırık parçaları</b>. Bu pattern artık oyuncu tarafından fark edilmeye başlanır.</p>
+
+<h3>Sonraki Dünyaya Geçiş Cutscene'i</h3>
+<p>Ayaz Ata'nın tahtı eridiğinde, altından kızıl bir ışık patlar. Sıcak, kavurucu, neredeyse yakıcı. Dağın tepesinden aşağıya bakınca uzakta lav nehirleri görünür — volkan. Mergen yanına gelir: <i>"Soğuktan kurtuldun. Ama ateş... ateş soğuktan farklıdır. Soğuk seni durdurur — ateş seni değiştirir. Ve sen, yiğit... değişmeye hazır mısın?"</i> — kamera volkan kraterine dalar. <b>Dünya 5 açılır.</b></p>
+<p class="warn" style="margin-top:16px"><b>⚠️ Dünya 5 — Dönüm Noktası:</b> Andar Ocakları'nda Alp ilk kez geçmişini gerçekten hatırlamaya başlar. Prestige sistemi burada açılır. Oyunun tonu değişir.</p>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<div style="text-align:center;margin-top:60px;padding:30px;color:#666;border-top:1px solid #2a2a40">
+<p>← <a href="world-3-sarikum-denizi.html">Önceki: Sarıkum Denizi</a> · <a href="index.html">Ana Sayfa</a> · <a href="world-5-andar-ocaklari.html">Sonraki: Andar Ocakları →</a></p>
+</div>
+</main>
+</div>
+</body>
+</html>

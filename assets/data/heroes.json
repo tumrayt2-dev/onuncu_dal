@@ -1,0 +1,52 @@
+[
+  {
+    "id": "kalkan_er",
+    "nameKey": "heroKalkanEr",
+    "heroClass": "kalkanEr",
+    "role": "Tank",
+    "resourceType": "irade",
+    "resourceMax": 100,
+    "baseStats": { "hp": 200, "atk": 18, "def": 15, "spd": 0.8, "crit": 5, "critDmg": 150, "dodge": 3, "block": 20, "lifesteal": 0, "hpRegen": 2, "accuracy": 10, "resist": 10, "magicFind": 0 },
+    "perLevel": { "hp": 12, "atk": 1.5, "def": 1.2, "spd": 0.005, "crit": 0.1, "critDmg": 0.5, "dodge": 0.05, "block": 0.3, "lifesteal": 0, "hpRegen": 0.2, "accuracy": 0.2, "resist": 0.15, "magicFind": 0 }
+  },
+  {
+    "id": "kurt_boru",
+    "nameKey": "heroKurtBoru",
+    "heroClass": "kurtBoru",
+    "role": "MeleeDPS",
+    "resourceType": "ofke",
+    "resourceMax": 100,
+    "baseStats": { "hp": 150, "atk": 28, "def": 8, "spd": 1.1, "crit": 10, "critDmg": 175, "dodge": 8, "block": 0, "lifesteal": 5, "hpRegen": 1, "accuracy": 12, "resist": 5, "magicFind": 0 },
+    "perLevel": { "hp": 8, "atk": 2.5, "def": 0.6, "spd": 0.008, "crit": 0.15, "critDmg": 1.0, "dodge": 0.1, "block": 0, "lifesteal": 0.05, "hpRegen": 0.1, "accuracy": 0.2, "resist": 0.05, "magicFind": 0 }
+  },
+  {
+    "id": "kam",
+    "nameKey": "heroKam",
+    "heroClass": "kam",
+    "role": "Caster",
+    "resourceType": "ruh",
+    "resourceMax": 150,
+    "baseStats": { "hp": 110, "atk": 32, "def": 5, "spd": 0.9, "crit": 8, "critDmg": 200, "dodge": 5, "block": 0, "lifesteal": 0, "hpRegen": 1, "accuracy": 15, "resist": 15, "magicFind": 10 },
+    "perLevel": { "hp": 6, "atk": 3.0, "def": 0.4, "spd": 0.006, "crit": 0.12, "critDmg": 1.2, "dodge": 0.08, "block": 0, "lifesteal": 0, "hpRegen": 0.1, "accuracy": 0.3, "resist": 0.2, "magicFind": 0.2 }
+  },
+  {
+    "id": "yay_ci",
+    "nameKey": "heroYayCi",
+    "heroClass": "yayCi",
+    "role": "Ranged",
+    "resourceType": "soluk",
+    "resourceMax": 80,
+    "baseStats": { "hp": 120, "atk": 24, "def": 7, "spd": 1.2, "crit": 12, "critDmg": 180, "dodge": 10, "block": 0, "lifesteal": 0, "hpRegen": 1, "accuracy": 18, "resist": 5, "magicFind": 5 },
+    "perLevel": { "hp": 7, "atk": 2.2, "def": 0.5, "spd": 0.007, "crit": 0.18, "critDmg": 1.0, "dodge": 0.12, "block": 0, "lifesteal": 0, "hpRegen": 0.1, "accuracy": 0.35, "resist": 0.05, "magicFind": 0.1 }
+  },
+  {
+    "id": "golge_bek",
+    "nameKey": "heroGolgeBek",
+    "heroClass": "golgeBek",
+    "role": "BurstCrit",
+    "resourceType": "sir",
+    "resourceMax": 5,
+    "baseStats": { "hp": 100, "atk": 22, "def": 6, "spd": 1.4, "crit": 15, "critDmg": 200, "dodge": 12, "block": 0, "lifesteal": 0, "hpRegen": 0.5, "accuracy": 14, "resist": 5, "magicFind": 10 },
+    "perLevel": { "hp": 5, "atk": 2.0, "def": 0.4, "spd": 0.01, "crit": 0.2, "critDmg": 1.5, "dodge": 0.15, "block": 0, "lifesteal": 0, "hpRegen": 0.05, "accuracy": 0.25, "resist": 0.05, "magicFind": 0.15 }
+  }
+]

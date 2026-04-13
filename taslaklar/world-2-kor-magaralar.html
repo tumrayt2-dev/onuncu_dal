@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dünya 2: Kör Mağaralar | ALP Wiki</title>
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="sidebar-logo"><h1>⚔️ ALP</h1><div class="version">Uluğ Kayın'ın Düşüşü</div></div>
+<nav>
+<div class="nav-section">ANA</div>
+<a href="index.html">🏠 Ana Sayfa</a>
+<a href="systems.html">⚙️ Sistemler</a>
+<a href="story.html">📖 Hikaye & NPC'ler</a>
+<a href="sequels.html">🔮 Oyun 2 & 3</a>
+
+<div class="nav-section">DÜNYALAR</div>
+<a href="world-1-kayin-vadisi.html">🌲 1. Kayın Vadisi</a>
+<a href="world-2-kor-magaralar.html" class="active">🕳️ 2. Kör Mağaralar</a>
+<a href="world-3-sarikum-denizi.html">🏜️ 3. Sarıkum Denizi</a>
+<a href="world-4-ayaz-doruk.html">❄️ 4. Ayaz Doruk</a>
+<a href="world-5-andar-ocaklari.html">🔥 5. Andar Ocakları</a>
+<a href="world-6-ak-yayik-gokleri.html">☁️ 6. Ak Yayık Gökleri</a>
+<a href="world-7-yutpa-derinlikleri.html">🌊 7. Yutpa Derinlikleri</a>
+<a href="world-8-toybodim-nehri.html">⚰️ 8. Toybodım Nehri</a>
+<a href="world-9-kara-demir-sarayi.html">👑 9. Kara Demir Sarayı</a>
+<a href="world-10-bosluk-tengiz.html">🌌 10. Boşluk Tengiz</a>
+
+<div class="nav-section">BU SAYFA</div>
+<a href="#story">🎬 Hikaye</a>
+<a href="#world-effect">🌑 Dünya Etkisi</a>
+<a href="#npcs">👤 NPC'ler</a>
+<a href="#env">🕳️ Ortam</a>
+<a href="#mobs">👹 Mob Listesi</a>
+<a href="#mini-bosses">⚔️ Mini-Boss'lar</a>
+<a href="#world-boss">👁️ Büyük Abaası</a>
+<a href="#rewards">🎁 Ödüller</a>
+<a href="#farm">🌾 Farm Tavsiyesi</a>
+<a href="#lore-role">🔗 Hikayedeki Yeri</a>
+</nav>
+</aside>
+
+<main class="main">
+<h1 class="title">🕳️ Dünya 2 — Kör Mağaralar</h1>
+<p class="subtitle">Güneşin asla ulaşmadığı derinlik · Büyük Abaası'nın gözü · İkinci Kayın Tohumu</p>
+
+<!-- ============================================================ -->
+<!-- HİKAYE -->
+<!-- ============================================================ -->
+<section id="story">
+<h2>🎬 Hikaye Kutusu</h2>
+<div class="destan">
+<p>Yelbegen'in cesedinden açılan yarıktan aşağı indikçe ışık söndü. Önce gri, sonra koyu mavi, sonra... hiç. Alp, hayatında ilk kez gerçek karanlıkla tanıştı.</p>
+<p>Ama karanlık boş değildi. Duvarlarda fosforlu mantarlar soluk bir yeşil ışık saçıyordu — yeterince görmek için değil, yeterince korkmak için. Ve derinlerden, tek bir dev göz, parlak kırmızı bir ışıkla bakıyordu.</p>
+<p>Abaası. Yeraltının ilk sakinleri. Tek gözlü, taş tenli, karanlığın çocukları. Ve onların en büyüğü, Alp'in geldiğini çoktan biliyordu.</p>
+</div>
+<p>Kör Mağaralar, Uluğ Kayın'ın ikinci kırık dalının savrulduğu yerdir. Dalın düştüğü yerde devasa bir mağara sistemi oluşmuş — kilometrelerce derine inen tüneller, fosforlu göller, kristal odaları. Ama bu güzelliğin altında Abaası halkı pusuda bekler.</p>
+<p>Alp'in görevi: mağaranın en derin noktasına in, Büyük Abaası'nın taş bakışını kır, ikinci Kayın Tohumu'nu kurtar.</p>
+<div class="lore"><b>Alp'in Hafızası:</b> Bu dünyada Alp <b>ilk hafıza parçasını</b> alır. Stage 25 civarında kısa bir flashback: bir elin uzandığı, birisinin adını söylediği bulanık bir görüntü. Ad duyulmaz ama Alp tedirgin olur. "Ben... birini tanıyordum."</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DÜNYA ETKİSİ -->
+<!-- ============================================================ -->
+<section id="world-effect">
+<h2>🌑 Dünya Etkisi — Karanlık</h2>
+<div class="warn">
+<b>Kör Mağaralar'ın özel savaş etkisi:</b> Tüm mob'lar varsayılan olarak <b>siluet</b> halinde görünür — siyah gölge, detay yok. Mob sadece <b>saldırı anında</b> 1 saniyeliğine tam görünür olur (kısa fosfor parıltısı). Bu süre dışında mob türünü, HP'sini ve pozisyonunu tahmin etmek zorundadır oyuncu.
+</div>
+<h3>Karanlık Mekaniği Detayları</h3>
+<table>
+<tr><th>Özellik</th><th>Açıklama</th></tr>
+<tr><td>Varsayılan görünüm</td><td>Mob'lar siyah siluet (boyut + hareket görünür, tür ayırt edilmez)</td></tr>
+<tr><td>Parıltı tetikleyici</td><td>Mob saldırınca veya Alp mob'a vurduğunda → 1sn tam görünür</td></tr>
+<tr><td>Fosfor Mantarı (ortam)</td><td>Rastgele yerlerde küçük ışık havuzları — bu alanlardaki mob'lar her zaman görünür</td></tr>
+<tr><td>Meşale item'ı</td><td>Stage 5'te Kübey'den alınır. Kullanınca 8sn boyunca tüm mob'lar görünür (cooldown: 30sn)</td></tr>
+<tr><td>Stage ilerledikçe</td><td>Stage 30+ → fosfor mantarları azalır, karanlık yoğunlaşır</td></tr>
+</table>
+<div class="note"><b>Oyun İçi Bilgilendirme:</b> Dünya 2'nin ilk stage'inde ekranda bilgi kartı açılır: "🌑 Karanlık Bölge — Düşmanlar gölgede gizleniyor. Saldırı anlarını gözle, meşaleyi kullan!" + [Anladım] butonu.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- NPC'LER -->
+<!-- ============================================================ -->
+<section id="npcs">
+<h2>👤 Bu Dünyanın NPC'leri</h2>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🔨</div>
+<div><div class="npc-name">Demirci Kübey</div><div class="npc-role">Ekipman / Upgrade NPC (Sabit)</div></div>
+</div>
+<p>Mağaranın girişindeki ilk kavşakta ocağını kurmuş. Nasıl buraya geldi? Sorma. Alp sorduğunda sadece omuz silker: <i>"Demir neredeyse ben oradayım."</i></p>
+<div class="npc-quote">"Bu karanlıkta gözün değil, elindeki çelik çalışır. Ver, sertleştireyim."</div>
+<p><b>Özel:</b> Dünya 2'de Kübey, <b>Meşale</b> item'ını ilk kez burada satar (100 altın). Ayrıca mağara malzemelerinden (Fosfor Özü, Kör Taşı) yeni enchant seçenekleri sunar.</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">📜</div>
+<div><div class="npc-name">Gezgin Bilge Mergen</div><div class="npc-role">Anlatıcı / Quest Veren (Sabit)</div></div>
+</div>
+<p>Mağaranın girişinde, fosforlu bir mantarın altında oturuyor. Gözleri karanlığa alışmış gibi — belki de buraya ilk gelen o.</p>
+<div class="npc-quote">"Karanlıkta yürümek cesaret ister, yiğit. Ama karanlıkta durmak... işte asıl o bilgelik ister."</div>
+<p><b>Rolü:</b> 1 ana quest ("Büyük Abaası'nın Gözünü Söndür") + 3 yan quest verir.</p>
+<p><b>Yan Quest'ler:</b></p>
+<table>
+<tr><th>Quest</th><th>Görev</th><th>Ödül</th></tr>
+<tr><td>Fosfor Toplayıcı</td><td>15 Fosfor Mantarı topla</td><td>500 altın + 1 Meşale</td></tr>
+<tr><td>Körmös Avcısı</td><td>20 Körmös öldür</td><td>3 Ruh Cevheri + rare item</td></tr>
+<tr><td>Kör Gölün Sırrı</td><td>Stage 35'teki gizli odayı bul</td><td>50 elmas + "Kör Göl" cosmetic title</td></tr>
+</table>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🦇</div>
+<div><div class="npc-name">Yarasa-Kam Karaçı</div><div class="npc-role">Dünya 2 Özel — Kör Şaman</div></div>
+</div>
+<p>Doğuştan kör bir şaman. Gözlerinin olması gereken yerde pürüzsüz deri var. Ama "görür" — sesle, titreşimle, ruhla. Mağaranın orta bölgesinde (Stage 15+) yaşar. Etrafında her zaman 3-4 yarasa döner.</p>
+<div class="npc-quote">"Gözlerine güvenme. Kulakların sana daha çok şey söyler. O büyük gözün bakışından kaç — ama sesini dinle, zayıflığını söylüyor."</div>
+<p><b>Rolü:</b> Büyük Abaası hakkında ipuçları verir. Stage 25'te Alp'in ilk hafıza flashback'ini tetikleyen kısa bir ritüel yapar. "Davulumu çaldığımda bir şey gördün, değil mi? O hatıra senin. Kaybettiğin bir parça."</p>
+<p><b>Mekanik katkısı:</b> Karaçı ile konuşunca "Yankı Duyusu" pasif buff alırsın (30 dakika): siluet mob'ların şerit konumu mini-haritada gösterilir. Kısa bir avantaj.</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">⛏️</div>
+<div><div class="npc-name">Maden-Er Toğrul</div><div class="npc-role">Dünya 2 Özel — Madenci / Crafting NPC</div></div>
+</div>
+<p>Mağaranın derinlerinde kristal damarlarını kazan yaşlı madenci. Bir zamanlar yüzeyde yaşamış ama Abaası'ların "taş bakışından" kaçamayıp tek kolu taşlaşmış. Taş kolu kazma olarak kullanıyor.</p>
+<div class="npc-quote">"Taş olduk diye ölmedik, yiğit. Taş da işe yarar — bakışa inat."</div>
+<p><b>Rolü:</b> Mağaraya özel crafting malzemeleri satar/takas eder. <b>Kör Taşı</b> (Abaası drop) + <b>Fosfor Özü</b> (mantar toplama) ile mağaraya özel ekipman üretir:</p>
+<table>
+<tr><th>Ekipman</th><th>Maliyet</th><th>Etki</th></tr>
+<tr><td>Fosfor Yüzüğü</td><td>10 Fosfor Özü</td><td>Karanlıkta mob görünürlük mesafesi +%30</td></tr>
+<tr><td>Kör Taş Kalkanı</td><td>5 Kör Taşı + 500 altın</td><td>DEF +15, taş bakışına %20 direnç</td></tr>
+<tr><td>Yankı Kolyesi</td><td>3 Kör Taşı + 3 Fosfor Özü</td><td>Karanlıktaki mob'ların HP barını gösterir</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ORTAM -->
+<!-- ============================================================ -->
+<section id="env">
+<h2>🕳️ Ortam & Atmosfer</h2>
+
+<h3>Parallax Arka Plan (3 Katman)</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td><b>Uzak</b></td><td>Koyu lacivert-siyah derinlik, uzakta kristal parıltıları (yıldız gibi), damlayan su izleri</td></tr>
+<tr><td><b>Orta</b></td><td>Devasa sarkıt/dikit silüetleri, fosforlu mantar kümeleri (yeşil-mavi ışık), ara sıra yarasa sürüsü geçişi</td></tr>
+<tr><td><b>Yakın</b></td><td>Islak kayalık zemin, su birikintileri (yansıma efekti), düşen su damlaları, küçük böcek/solucan hareketleri</td></tr>
+</table>
+
+<h3>Işık Sistemi</h3>
+<p>Kör Mağaralar'da dinamik ışık sistemi var — Dünya 1'den farklı olarak ekran varsayılan olarak karanlık:</p>
+<table>
+<tr><th>Işık Kaynağı</th><th>Yarıçap</th><th>Açıklama</th></tr>
+<tr><td>Alp'in etrafı</td><td>Küçük hale</td><td>Alp'in kendi loş ışığı (2-3 karakter genişliği)</td></tr>
+<tr><td>Fosfor mantarları</td><td>Orta alan</td><td>Sabit noktalar, mob'ları aydınlatır</td></tr>
+<tr><td>Meşale (item)</td><td>Büyük alan</td><td>8sn tam aydınlık, cooldown 30sn</td></tr>
+<tr><td>Mob saldırısı</td><td>Kısa parıltı</td><td>1sn mob'u tam gösterir</td></tr>
+<tr><td>Kristal odaları</td><td>Tam aydınlık</td><td>Stage 20, 35, 50'de — mini-boss ve boss arenası</td></tr>
+</table>
+
+<h3>Hava Durumu (Mağara İçi)</h3>
+<table>
+<tr><th>Efekt</th><th>Stage</th><th>Açıklama</th></tr>
+<tr><td>💧 Su damlası</td><td>Default</td><td>Sürekli damlama sesi + görsel</td></tr>
+<tr><td>🌊 Yeraltı seli</td><td>Stage 20+</td><td>Ara sıra alt şeriti su basar (2sn), o şeritteki herkes yavaşlar</td></tr>
+<tr><td>💎 Kristal titreşimi</td><td>Stage 40+</td><td>Duvarlar titrer, taş parçaları düşer (küçük hasar)</td></tr>
+</table>
+
+<h3>Ses Ambiyansı</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td>Müzik</td><td>Düşük frekanslı drone + damla ritmi + uzak yankılı davul. Daha koyu, daha yavaş tempo (Dünya 1'den farklı)</td></tr>
+<tr><td>Ambiyans</td><td>Su damlası yankısı, uzak rüzgar uğultusu, yarasa kanat çırpması, kristal çınlaması</td></tr>
+<tr><td>Stage 35+</td><td>Derinden gelen ritimli bir kalp atışı sesi — Büyük Abaası yaklaşıyor</td></tr>
+<tr><td>Stage 45+</td><td>Kalp atışı hızlanır, arada dev bir göz açılıp kapanma sesi (wet blink)</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- MOB LİSTESİ -->
+<!-- ============================================================ -->
+<section id="mobs">
+<h2>👹 Mob Listesi (8 adet)</h2>
+<p>Stage scaling: HP <code>×1.10/stage</code>, ATK <code>×1.08/stage</code> (Dünya 1'den %2 daha sert). Aşağıdaki stat'lar <b>Stage 1 base</b> (Dünya 2 Stage 1 = genel Stage 51).</p>
+
+<table>
+<tr><th>Mob</th><th>Arketip</th><th>Şerit</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>XP</th><th>Altın</th></tr>
+<tr><td>Abaası Neferi</td><td>Melee</td><td><span class="lane-orta">Orta</span></td><td>85</td><td>18</td><td>8</td><td>0.8</td><td>14</td><td>10-15</td></tr>
+<tr><td>Körmös</td><td>Caster</td><td><span class="lane-orta">Orta</span></td><td>60</td><td>25</td><td>4</td><td>0.7</td><td>18</td><td>12-18</td></tr>
+<tr><td>Mağara Solucanı</td><td>Burrower</td><td><span class="lane-alt">Alt</span></td><td>50</td><td>20</td><td>3</td><td>1.2</td><td>12</td><td>8-14</td></tr>
+<tr><td>Taş Golem</td><td>Tank</td><td><span class="lane-orta">Orta</span></td><td>200</td><td>14</td><td>20</td><td>0.4</td><td>25</td><td>18-28</td></tr>
+<tr><td>K'daai Çırağı</td><td>Self-destruct</td><td><span class="lane-orta">Orta</span></td><td>35</td><td>40</td><td>0</td><td>1.3</td><td>16</td><td>14-20</td></tr>
+<tr><td>Fosfor Örümceği</td><td>Pack (2'li)</td><td><span class="lane-alt">Alt</span></td><td>45</td><td>16</td><td>5</td><td>1.1</td><td>11</td><td>9-13</td></tr>
+<tr><td class="r-uncommon">Kristal Perisi</td><td>Buffer ⚠️</td><td><span class="lane-ust">Üst</span></td><td>55</td><td>10</td><td>6</td><td>0.9</td><td>28</td><td>20-30</td></tr>
+<tr><td>Kör Yarasa Sürüsü</td><td>Flying/Swarm</td><td><span class="lane-ust">Üst</span></td><td>20×5</td><td>8</td><td>1</td><td>1.6</td><td>15</td><td>10-16</td></tr>
+</table>
+
+<div class="mob-card">
+<h4>👁️ Abaası Neferi</h4>
+<p>Tek gözlü, gri tenli, taş gibi sert yeraltı savaşçısı. Yavaş ama sağlam. Karanlıkta zor görülür — siluet olarak diğer mob'lara benzer ama boyutu büyüktür.</p>
+<p><b>Özel:</b> <i>Taş Bakış</i> — her 10sn bakışıyla Alp'e %15 yavaşlatma (3sn). Meşale aktifken taş bakış etkisizleşir.</p>
+<p><b>Drop:</b> %6 common, %2 uncommon. <b>Kör Taşı</b> (crafting, %8). <b>Öğretir:</b> Meşale zamanlama.</p>
+</div>
+
+<div class="mob-card">
+<h4>👻 Körmös</h4>
+<p>Ruhların kötü versiyonları. Yarı saydam, havada süzülür. Karanlıkta neredeyse tamamen görünmez — sadece saldırırken fosforlu bir parıltı yayar.</p>
+<p><b>Özel:</b> <i>Ruh Çığlığı</i> — AoE büyü, tüm şeritlere 3sn boyunca hasar. Çığlık atarken 2sn tam görünür olur (vuruş penceresi).</p>
+<p><b>Drop:</b> %5 uncommon, Ruh Parçası (quest item, %10). <b>Öğretir:</b> Görünür olduğu anı yakala.</p>
+</div>
+
+<div class="mob-card">
+<h4>🪱 Mağara Solucanı</h4>
+<p>Yeraltından aniden fırlayan dev solucan. Alt şeritte toprağın altında hareket eder — yüzeyde <b>toz bulutu</b> görünür (dikkat ederek tahmin et).</p>
+<p><b>Özel:</b> <i>Yeraltı Atağı</i> — 1.5sn yer altında görünmez, sonra fırlayıp vurur (yüksek hasar). Fırladığı anda savunmasız (0.5sn).</p>
+<p><b>Drop:</b> %7 common, Solucan Dişi (malzeme, %12). <b>Öğretir:</b> Toz bulutunu oku, zamanlama.</p>
+</div>
+
+<div class="mob-card">
+<h4>🪨 Taş Golem</h4>
+<p>Devasa, yavaş, neredeyse yıkılmaz. Karanlıkta bir kaya gibi durur — bazen gerçekten kaya sanırsın.</p>
+<p><b>Özel:</b> <i>Taş Kabuk</i> — HP %30 altına düşene kadar hasar -%50 alır (yarı hasar). %30 altında kabuk kırılır, DEF 0'a düşer.</p>
+<p><b>Drop:</b> %12 uncommon, Golem Çekirdeği (crafting, %5). <b>Öğretir:</b> Sabır + burst zamanlama (kabuk kırılınca full hasar).</p>
+</div>
+
+<div class="mob-card">
+<h4>🔥 K'daai Çırağı</h4>
+<p>Ateş cini çırağı. Küçük, turuncu parıltılı — karanlıkta en kolay görünen mob. Ama tehlikeli: <b>ölünce patlar.</b></p>
+<p><b>Özel:</b> <i>Ateş Patlaması</i> — öldürüldüğünde 2 şerit genişliğinde AoE patlama (yüksek hasar). Uzaktan öldürürsen güvenli, yakında öldürürsen hasar alırsın.</p>
+<p><b>Drop:</b> %10 common, K'daai Koru (ateş enchant malzemesi, %15). <b>Öğretir:</b> Menzil yönetimi — yakın sınıflar dikkatli olmalı.</p>
+</div>
+
+<div class="mob-card">
+<h4>🕷️ Fosfor Örümceği</h4>
+<p>Her zaman 2'li gelir. Küçük, hızlı, yeşil fosfor ışığıyla parlar. Alt şeritten ağ atarak Alp'i <b>yerinde sabitler</b>.</p>
+<p><b>Özel:</b> <i>Fosfor Ağı</i> — Alp'i 2sn hareketsiz kılar (şerit değiştiremez). Bu sürede diğer mob'lar vurmaya devam eder.</p>
+<p><b>Drop:</b> %8 common, Fosfor Özü (crafting, %20). <b>Öğretir:</b> Ağ beklentisi — sabitlenme riskini hesapla, önce örümceği temizle.</p>
+</div>
+
+<div class="mob-card" style="border-color:#42a5f5">
+<h4>💎 Kristal Perisi <span class="badge" style="background:#1e3a5f;color:#64b5f6">ÖNCELİK</span></h4>
+<p>Dünya 1'deki Albıs Perisi'nin mağara versiyonu. Kristal kanatları, saydamsı vücut. Üst şeritte uçar.</p>
+<p><b>Özel:</b> <i>Kristal Yansıması</i> — yakınındaki mob'lara <b>+%25 DEF buff</b> verir (mob'lar daha az hasar alır). Ayrıca her 8sn bir kristal kalkan oluşturur (hedef mob 1 saldırıyı sıfır hasarla geçiştirir).</p>
+<p><b>Drop:</b> %15 uncommon, %8 rare, Kristal Parçası (gem crafting). <b>Öğretir:</b> Buffer mob'u tanı ve ilk öldür — DEF buff'ı savaşı çok uzatır.</p>
+</div>
+
+<div class="mob-card">
+<h4>🦇 Kör Yarasa Sürüsü</h4>
+<p>5 yarasadan oluşan sürü. Üst şeritte uçar, tek tek zayıf ama AoE olmadan bitmez. Karanlıkta ses çıkarır (ama görünmez).</p>
+<p><b>Özel:</b> <i>Sonar Çığlık</i> — sürü olarak her 5sn AoE ses dalgası atar (orta şeriti de etkiler). Tek tek öldürülürler ama her yarasanın ayrı HP'si var.</p>
+<p><b>Drop:</b> %5 common her yarasa, Yarasa Kulağı (cosmetic, %3). <b>Öğretir:</b> AoE skill önemi, üst şerit erişimi.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MİNİ-BOSS'LAR -->
+<!-- ============================================================ -->
+<section id="mini-bosses">
+<h2>⚔️ Mini-Boss'lar</h2>
+<p>Her mini-boss, Kör Mağaralar'ın karanlık mekaniğine dair farklı bir sistemi öğretir.</p>
+
+<div class="boss-card">
+<h3>Stage 10 — Karanlık Avcısı Tülek</h3>
+<p>Tek gözlü, çevik bir Abaası avcısı. Karanlığın içinden sessizce yaklaşır. Gözü kırmızı parlar — tek ışık kaynağı o.</p>
+<ul>
+<li><b>HP:</b> 800 · <b>ATK:</b> 30 · <b>DEF:</b> 10 · <b>SPD:</b> 1.1</li>
+<li><b>Mekanik — Karanlıkta Hedefleme:</b> Tülek sürekli şerit değiştirir ve karanlıkta kaybolur. Sadece gözünün kırmızı parıltısı görünür. Vurmak için parıltıyı takip etmen gerek.</li>
+<li>Her 12sn <b>"Pusu Atağı"</b> — karanlıktan aniden çıkar, %200 hasar. Bunu sadece göz parıltısının hızla yaklaştığını görerek tahmin edebilirsin.</li>
+<li>HP %40'ta ışığı tamamen söner, 5sn boyunca görünmez. Bu sürede sadece ses (ayak sesleri) ipucudur.</li>
+</ul>
+<p><b>Öğrettiği:</b> Karanlıkta görsel ve sesli ipuçlarını takip etme. Siluet okuma.</p>
+<p><b>Ödül:</b> 5 Ruh Cevheri · %40 rare · 400 altın · 1 Meşale</p>
+<div class="note"><b>💡 Savaş İpucu (Katman 1):</b> Karaçı der ki: <i>"Gözünü kapat. Onun gözünü dinle — nereye gittiğini söylüyor."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 20 — Fosfor Kraliçesi</h3>
+<p>Dev bir fosforlu mantar, etrafında sürekli spor bulutları saçar. Odanın ışık kaynağı — ama bu bir tuzak.</p>
+<ul>
+<li><b>HP:</b> 1.400 · <b>ATK:</b> 22 · <b>DEF:</b> 15 · <b>SPD:</b> 0.5</li>
+<li><b>Mekanik — Işık Kaynağı Koruma:</b> Kraliçe odanın ortasında durur ve etrafında <b>3 Fosfor Fidanı</b> vardır. Fidanlar ışık yayar — mob'lar fidanların yanında tam görünür.</li>
+<li>Ama Kraliçe her 15sn bir fidanı söker (ışık alanı küçülür). Oyuncu fidanları yıkmadan Kraliçe'yi öldürmeye çalışmalı — ama Kraliçe fidanlar varken +%30 HP regen alır.</li>
+<li><b>İkilem:</b> Fidanları yıkarak regen'i kes (ama karanlık artar) VEYA fidanları koru ve regen'e rağmen ışıkta savaş.</li>
+</ul>
+<p><b>Öğrettiği:</b> Kaynak yönetimi ikilemi. "İki kötü arasından en azını seç" prensibi.</p>
+<p><b>Ödül:</b> 8 Ruh Cevheri · 1 garanti rare · 800 altın · 50 elmas (ilk geçiş) · 5 Fosfor Özü</p>
+<div class="note"><b>💡 Savaş İpucu (Katman 1):</b> Mergen der ki: <i>"Işık güzel ama bedeli var. Karanlık korkutur ama serbest bırakır. Seçim senin."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 30 — Yankı Yiyen Sessiz</h3>
+<p>Görünmeyen bir yaratık. Adı bile yok — madenciler ona "Sessiz" der. Hiçbir zaman tam görünmez, sadece <b>ses</b> çıkarır.</p>
+<ul>
+<li><b>HP:</b> 2.000 · <b>ATK:</b> 38 · <b>DEF:</b> 12 · <b>SPD:</b> 1.0</li>
+<li><b>Mekanik — Ses Tabanlı Konum:</b> Sessiz asla görünmez (meşale bile işe yaramaz!). Ama 3 ipucu vardır:</li>
+<li>🔊 <b>Ayak sesi</b> — hangi şeritte olduğunu gösterir (sol/sağ stereo)</li>
+<li>💨 <b>Nefes sesi</b> — ne kadar yakın olduğunu gösterir (yükseldikçe yakın)</li>
+<li>⚡ <b>Saldırı öncesi çığlık</b> — 1sn önce hırıltı duyulur, o şeritten kaç</li>
+<li>Alp'in vurduğu yer isabet ederse hasar verir + kısa parıltı (0.3sn). Iskalayınca "miss" yazısı çıkar.</li>
+</ul>
+<p><b>Öğrettiği:</b> Ses ipuçlarını okuma, tahmin yürütme, refleks. Görsel olmayan bilgi kullanımı.</p>
+<p><b>Ödül:</b> 12 Ruh Cevheri · Pet Yumurtası (%30 Kör Yarasa pet) · 1.200 altın · "Sessiz'i Duyan" achievement</p>
+<div class="note"><b>💡 Savaş İpucu (Katman 1):</b> Karaçı der ki: <i>"Onu göremezsin. Ben de göremem. Ama ikimiz de duyabiliriz."</i></div>
+<div class="warn"><b>⚠️ Kulaklık Önerisi:</b> Bu mini-boss stereo ses kullanır. Oyun içinde kulaklık ikonu ile uyarı gösterilir.</div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 40 — Kör Göz Muhafızı</h3>
+<p>Büyük Abaası'nın kişisel koruması. Devasa, zırhlı, tek gözü Abaası'nınki gibi kırmızı parlar. Ama bu göz — hem gücü hem zayıflığı.</p>
+<ul>
+<li><b>HP:</b> 3.000 · <b>DEF:</b> 28 · <b>SPD:</b> 0.6</li>
+<li><b>Mekanik — Tek Göz Zayıflığı:</b> Muhafız'ın gözü her 10sn açılır (2sn). Göz açıkken:</li>
+<li>➡️ Muhafız "Taş Bakış" atar (bakmayı önlemek gerek — şerit değiştir VEYA karşı şeride dön)</li>
+<li>➡️ AMA göz açıkken gözüne vurarsan <b>×3 CRIT hasar</b> + 4sn sersemletme</li>
+<li><b>İkilem:</b> Göz açılınca kaç mı (güvenli) yoksa risk alıp gözüne vur mu (yüksek ödül)?</li>
+<li>Göz kapalıyken normal hasar alır ama DEF 28 çok yüksek → uzun sürer.</li>
+</ul>
+<p><b>Öğrettiği:</b> Risk/ödül hesabı. Zayıf nokta vuruşu (Büyük Abaası'na hazırlık — aynı mekanik daha karmaşık).</p>
+<p><b>Ödül:</b> 20 Ruh Cevheri · garanti 1 epic · 2.000 altın · "Kör Taş Zırhı" (set parçası)</p>
+<div class="note"><b>💡 Savaş İpucu (Katman 1):</b> Toğrul der ki: <i>"O göz açılınca herkes kaçar. Ama cesur olan oraya vurur. Tercih senin, yiğit."</i></div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WORLD BOSS -->
+<!-- ============================================================ -->
+<section id="world-boss">
+<h2>👁️ World Boss — BÜYÜK ABAASI</h2>
+<div class="destan">
+<p>Mağaranın en derinine indiğinde, tavanın çöktüğü devasa bir boşlukta karşılaştın onunla. Tek bir göz — ama öyle bir göz ki odanın yarısı kadar. Kırmızı, nemli, sürekli kırpışan. Ve baktığında...</p>
+<p>Baktığında her şey donuyor. Taş oluyor. Ölmüyor — daha kötüsü: yaşıyor ama kıpırdayamıyor. Toğrul'un kolu gibi.</p>
+</div>
+
+<div class="worldboss-card">
+<h3>⚔️ Boss Mekaniği</h3>
+<p><b>Kavram:</b> Devasa tek gözlü yaratık. Göz mekaniği savaşın kalbi. Gövdesi mağara duvarıyla bütünleşmiş — hareket etmiyor. Ama gözü her şeridi tarıyor.</p>
+
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Toplam HP</td><td>~15.000 (3 bar: Dış Kabuk 5.000, İç Kabuk 5.000, Göz Çekirdeği 5.000)</td></tr>
+<tr><td>ATK</td><td>45</td></tr>
+<tr><td>DEF (kabuk)</td><td>30 (kabuk aktifken), 5 (kabuk kırılınca)</td></tr>
+<tr><td>Göz açılma süresi</td><td>Her 15sn → 4sn açık kalır</td></tr>
+<tr><td>Taş Bakış hasarı</td><td>Bakışa yakalanırsan: 3sn taşlaşma (hasar alamaz, hareket edemez)</td></tr>
+</table>
+
+<h3>3 HP Barı — Faz Sistemi</h3>
+
+<div class="card">
+<h4>Faz 1 — Dış Kabuk (HP: 5.000)</h4>
+<p>Abaası'nın vücudu taş zırhla kaplı. Göz kapalı başlar, sadece <b>tentakül kollarıyla</b> saldırır (3 şerite uzanır).</p>
+<p><b>Tentakül Paterni:</b> Alt → Orta → Üst sırayla vurur (önceden bildirilen sıra). Oyuncu sırayı okuyup şerit değiştirir.</p>
+<p>Göz ilk kez 30sn sonra açılır. Bu fazda göze vurmak ŞART değil — kabuk kırılınca Faz 2'ye geçer.</p>
+<p><b>Add'ler:</b> Her 20sn 2 Abaası Neferi spawn olur.</p>
+</div>
+
+<div class="card">
+<h4>Faz 2 — İç Kabuk (HP: 5.000)</h4>
+<p>Dış kabuk kırılır, altından nemli, kırmızı doku çıkar. DEF 30→15 düşer. Ama göz artık <b>her 10sn açılır</b> (4sn açık).</p>
+<p><b>Yeni mekanik — Taş Işını:</b> Göz açıldığında Abaası bir şerite <b>Taş Işını</b> atar. O şeritteki herkes 3sn taşlaşır. Işın uyarısı: 1.5sn önce o şerit kırmızı yanar.</p>
+<p>Göz açıkken gözüne vurmak → <b>×2 hasar + 3sn sersemletme</b> (göz kapanır, taş bakış iptal).</p>
+<p><b>Add'ler:</b> Her 15sn 1 Körmös + 1 K'daai Çırağı. K'daai ölünce patlar — dikkat.</p>
+</div>
+
+<div class="card">
+<h4>Faz 3 — Göz Çekirdeği (HP: 5.000)</h4>
+<p>İç kabuk da kırılır. Abaası'nın gözü tamamen açılır — dev, kırmızı, titreyerek bakıyor. DEF 5'e düşer ama...</p>
+<p><b>"Sürekli Bakış":</b> Göz artık sürekli açık. Her 5sn bir şerite Taş Işını atar. Uyarı süresi 1sn'ye düşer (çok hızlı).</p>
+<p><b>"Umutsuzluk":</b> HP %20'de Abaası tüm şeritlere aynı anda bakar — 2sn boyunca hiçbir yerde güvenli değilsin. Çözüm: <b>Meşale kullan</b> → meşale ışığı Abaası'nın gözünü kamaştırır, 3sn bakışı iptal eder (sadece Faz 3'te).</p>
+<p><b>Add'ler:</b> YOK — bu faz saf 1v1, Alp vs Göz.</p>
+</div>
+
+<h3>Strateji İpuçları</h3>
+<table>
+<tr><th>İpucu</th><th>Açıklama</th></tr>
+<tr><td>Meşaleyi Faz 3'e sakla</td><td>Faz 1-2'de kullanma, Faz 3'teki "Umutsuzluk" anı için sakla</td></tr>
+<tr><td>Göz açılınca karar ver</td><td>Güvende → şerit değiştir. Güçlüysen → gözüne vur (×2 hasar)</td></tr>
+<tr><td>K'daai'yi uzaktan öldür</td><td>Faz 2'de K'daai patlaması + Taş Bakış birleşirse ölürsün</td></tr>
+<tr><td>Add'leri hızlı temizle</td><td>Neferler ve Körmösler birikirse kaos olur</td></tr>
+<tr><td>Faz 3'te sabırlı ol</td><td>DEF düşük, ışın aralarında vur, acele etme</td></tr>
+</table>
+
+<h3>Çıldırma (Enrage)</h3>
+<p>Savaş <b>5 dakikayı</b> aşarsa Abaası "Çıldırma"ya girer: Taş Işını cooldown'u 2sn'ye düşer, sürekli add spawn olur. DPS testi — yetmezse geri çekil, farm yap.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ÖDÜLLER -->
+<!-- ============================================================ -->
+<section id="rewards">
+<h2>🎁 Ödüller & Unlock'lar</h2>
+
+<h3>Büyük Abaası İlk Geçiş Ödülü</h3>
+<ul>
+<li>💰 <b>25.000 altın</b></li>
+<li>💎 <b>300 elmas</b></li>
+<li>🌱 <b>Kayın Tohumu #2</b></li>
+<li>🥚 Pet Yumurtası — <b>%60 Kör Yarasa, %30 Fosfor Örümcek, %10 Kaplumbağa Ata</b></li>
+<li>🗡️ 1 garanti epic item + 1 garanti rare</li>
+<li>🏆 Achievement: "Göz Kırpan"</li>
+</ul>
+
+<h3>Dünya 2 Bitince Açılanlar</h3>
+<ul>
+<li>🗺️ <b>Dünya 3: Sarıkum Denizi</b> açılır</li>
+<li>🏰 <b>Günlük Zindanlar</b> sistemi aktive olur (ilk zindan: Altın Zindanı)</li>
+<li>🔨 Kübey'de yeni enchant seçenekleri (Mağara malzemeleri)</li>
+<li>📜 Ana Quest Zinciri 3. bölüm</li>
+<li>🐾 Pet evrim sistemi açılır (Yavru → Genç)</li>
+</ul>
+
+<h3>3 Yıldız Bonusu</h3>
+<ul>
+<li>⭐ Stage'i bitir: normal ödül</li>
+<li>⭐⭐ HP %80 üstünde bitir: +75 elmas (ilk kez)</li>
+<li>⭐⭐⭐ 3 dakika altında bitir: +150 elmas + rare item (ilk kez)</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- FARM TAVSİYESİ -->
+<!-- ============================================================ -->
+<section id="farm">
+<h2>🌾 Farm Tavsiyesi</h2>
+<table>
+<tr><th>Amaç</th><th>Önerilen Stage</th><th>Neden</th></tr>
+<tr><td>💰 <b>Altın Farm</b></td><td>Stage 20-25</td><td>Fosfor Kraliçesi ödülü yüksek, mob yoğunluğu iyi</td></tr>
+<tr><td>⭐ <b>XP Farm</b></td><td>Stage 35-40</td><td>Taş Golem + Kristal Perisi = yüksek XP</td></tr>
+<tr><td>💎 <b>Item Farm</b></td><td>Stage 40 (Kör Göz Muhafızı)</td><td>Epic garanti, "Kör Taş Zırhı" set parçası</td></tr>
+<tr><td>🧪 <b>Malzeme Farm</b></td><td>Stage 10-15</td><td>Fosfor Özü (örümcek) + Kör Taşı (Abaası) bolca düşer</td></tr>
+<tr><td>🐾 <b>Pet Farm</b></td><td>Stage 30 (Sessiz)</td><td>%30 Kör Yarasa pet yumurtası</td></tr>
+<tr><td>🔥 <b>K'daai Koru Farm</b></td><td>Stage 25-30</td><td>Ateş enchant malzemesi, Dünya 5'e hazırlık</td></tr>
+</table>
+<div class="note"><b>AFK Tavsiyesi:</b> Dünya 2'de AFK farm için Stage 35-40 ideal. Taş Golem yavaş ama ödül/dakika oranı en yüksek burada. Meşale AFK'da otomatik kullanılır.</div>
+<div class="warn"><b>Karanlık + AFK:</b> AFK modda karanlık mekaniği basitleştirilir — mob'lar %50 görünür olur. Tam karanlık sadece manuel oynamada geçerli. Bu, AFK'nın cezalandırıcı olmaması için.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HİKAYEDEKİ YERİ -->
+<!-- ============================================================ -->
+<section id="lore-role">
+<h2>🔗 Hikayedeki Yeri</h2>
+<p>Kör Mağaralar, oyuncunun <b>rahatlık alanından çıktığı</b> ilk dünyadır. Kayın Vadisi'nde öğrendiği her şey burada test edilir — üstelik karanlık mekaniğiyle zorluk katlanır.</p>
+
+<p>Alp burada:</p>
+<ul>
+<li>✅ <b>İlk hafıza parçasını alır</b> (Stage 25 — bulanık flashback, bir elin uzanması)</li>
+<li>✅ Kör şaman Karaçı ile tanışır (ileride tekrar karşılaşılacak)</li>
+<li>✅ Karanlıkta savaşmayı öğrenir (ses ipuçları, meşale yönetimi)</li>
+<li>✅ İkinci Kayın Tohumu'nu toplar</li>
+<li>✅ Günlük Zindanlar açılır (oyunun rutin döngüsü başlar)</li>
+</ul>
+
+<div class="lore"><b>Hikaye İpucu:</b> Büyük Abaası yenildiğinde, gözü sönerken fısıldar: "Sen... karanlıktan korkmuyorsun. Ama <b>kendi aydınlığından</b> korkmalısın... Çünkü hatırladığında..." — cümle tamamlanmaz, göz kapanır. Bu, Alp'in geçmişinin güzel olmayabileceğine ilk ipucu.</div>
+
+<h3>Sonraki Dünyaya Geçiş Cutscene'i</h3>
+<p>Büyük Abaası'nın gözü söndüğünde, mağaranın tavanı çatlar. İçeriden sıcak, kuru bir rüzgar eser — kum taneleri. Kırmızı gökyüzü bir anlığına görünür. Mergen yanına gelir: <i>"Işığa kavuştun, yiğit. Ama sonraki dal... ışığın fazla olduğu yere düştü. Güneş orada düşman."</i> — kamera yukarı çıkar, uçsuz çöle açılır. <b>Dünya 3 açılır.</b></p>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<div style="text-align:center;margin-top:60px;padding:30px;color:#666;border-top:1px solid #2a2a40">
+<p>← <a href="world-1-kayin-vadisi.html">Önceki: Kayın Vadisi</a> · <a href="index.html">Ana Sayfa</a> · <a href="world-3-sarikum-denizi.html">Sonraki: Sarıkum Denizi →</a></p>
+</div>
+</main>
+</div>
+</body>
+</html>

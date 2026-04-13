@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dünya 3: Sarıkum Denizi | ALP Wiki</title>
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="sidebar-logo"><h1>⚔️ ALP</h1><div class="version">Uluğ Kayın'ın Düşüşü</div></div>
+<nav>
+<div class="nav-section">ANA</div>
+<a href="index.html">🏠 Ana Sayfa</a>
+<a href="systems.html">⚙️ Sistemler</a>
+<a href="story.html">📖 Hikaye & NPC'ler</a>
+<a href="sequels.html">🔮 Oyun 2 & 3</a>
+
+<div class="nav-section">DÜNYALAR</div>
+<a href="world-1-kayin-vadisi.html">🌲 1. Kayın Vadisi</a>
+<a href="world-2-kor-magaralar.html">🕳️ 2. Kör Mağaralar</a>
+<a href="world-3-sarikum-denizi.html" class="active">🏜️ 3. Sarıkum Denizi</a>
+<a href="world-4-ayaz-doruk.html">❄️ 4. Ayaz Doruk</a>
+<a href="world-5-andar-ocaklari.html">🔥 5. Andar Ocakları</a>
+<a href="world-6-ak-yayik-gokleri.html">☁️ 6. Ak Yayık Gökleri</a>
+<a href="world-7-yutpa-derinlikleri.html">🌊 7. Yutpa Derinlikleri</a>
+<a href="world-8-toybodim-nehri.html">⚰️ 8. Toybodım Nehri</a>
+<a href="world-9-kara-demir-sarayi.html">👑 9. Kara Demir Sarayı</a>
+<a href="world-10-bosluk-tengiz.html">🌌 10. Boşluk Tengiz</a>
+
+<div class="nav-section">BU SAYFA</div>
+<a href="#story">🎬 Hikaye</a>
+<a href="#world-effect">🌡️ Dünya Etkisi</a>
+<a href="#npcs">👤 NPC'ler</a>
+<a href="#env">🏜️ Ortam</a>
+<a href="#mobs">👹 Mob Listesi</a>
+<a href="#mini-bosses">⚔️ Mini-Boss'lar</a>
+<a href="#world-boss">🐍 Şahmaran</a>
+<a href="#rewards">🎁 Ödüller</a>
+<a href="#farm">🌾 Farm Tavsiyesi</a>
+<a href="#lore-role">🔗 Hikayedeki Yeri</a>
+</nav>
+</aside>
+
+<main class="main">
+<h1 class="title">🏜️ Dünya 3 — Sarıkum Denizi</h1>
+<p class="subtitle">Kum altında gömülü imparatorluklar · Şahmaran'ın yuvası · Üçüncü Kayın Tohumu</p>
+
+<!-- ============================================================ -->
+<!-- HİKAYE -->
+<!-- ============================================================ -->
+<section id="story">
+<h2>🎬 Hikaye Kutusu</h2>
+<div class="destan">
+<p>Mağaradan çıktığında güneş gözlerini yaktı. Önce beyazlık, sonra sarı, sonra... uçsuz bucaksız kum. Ufuk çizgisi her yöne aynıydı — hiçbir yer, her yer.</p>
+<p>Ama kumun altında bir şey atıyordu. Eski bir kalp gibi, derin ve ağır. Adım attıkça ayaklarının altında taş duvarlar hissetti — gömülmüş bir şehir. Binlerce yıllık, çoktan unutulmuş. Ve o şehrin kraliçesi, yarı yılan yarı kadın, hâlâ tahtında oturuyordu.</p>
+<p>Şahmaran uyumuyordu. Bekliyordu.</p>
+</div>
+<p>Sarıkum Denizi, Uluğ Kayın'ın üçüncü dalının savrulduğu diyardır. Dalın düştüğü yerde bir zamanlar göller vardı — şimdi kurumuş, kumla dolmuş, altında antik bir medeniyet gömülü. Çölün yüzeyinde Jeztırnak'lar avlanır; kumun altında Mankurtlar sessizce yürür; en derinde Şahmaran'ın sarayı bekler.</p>
+<p>Alp'in görevi: çölü geç, gömülü şehre in, Şahmaran'ın lanetini kır, üçüncü Kayın Tohumu'nu kurtar.</p>
+<div class="lore"><b>Alp'in Hafızası:</b> Bu dünyada <b>ikinci hafıza parçası</b> gelir. Stage 30 civarında bir flashback: Alp bir ateşin başında oturuyor, yanında başka biri var. Yüzü görünmüyor ama sıcak bir ses diyor ki: <i>"Sen gidersen kim korur bizi?"</i> — Alp gözlerini açtığında kumda tek başına. İlk kez üzüntü hisseder.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DÜNYA ETKİSİ -->
+<!-- ============================================================ -->
+<section id="world-effect">
+<h2>🌡️ Dünya Etkisi — Sıcak Çarpması</h2>
+<div class="warn">
+<b>Sarıkum Denizi'nin özel savaş etkisi:</b> Her <b>30 saniyede</b> bir "Sıcak Dalgası" gelir. 3 saniye boyunca tüm karakterler (Alp + mob'lar) <b>-%20 SPD</b> kaybeder. Ekranda hava titremesi efekti + "☀️ Sıcak Çarpması!" uyarısı belirir.
+</div>
+<h3>Sıcak Mekaniği Detayları</h3>
+<table>
+<tr><th>Özellik</th><th>Açıklama</th></tr>
+<tr><td>Tetiklenme</td><td>Her 30sn otomatik, kaçınılamaz</td></tr>
+<tr><td>Süre</td><td>3sn boyunca tüm SPD -%20</td></tr>
+<tr><td>Etkilenenler</td><td>Alp + tüm mob'lar (boss dahil)</td></tr>
+<tr><td>Görsel</td><td>Ekran titremesi, hava kırılması efekti, güneş parlaması</td></tr>
+<tr><td>Su Şişesi item</td><td>Stage 5'te Kübey'den alınır. Kullanınca sıcak çarpmasını 1 kez atlatırsın (cooldown: 60sn)</td></tr>
+<tr><td>Stage ilerledikçe</td><td>Stage 35+ → sıcak çarpması her 25sn'ye düşer, etki -%25 SPD'ye çıkar</td></tr>
+</table>
+<div class="note"><b>Strateji:</b> Sıcak çarpması mob'ları da etkiler — yavaşlama anını burst penceresi olarak kullanabilirsin. Özellikle hızlı mob'lara (Kum Kaçanı) karşı avantaj.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- NPC'LER -->
+<!-- ============================================================ -->
+<section id="npcs">
+<h2>👤 Bu Dünyanın NPC'leri</h2>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🔨</div>
+<div><div class="npc-name">Demirci Kübey</div><div class="npc-role">Ekipman / Upgrade NPC (Sabit)</div></div>
+</div>
+<p>Çölün girişindeki bir vahanın kenarında, hurma ağacının altında ocağını kurmuş. Terden sırılsıklam ama çekiç durmadan iniyor.</p>
+<div class="npc-quote">"Kum her şeyi aşındırır. Ama iyi çelik kuma direnir. Ver, cilalayayım."</div>
+<p><b>Özel:</b> Dünya 3'te Kübey <b>Su Şişesi</b> item'ını satar (150 altın). Ayrıca çöl malzemelerinden (Bakır Toz, Kum Camı, Yılan Pulu) yeni enchant seçenekleri sunar. İlk kez <b>item reroll</b> (affix değiştirme) hizmeti de burada açılır.</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">📜</div>
+<div><div class="npc-name">Gezgin Bilge Mergen</div><div class="npc-role">Anlatıcı / Quest Veren (Sabit)</div></div>
+</div>
+<p>Kumun üstüne serdiği bir kilimin üzerinde, sanki çöl ona ait gibi rahat oturuyor. Etrafında parşömenler rüzgarda uçuşuyor — ama hiçbiri kaybolmuyor, sanki iplerle bağlı.</p>
+<div class="npc-quote">"Çöl boş görünür ama altı dolu. Tıpkı hafızan gibi, yiğit. Kazarsan bulursun — ama buldukların hoşuna gitmeyebilir."</div>
+<p><b>Rolü:</b> 1 ana quest ("Şahmaran'ın Tahtını Bul") + 3 yan quest verir.</p>
+<p><b>Yan Quest'ler:</b></p>
+<table>
+<tr><th>Quest</th><th>Görev</th><th>Ödül</th></tr>
+<tr><td>Bakır Pençe Avcısı</td><td>10 Jeztırnak öldür</td><td>800 altın + 1 Su Şişesi</td></tr>
+<tr><td>Kayıp Kervan</td><td>Stage 25'teki gömülü kervansarayı bul, 5 sandık aç</td><td>5 Ruh Cevheri + epic item şansı (%30)</td></tr>
+<tr><td>Mankurt'un Hatırası</td><td>3 farklı Mankurt'u öldürmeden savaşı bitir (kaçmalarını sağla)</td><td>100 elmas + "Merhametli" cosmetic title + hikaye ipucu</td></tr>
+</table>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">🐪</div>
+<div><div class="npc-name">Kervan-Başı Togay</div><div class="npc-role">Dünya 3 Özel — Tüccar / Bilgi NPC</div></div>
+</div>
+<p>Çölün tek hayatta kalan kervan tüccarı. Devesinin sırtında koca bir sandık, içinde her dünyadan topladığı garip eşyalar. Güneşten yanmış yüzü, kırışık gözleri ama her zaman gülümsüyor. Çölü avucunun içi gibi bilir.</p>
+<div class="npc-quote">"Her kum tanesinin altında bir hikaye var, yiğit. Ben sadece onları satın alıp satıyorum. Peki senin hikayen ne kadar eder?"</div>
+<p><b>Rolü:</b> Özel tüccar — diğer dünyalardan nadir malzeme satar (yüksek fiyat). Her dünyada rastgele 2-3 özel item bulundurur, envantere 12 saatte bir yenilenir. Ayrıca Şahmaran hakkında dedikodu verir: <i>"Yılanın üst yarısı güzel konuşur, alt yarısı sessizce öldürür. İkisine de güvenme."</i></p>
+<p><b>Mekanik katkısı:</b> Togay'dan <b>Çöl Haritası</b> satın alınır (500 altın) → gizli stage'leri gösterir (bonus kum altı odaları, ekstra loot).</p>
+</div>
+
+<div class="npc">
+<div class="npc-header">
+<div class="npc-avatar">⛓️</div>
+<div><div class="npc-name">Hafızasız Koruk</div><div class="npc-role">Dünya 3 Özel — Eski Mankurt / Hikaye NPC</div></div>
+</div>
+<p>Bir zamanlar Mankurt olan ama lanetinden kurtulan yaşlı adam. Gözleri bulanık, hafızası yarım — bazı şeyleri hatırlıyor, bazılarını değil. Kumda başıboş dolaşır. Başında hâlâ Mankurt keçesi var ama artık onu kontrol eden yok.</p>
+<div class="npc-quote">"Ben... bir şeydim. Bir isim vardı. Şimdi yok. Ama sen... sende de eksik bir şey var. Benim gibi. Aynı koku."</div>
+<p><b>Rolü:</b> Hikaye NPC'si. Alp ile arasında <b>paralellik</b> kurar — ikisi de hafızasını kaybetmiş. Koruk, Alp'e üç kez rastlar (Stage 10, 25, 45). Her seferinde biraz daha hatırlar. Son karşılaşmada der ki: <i>"Hatırladım. Ben bir babydım. Bir oğlum vardı. Onu... koruyamadım."</i> — ve yere çöker. Alp bir an kendi geçmişini hisseder ama netleşmez.</p>
+<p><b>Mekanik katkısı:</b> Koruk'la her konuşmada Alp <b>"Empati" buff</b>'ı alır (1 saat): Mankurt mob'lardan +%50 XP. Bu, "anlamak ödüllendirilir" mesajı verir.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ORTAM -->
+<!-- ============================================================ -->
+<section id="env">
+<h2>🏜️ Ortam & Atmosfer</h2>
+
+<h3>Parallax Arka Plan (3 Katman)</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td><b>Uzak</b></td><td>Turuncu-kırmızı gökyüzü, büyük güneş (hareket eden hale), uzakta kum fırtınası siluetleri, serap titremesi</td></tr>
+<tr><td><b>Orta</b></td><td>Kum tepeleri, gömülü yapı kalıntıları (sütunlar, kemerler), ara sıra kurumuş ağaç iskeleti, uçuşan kum parçacıkları</td></tr>
+<tr><td><b>Yakın</b></td><td>Dalgalanan kum zemini, ayak izleri (kısa süre kalır), yarı gömülü kafatasları/kemikler, küçük akrep/böcek hareketleri</td></tr>
+</table>
+
+<h3>Stage Bölgeleri (Görsel Değişim)</h3>
+<p>Sarıkum Denizi 3 görsel bölgeye ayrılır:</p>
+<table>
+<tr><th>Stage</th><th>Bölge</th><th>Görsel</th></tr>
+<tr><td>1-15</td><td>Açık Çöl</td><td>Yüzey kumları, vahalar, kervansaray kalıntıları</td></tr>
+<tr><td>16-35</td><td>Gömülü Şehir</td><td>Kum altı tünelleri, eski taş duvarlar, meşale aydınlatmalı koridorlar, çatlamış mozaikler</td></tr>
+<tr><td>36-50</td><td>Şahmaran Sarayı</td><td>Yılan motifleri, altın-yeşil süslemeler, zehirli yeşil havuzlar, devasa yılan heykelleri</td></tr>
+</table>
+
+<h3>Hava Durumu</h3>
+<table>
+<tr><th>Efekt</th><th>Stage</th><th>Açıklama</th></tr>
+<tr><td>☀️ Kavurucu güneş</td><td>Default (yüzey)</td><td>Parlak aydınlatma, serap efekti, sıcak çarpması mekaniği aktif</td></tr>
+<tr><td>🌪️ Kum fırtınası</td><td>Stage 15+</td><td>Rastgele (her 3 stage'de 1), görüş azalır, ranged saldırılar -%15 isabet</td></tr>
+<tr><td>🌙 Gece çölü</td><td>Stage 36+</td><td>Gömülü sarayda gece havası — serin, sıcak çarpması yok ama yılan mob'ları +%15 SPD</td></tr>
+</table>
+
+<h3>Ses Ambiyansı</h3>
+<table>
+<tr><th>Katman</th><th>Açıklama</th></tr>
+<tr><td>Müzik</td><td>Bağlama + ney melodisi, uzun notalar, çöl yankısı. Melankoli ama geniş, "uçsuzluk" hissi</td></tr>
+<tr><td>Ambiyans</td><td>Rüzgar uğultusu (sürekli), kum tanelerinin sürtünmesi, uzaktan deve çanı, arada çıngırak yılanı sesi</td></tr>
+<tr><td>Stage 16+ (yeraltı)</td><td>Rüzgar kesilir, yankılı ayak sesleri, damlayan su (nadir), taş çatırtısı</td></tr>
+<tr><td>Stage 40+</td><td>Düşük frekanslı yılan tıslaması, kalp atışı ritmi, Şahmaran'ın fısıltısı (duyulur ama anlaşılmaz)</td></tr>
+</table>
+</section>
+
+<!-- ============================================================ -->
+<!-- MOB LİSTESİ -->
+<!-- ============================================================ -->
+<section id="mobs">
+<h2>👹 Mob Listesi (8 adet)</h2>
+<p>Stage scaling: HP <code>×1.11/stage</code>, ATK <code>×1.09/stage</code>. Aşağıdaki stat'lar <b>Stage 1 base</b> (Dünya 3 Stage 1 = genel Stage 101).</p>
+
+<table>
+<tr><th>Mob</th><th>Arketip</th><th>Şerit</th><th>HP</th><th>ATK</th><th>DEF</th><th>SPD</th><th>XP</th><th>Altın</th></tr>
+<tr><td>Jeztırnak</td><td>Melee/Elite</td><td><span class="lane-orta">Orta</span></td><td>120</td><td>28</td><td>10</td><td>1.1</td><td>22</td><td>16-24</td></tr>
+<tr><td>Mankurt Askeri</td><td>Tank</td><td><span class="lane-orta">Orta</span></td><td>180</td><td>16</td><td>18</td><td>0.6</td><td>20</td><td>14-20</td></tr>
+<tr><td>Kum Solucanı</td><td>Burrower</td><td><span class="lane-alt">Alt</span></td><td>90</td><td>32</td><td>5</td><td>1.3</td><td>18</td><td>12-18</td></tr>
+<tr><td>Kum Kaçanı</td><td>Fast/Dodge</td><td><span class="lane-orta">Orta</span></td><td>55</td><td>20</td><td>3</td><td>1.8</td><td>15</td><td>10-16</td></tr>
+<tr><td>Çöl Akrebi</td><td>Poisoner</td><td><span class="lane-alt">Alt</span></td><td>70</td><td>22</td><td>12</td><td>0.9</td><td>17</td><td>12-17</td></tr>
+<tr><td>Kum Hayaleti</td><td>Caster</td><td><span class="lane-ust">Üst</span></td><td>65</td><td>30</td><td>4</td><td>0.8</td><td>24</td><td>18-26</td></tr>
+<tr><td class="r-uncommon">Yılan Rahibesi</td><td>Healer ⚠️</td><td><span class="lane-ust">Üst</span></td><td>80</td><td>12</td><td>8</td><td>0.7</td><td>30</td><td>22-32</td></tr>
+<tr><td>Bakır Tırnak Sürüsü</td><td>Pack (3'lü)</td><td><span class="lane-alt">Alt</span></td><td>40</td><td>18</td><td>6</td><td>1.2</td><td>12</td><td>8-14</td></tr>
+</table>
+
+<div class="mob-card">
+<h4>🦅 Jeztırnak</h4>
+<p>Bakır tırnaklı, uzun saçlı kadın canavar. Çölün en tehlikeli avcısı. Hızlı, acımasız, tırnakları zırhı keser. Kum fırtınasında avantajlı — fırtına sırasında <b>dodge +%20</b>.</p>
+<p><b>Özel:</b> <i>Bakır Pençe</i> — vuruşta %30 şansla Alp'in DEF'ini 3sn boyunca -%5 düşürür (stacklenebilir, max -15). Birden fazla Jeztırnak varsa DEF hızla erir.</p>
+<p><b>Drop:</b> %8 uncommon, Bakır Toz (enchant malzemesi, %15). <b>Öğretir:</b> DEF azalmasını yönet, hızlı öldür.</p>
+</div>
+
+<div class="mob-card">
+<h4>⛓️ Mankurt Askeri</h4>
+<p>Hafızası silinmiş, mekanik hareket eden eski savaşçılar. Gözleri boş, yüzleri ifadesiz. Yavaş ama ısrarcı — ölene kadar saldırır, geri çekilmez, korkmaz.</p>
+<p><b>Özel:</b> <i>Boş Bakış</i> — korkutma ve sersemletme efektleri Mankurt'a İŞLEMEZ (immün). Öldüğünde küçük bir sarsıntı + hüzünlü ses efekti (bunlar bir zamanlar insandı).</p>
+<p><b>Drop:</b> %6 uncommon, Mankurt Keçesi (cosmetic, %3), Hafıza Parçası (quest item, %5). <b>Öğretir:</b> CC immün düşmanlara saf hasar ile yaklaşma.</p>
+</div>
+
+<div class="mob-card">
+<h4>🪱 Kum Solucanı</h4>
+<p>Çölün altında hareket eden dev solucan. Kör Mağaralar'daki versiyondan daha büyük, daha hızlı. Yüzeyde kumda <b>hareket eden bir tepe</b> görünür — solucanın konumunu gösterir.</p>
+<p><b>Özel:</b> <i>Kum Patlaması</i> — yerden fırladığında etrafına AoE hasar + kum bulutu (2sn görüş azalması). Fırlamadan 1.5sn önce kum tepesi büyür (uyarı).</p>
+<p><b>Drop:</b> %10 common, Solucan Dişi (upgrade malzemesi, %12). <b>Öğretir:</b> Çevre okuma — kum tepesini gör, şerit değiştir.</p>
+</div>
+
+<div class="mob-card">
+<h4>🦎 Kum Kaçanı</h4>
+<p>Küçük, ince, kertenkele gibi çöl yaratığı. İnanılmaz hızlı — oyundaki en yüksek SPD mob'u. Vurmak zor, kaçmak kolay. Sıcak çarpmasında yavaşlayınca yakalanır.</p>
+<p><b>Özel:</b> <i>Kum Kayması</i> — her 5sn rastgele şerit değiştirir + %30 dodge. Sıcak çarpması sırasında dodge 0'a düşer (avantaj penceresi).</p>
+<p><b>Drop:</b> %12 common, altın +%80. <b>Öğretir:</b> Sıcak çarpması zamanlamasını avantaj olarak kullan.</p>
+</div>
+
+<div class="mob-card">
+<h4>🦂 Çöl Akrebi</h4>
+<p>Kuyruğundaki iğneyle zehir enjekte eder. Küçük ama tehlikeli. Alt şeritte saklanır, kum renginde kamuflaj.</p>
+<p><b>Özel:</b> <i>Zehir İğnesi</i> — vuruşta %40 şansla 5sn zehir DoT (saniyede ATK'nın %8'i kadar hasar). Zehir stacklenir (max 3 stack). Antidot iksiri ile temizlenebilir.</p>
+<p><b>Drop:</b> %7 uncommon, Akrep Zehri (iksir crafting, %18). <b>Öğretir:</b> Zehir yönetimi, iksir kullanımı.</p>
+</div>
+
+<div class="mob-card">
+<h4>👻 Kum Hayaleti</h4>
+<p>Çölde susuzluktan ölmüş gezginlerin ruhları. Havada süzülür, serap gibi titrer. Üst şeritte uçar, kum büyüsü atar.</p>
+<p><b>Özel:</b> <i>Serap Aldatmacası</i> — kendi kopyasını oluşturur (1 kopya, düşük HP). Kopya hasar vermez ama dikkat dağıtır. Asıl Hayalet'i ayırt etmek için: asıl olan daha parlak titrer.</p>
+<p><b>Drop:</b> %10 uncommon, Serap Özü (gem crafting, %8). <b>Öğretir:</b> Hedef seçimi — aldatmacaya kanma.</p>
+</div>
+
+<div class="mob-card" style="border-color:#ef5350">
+<h4>🐍 Yılan Rahibesi <span class="badge" style="background:#5f1e1e;color:#ef5350">ÖNCELİK</span></h4>
+<p>Şahmaran'a tapınan yarı yılan rahibe. Üst şeritte süzülür, savaşmaz — ama yakınındaki mob'ları <b>iyileştirir</b>.</p>
+<p><b>Özel:</b> <i>Yılan Duası</i> — her 6sn yakınındaki en düşük HP'li mob'a <b>%20 HP iyileştirme</b> uygular. Birden fazla Rahibe varsa iyileştirme stacklenir → mob'lar ölümsüzleşir.</p>
+<p><b>Ayrıca:</b> Öldüğünde yanındaki tüm mob'lara <b>3sn öfke buff'ı</b> verir (+%20 ATK). Bu yüzden zamanlama önemli — etraftaki mob'lar azken öldür.</p>
+<p><b>Drop:</b> %15 uncommon, %10 rare, Yılan Pulu (set crafting). <b>Öğretir:</b> Healer önceliği + ölüm zamanlaması.</p>
+</div>
+
+<div class="mob-card">
+<h4>🐾 Bakır Tırnak Sürüsü</h4>
+<p>Jeztırnak'ın küçük versiyonları — yavru veya zayıf bireyler. 3'lü grup halinde gelir, alt şeritten koşar. Tek başına zayıf ama birlikte bakır pençe DEF azaltması hızla birikir.</p>
+<p><b>Özel:</b> <i>Sürü Koordinasyonu</i> — 3'ü birden hayattayken ATK +%15. Biri ölünce bonus kalkar. Hızlıca teker teker öldürmek bonusu kırar.</p>
+<p><b>Drop:</b> %5 common her biri, Bakır Toz (düşük %, ama 3'lü olduğu için toplam iyi). <b>Öğretir:</b> Sürü bonusunu kırma stratejisi.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- MİNİ-BOSS'LAR -->
+<!-- ============================================================ -->
+<section id="mini-bosses">
+<h2>⚔️ Mini-Boss'lar</h2>
+<p>Her mini-boss, çöl dünyasının farklı bir mekaniğini öğretir ve Şahmaran'a hazırlar.</p>
+
+<div class="boss-card">
+<h3>Stage 10 — Güneş Yiyen Kertenkele</h3>
+<p>Dev bir çöl kertenkelesi, sırtında güneş ışığını emen kristal plakalar var. Güneşten güç alır — sıcak çarpmasında güçlenir.</p>
+<ul>
+<li><b>HP:</b> 1.200 · <b>ATK:</b> 35 · <b>DEF:</b> 12 · <b>SPD:</b> 1.0</li>
+<li><b>Mekanik — Sıcak Yönetimi:</b> Sıcak çarpması geldiğinde Kertenkele yavaşlamak yerine <b>+%30 ATK buff</b> alır (3sn). Yani sıcak anı oyuncu için tehlikeli, Kertenkele için fırsat.</li>
+<li>Çözüm: Sıcak çarpması gelmeden önce burst yap. Veya Su Şişesi ile sıcağı atla.</li>
+<li>HP %30'da <b>"Güneş Patlaması"</b> — tüm şeritlere AoE hasar (1 kez).</li>
+</ul>
+<p><b>Öğrettiği:</b> Sıcak çarpması zamanlamasını hesaba katma. Çevre etkisini okuma.</p>
+<p><b>Ödül:</b> 8 Ruh Cevheri · %40 rare · 600 altın · 1 Su Şişesi</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Togay der ki: <i>"O kertenkele güneşi sever. Sen sevme — gölgede kal, soğukta vur."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 20 — Kum Tuzağı Anası</h3>
+<p>Kumun altına dev huniler kazan karınca-aslanı benzeri yaratık. Kendisi görünmez, sadece kum hunileri görünür.</p>
+<ul>
+<li><b>HP:</b> 1.800 · <b>ATK:</b> 28 · <b>DEF:</b> 20 · <b>SPD:</b> 0.3</li>
+<li><b>Mekanik — Kum Altı Kaçınma:</b> Savaş alanında 3 kum hunisi var (her şeritte 1). Huninin ortasına düşersen <b>2sn hareketsiz kalırsın</b> + hasar alırsın. Huni yavaşça büyür (uyarı) sonra küçülür.</li>
+<li>Kum Tuzağı Anası sadece hunilerden birinin altında — rastgele değişir. Doğru huniyi tahmin edip vurman gerek.</li>
+<li>Yanlış huniyi vurursan sadece kum çıkar (miss). Doğru huniyi vurursan Ana yüzeye çıkar → 5sn savunmasız.</li>
+</ul>
+<p><b>Öğrettiği:</b> Kum altı tehditlerden kaçınma + doğru hedefi tahmin (gözlem).</p>
+<p><b>Ödül:</b> 12 Ruh Cevheri · 1 garanti rare · 1.200 altın · 75 elmas (ilk geçiş) · Çöl Haritası (ücretsiz)</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Mergen der ki: <i>"Kum oynar, gözlerin yanılır. Ama kumun aktığı yöne bak — orası boş değil."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 30 — Mankurt Komutanı "Demir Başlık"</h3>
+<p>Diğer Mankurtlardan farklı — hafızası tamamen silinmemiş, yarı bilinçli. Başlığı demir, gözleri acı dolu. Emirlere uyuyor ama arada bir duraklıyor, sanki hatırlamaya çalışıyor.</p>
+<ul>
+<li><b>HP:</b> 2.500 · <b>ATK:</b> 40 · <b>DEF:</b> 22 · <b>SPD:</b> 0.8</li>
+<li><b>Mekanik — Hafıza Mekaniği:</b> Demir Başlık her 20sn <b>"Hatırlama Krizi"</b> yaşar — 3sn boyunca durur, saldırmaz, DEF 0'a düşer. Bu pencere burst için altın.</li>
+<li>AMA kriz bittiğinde <b>"Öfke Patlaması"</b> → 5sn ATK +%50 + tüm CC bağışıklık. Yani krizi kullan, ama kriz sonrasına hazırlan.</li>
+<li>HP %25'te son kriz — bu sefer 5sn durur ve gözlerinden yaş akar. Ama krizden çıkınca <b>SPD ×2, ATK ×2</b> (10sn).</li>
+<li><b>Hikaye anı:</b> Öldüğünde son sözü: <i>"Teşekkür... ederim..."</i> — serbest bırakılmış olur.</li>
+</ul>
+<p><b>Öğrettiği:</b> Zayıflık penceresini kullan ama sonrasına hazırlan. Risk/ödül döngüsü.</p>
+<p><b>Ödül:</b> 18 Ruh Cevheri · Pet Yumurtası (%25 Ak Tilki) · 1.800 altın · "Zincir Kıran" achievement · Hafıza Parçası (quest)</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Koruk der ki: <i>"O da benim gibi... Hatırlamaya çalışıyor. Durduğu an — bir hediye. Ama hediye sonrası öfke gelir."</i></div>
+</div>
+
+<div class="boss-card">
+<h3>Stage 40 — Çift Yüzlü Yılan Muhafızı</h3>
+<p>Şahmaran'ın kişisel koruması. Üst yarısı güzel bir kadın, alt yarısı dev bir yılan — ama savaşta <b>2 form arasında geçiş</b> yapar.</p>
+<ul>
+<li><b>HP:</b> 3.500 · <b>SPD:</b> 1.0</li>
+<li><b>Mekanik — Çoklu Form:</b> İki form arasında her 12sn geçiş yapar:
+<ul>
+<li>🧝 <b>İnsan Formu:</b> ATK 25, DEF 30. Yavaş, zırhlı, büyü atar (zehir topu). Fiziksel saldırılara dayanıklı, <b>büyüye zayıf</b>.</li>
+<li>🐍 <b>Yılan Formu:</b> ATK 45, DEF 8. Hızlı, agresif, ısırık + kuyruk vuruşu. Büyüye dayanıklı, <b>fiziksel saldırıya zayıf</b>.</li>
+</ul></li>
+<li>Form değişimi anında 1sn savunmasız (her iki zayıflık da aktif).</li>
+<li><b>Hazırlık:</b> Bu boss Şahmaran'ın mini versiyonu. Şahmaran'da 3 form olacak — burada 2 formla pratik yap.</li>
+</ul>
+<p><b>Öğrettiği:</b> Form tanıma + zayıflık değiştirme. Fiziksel vs büyü hasarı arasında geçiş yapabilme.</p>
+<p><b>Ödül:</b> 25 Ruh Cevheri · garanti 1 epic · 2.500 altın · "Yılan Pulu Zırhı" (set parçası)</p>
+<div class="note"><b>💡 Savaş İpucu:</b> Togay der ki: <i>"Kadınken kalkanla, yılanken büyüyle. Ama değiştiği an — her şeyle."</i></div>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- WORLD BOSS -->
+<!-- ============================================================ -->
+<section id="world-boss">
+<h2>🐍 World Boss — ŞAHMARAN</h2>
+<div class="destan">
+<p>Gömülü sarayın en derin salonunda, altın bir tahtın üzerinde kıvrılmıştı. Üst yarısı — inci gibi ten, zümrüt gözler, ipek saçlar. Alt yarısı — pullu, kalın, yeşil-siyah bir yılan gövdesi, salonun yarısını kaplayan.</p>
+<p>Gözlerini açtığında gülümsedi. Sıcak, davetkar, tehlikeli. "Hoş geldin, yiğit. Seni bekliyordum. Hepinizi bekliyordum." Ve sesi tatlıydı — ama kuyruğu çoktan kapıyı kapamıştı.</p>
+</div>
+
+<div class="worldboss-card">
+<h3>⚔️ Boss Mekaniği</h3>
+<p><b>Kavram:</b> Yarı kadın yarı yılan. 3 savaş formu. Sürekli yılan sürüleri çağırır. Zehir mekaniği ağırlıklı.</p>
+
+<table>
+<tr><th>Özellik</th><th>Değer</th></tr>
+<tr><td>Toplam HP</td><td>~18.000 (3 faz: 6.000 + 6.000 + 6.000)</td></tr>
+<tr><td>ATK</td><td>Forma göre: 30/50/65</td></tr>
+<tr><td>DEF</td><td>Forma göre: 25/10/20</td></tr>
+<tr><td>Zehir DoT</td><td>Her vuruşta %20 zehir şansı (5sn DoT)</td></tr>
+<tr><td>Yılan sürüsü</td><td>Her 25sn 3 küçük yılan spawn (melee, düşük HP)</td></tr>
+</table>
+
+<h3>3 Form — Faz Sistemi</h3>
+
+<div class="card">
+<h4>Faz 1 — Kraliçe Formu (HP: 6.000)</h4>
+<p>Şahmaran tahtında oturur, sakin ve zarif. Asa'sıyla uzaktan büyü atar.</p>
+<p><b>Saldırılar:</b></p>
+<table>
+<tr><th>Saldırı</th><th>Açıklama</th></tr>
+<tr><td>Zehir Topu</td><td>Tek hedefe orta hasar + zehir DoT</td></tr>
+<tr><td>Yılan Çağrısı</td><td>Her 25sn 3 küçük yılan spawn</td></tr>
+<tr><td>Büyüleyici Bakış</td><td>Her 30sn Alp'i 2sn büyüler (hareket edemez, saldıramaz). Bakıştan şerit değiştirerek kaçınılabilir.</td></tr>
+</table>
+<p><b>Zayıflık:</b> Fiziksel saldırılara -%20 dirençli. Melee sınıflar avantajlı.</p>
+<p><b>Add'ler:</b> Küçük yılanlar — düşük HP ama zehir vuruşlu. Birikmelerine izin verme.</p>
+</div>
+
+<div class="card">
+<h4>Faz 2 — Avcı Formu (HP: 6.000)</h4>
+<p>Şahmaran tahttan kalkar, yılan gövdesiyle hareket etmeye başlar. Hızlı, agresif, melee ağırlıklı.</p>
+<p><b>Saldırılar:</b></p>
+<table>
+<tr><th>Saldırı</th><th>Açıklama</th></tr>
+<tr><td>Kuyruk Kamçısı</td><td>Alt ve orta şeride AoE hasar (yüksek)</td></tr>
+<tr><td>Isırık</td><td>Tek hedef çok yüksek hasar + garanti zehir</td></tr>
+<tr><td>Kıvrılma</td><td>Kendi etrafında sarılır → 3sn hasar almaz, sonra patlama (AoE)</td></tr>
+</table>
+<p><b>Zayıflık:</b> Büyüye -%20 dirençli. Kam sınıfı avantajlı. Üst şerit kuyruk kamçısından güvenli.</p>
+<p><b>Add'ler:</b> Yılan sürüsü hızlanır (her 20sn). Ayrıca 1 Yılan Rahibesi spawn → Şahmaran'ı iyileştirmeye başlar. Rahibeyi hemen öldür!</p>
+</div>
+
+<div class="card">
+<h4>Faz 3 — Gerçek Form (HP: 6.000)</h4>
+<p>Şahmaran'ın insan yüzü düşer, altından tamamen yılan bir yüz çıkar. Dev, çirkin, öfkeli. Artık güzellik perdesi yok.</p>
+<p><b>Saldırılar:</b></p>
+<table>
+<tr><th>Saldırı</th><th>Açıklama</th></tr>
+<tr><td>Zehir Seli</td><td>Tüm şeritlere 3sn zehir havuzu (üzerinde duran sürekli hasar alır)</td></tr>
+<tr><td>Yutma</td><td>Alp'i yakalarsa 3sn "yutulur" (çok yüksek DoT, çırpın butonu ile erken çık)</td></tr>
+<tr><td>Pul Fırlat</td><td>3 yöne pul fırlatır — her pul vurduğu yerde 2sn kalan zehir alanı bırakır</td></tr>
+</table>
+<p><b>Zayıflık:</b> Her iki hasar tipine eşit zayıf. AMA <b>ateş hasarı ×2</b> (yılanlar soğukkanlı → ateşe zayıf).</p>
+<p><b>"Yutma" mekaniği:</b> Şahmaran HP %30'da ağzını açar ve Alp'e doğru atılır. Yakalanırsan 3sn içeride kalırsın (yüksek DoT). Ekranda "Çırpın!" butonu belirir — hızlı tıklayarak erken çıkabilirsin. Çırpınma başarılıysa Şahmaran 4sn sersemler (büyük burst penceresi).</p>
+</div>
+
+<h3>Strateji İpuçları</h3>
+<table>
+<tr><th>İpucu</th><th>Açıklama</th></tr>
+<tr><td>Antidot iksiri stokla</td><td>Zehir bu savaşın en büyük tehdidi. 5+ antidot ile gel.</td></tr>
+<tr><td>Faz 1'de yılan temizle</td><td>Add'ler birikirse Faz 2'de kabus olur</td></tr>
+<tr><td>Faz 2'de üst şeritte kal</td><td>Kuyruk kamçısı üste ulaşmaz</td></tr>
+<tr><td>Rahibeyi anında öldür</td><td>Faz 2'de Rahibe spawn olunca hemen hedefle, Şahmaran iyileşmesin</td></tr>
+<tr><td>Faz 3'te ateş kullan</td><td>Ateş skill/enchant varsa ×2 hasar. K'daai Koru ile ateş enchant yap.</td></tr>
+<tr><td>Yutma'ya hazırlan</td><td>HP %30'a yaklaşırken tam canlı ol, çırpınma başarılı olursa 4sn free hit</td></tr>
+</table>
+
+<h3>Çıldırma (Enrage)</h3>
+<p>Savaş <b>6 dakikayı</b> aşarsa Şahmaran "Çıldırma"ya girer: zehir havuzları kalıcı olur, yılan sürüsü her 10sn spawn, yutma cooldown'u 15sn'ye düşer. DPS yarışı.</p>
+</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ÖDÜLLER -->
+<!-- ============================================================ -->
+<section id="rewards">
+<h2>🎁 Ödüller & Unlock'lar</h2>
+
+<h3>Şahmaran İlk Geçiş Ödülü</h3>
+<ul>
+<li>💰 <b>35.000 altın</b></li>
+<li>💎 <b>400 elmas</b></li>
+<li>🌱 <b>Kayın Tohumu #3</b></li>
+<li>🥚 Pet Yumurtası — <b>%50 Ak Tilki, %35 Şahin, %15 Kök Boğa</b></li>
+<li>🗡️ 1 garanti epic + 1 garanti rare</li>
+<li>🏆 Achievement: "Yılanın Gerçek Yüzü"</li>
+</ul>
+
+<h3>Dünya 3 Bitince Açılanlar</h3>
+<ul>
+<li>🗺️ <b>Dünya 4: Ayaz Doruk</b> açılır</li>
+<li>🔨 Kübey'de <b>item reroll</b> (affix değiştirme) hizmeti açılır</li>
+<li>🐪 Togay'ın dükkanı genişler (Dünya 4 malzemeleri eklenir)</li>
+<li>📜 Ana Quest Zinciri 4. bölüm</li>
+<li>🧪 Yeni iksir tarifi: <b>Antidot+</b> (zehir bağışıklığı 10sn)</li>
+</ul>
+
+<h3>3 Yıldız Bonusu</h3>
+<ul>
+<li>⭐ Stage'i bitir: normal ödül</li>
+<li>⭐⭐ HP %80 üstünde bitir: +100 elmas (ilk kez)</li>
+<li>⭐⭐⭐ 3 dakika altında bitir: +200 elmas + rare item (ilk kez)</li>
+</ul>
+</section>
+
+<!-- ============================================================ -->
+<!-- FARM TAVSİYESİ -->
+<!-- ============================================================ -->
+<section id="farm">
+<h2>🌾 Farm Tavsiyesi</h2>
+<table>
+<tr><th>Amaç</th><th>Önerilen Stage</th><th>Neden</th></tr>
+<tr><td>💰 <b>Altın Farm</b></td><td>Stage 20-25</td><td>Kum Kaçanı +%80 altın bonus, Togay'ın yakınında hızlı satış</td></tr>
+<tr><td>⭐ <b>XP Farm</b></td><td>Stage 35-40</td><td>Yılan Rahibesi + Jeztırnak = yüksek XP değeri</td></tr>
+<tr><td>💎 <b>Item Farm</b></td><td>Stage 40 (Çift Yüzlü Muhafız)</td><td>Epic garanti, "Yılan Pulu Zırhı" set parçası</td></tr>
+<tr><td>🧪 <b>Malzeme Farm</b></td><td>Stage 10-20</td><td>Bakır Toz (Jeztırnak), Akrep Zehri (Akrep), Kum Camı (çevre drop)</td></tr>
+<tr><td>🐾 <b>Pet Farm</b></td><td>Stage 30 (Demir Başlık)</td><td>%25 Ak Tilki pet yumurtası (gold find +%30 pet!)</td></tr>
+<tr><td>🔥 <b>Ateş Enchant Hazırlık</b></td><td>Dünya 2 Stage 25-30</td><td>K'daai Koru farm — Dünya 5'e ve Şahmaran'a karşı çok faydalı</td></tr>
+</table>
+<div class="note"><b>AFK Tavsiyesi:</b> Dünya 3'te AFK farm için Stage 30-35 ideal. Sıcak çarpması AFK'da etkili ama mob'ları da yavaşlattığı için dengeli. Zehir hasarına dikkat — antidot iksiri AFK'da otomatik kullanılır (varsa).</div>
+<div class="warn"><b>Uyarı:</b> Kum fırtınası stage'lerinde (Stage 15+, rastgele) ranged sınıflar -%15 isabet kaybı yaşar. Yay-Çı ile AFK farm yaparken bu stage'lerden kaçın.</div>
+</section>
+
+<!-- ============================================================ -->
+<!-- HİKAYEDEKİ YERİ -->
+<!-- ============================================================ -->
+<section id="lore-role">
+<h2>🔗 Hikayedeki Yeri</h2>
+<p>Sarıkum Denizi, oyunun <b>duygusal derinleşme</b> dünyasıdır. Kayın Vadisi öğretir, Kör Mağaralar test eder — Sarıkum Denizi ise Alp'e <b>empati</b> kazandırır.</p>
+
+<p>Alp burada:</p>
+<ul>
+<li>✅ <b>İkinci hafıza parçasını alır</b> (Stage 30 — ateş başında birinin sesi: "Sen gidersen kim korur bizi?")</li>
+<li>✅ Hafızasız Koruk ile tanışır — kendi kayıp hafızasıyla <b>paralellik</b> kurar</li>
+<li>✅ Mankurt mekaniği sayesinde "hafızasızlık" temasını hem gameplay hem hikayede yaşar</li>
+<li>✅ Şahmaran'ın "güzellik altında tehlike" teması — Erlik hakkında dolaylı ipucu</li>
+<li>✅ İlk kez item reroll + çöl crafting sistemi açılır</li>
+<li>✅ Üçüncü Kayın Tohumu'nu toplar</li>
+</ul>
+
+<div class="lore"><b>Hikaye İpucu:</b> Şahmaran yenildiğinde, son nefesinde insan formuna döner ve fısıldar: <i>"Ben de bir zamanlar koruyucuydum... Ağacın dallarında uyurdum... Sonra düştüm ve... unuttum. Tıpkı sen gibi, Alp. Tıpkı... sen... gibi..."</i> — Alp sarsılır. "Ben de mi düştüm?"</div>
+<p>Bu, Alp'in kendisinin de Uluğ Kayın'la doğrudan bağlantılı olduğuna dair <b>ikinci büyük ipucu</b>dur (ilki Yelbegen'in "ikinci şans" sözüydü).</p>
+
+<h3>Sonraki Dünyaya Geçiş Cutscene'i</h3>
+<p>Şahmaran'ın gövdesi kumun altına gömülürken, sarayın tavanı çatlar. İçeriden buz gibi bir rüzgar eser — kar taneleri. Alp titreyerek yukarı bakar. Mergen yanına gelir: <i>"Sıcaktan kurtuldun, yiğit. Ama soğuk... soğuk daha acımasızdır. Çünkü soğukta yalnızlık daha çok acıtır."</i> — kamera yukarı çıkar, bembeyaz bir zirveye açılır. <b>Dünya 4 açılır.</b></p>
+</section>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<div style="text-align:center;margin-top:60px;padding:30px;color:#666;border-top:1px solid #2a2a40">
+<p>← <a href="world-2-kor-magaralar.html">Önceki: Kör Mağaralar</a> · <a href="index.html">Ana Sayfa</a> · <a href="world-4-ayaz-doruk.html">Sonraki: Ayaz Doruk →</a></p>
+</div>
+</main>
+</div>
+</body>
+</html>
