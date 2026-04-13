@@ -463,10 +463,10 @@ lib/screens/inventory_screen.dart:
 ```
 
 ### ✅ Test
-- [ ] Envanter açılıyor, loot'tan düşen item'lar görünüyor
-- [ ] Item detayları doğru (stat, affix, rarity)
-- [ ] Kuşanma çalışıyor (slot uyumu kontrolü)
-- [ ] Satış çalışıyor, altın artıyor
+- [x] Envanter açılıyor, loot'tan düşen item'lar görünüyor
+- [x] Item detayları doğru (stat, affix, rarity)
+- [x] Kuşanma çalışıyor (slot uyumu kontrolü)
+- [x] Satış çalışıyor, altın artıyor
 
 ---
 
@@ -491,11 +491,13 @@ lib/screens/inventory_screen.dart:
 ```
 
 ### ✅ Test
-- [ ] 9 ekipman slotu doğru çalışıyor
-- [ ] Item kuşanınca stat artıyor
-- [ ] Item çıkarınca stat azalıyor
-- [ ] Stat preview doğru hesaplıyor
-- [ ] Stat puanı dağıtımı çalışıyor
+- [x] 9 ekipman slotu doğru çalışıyor
+- [x] Item kuşanınca stat artıyor
+- [x] Item çıkarınca stat azalıyor
+- [x] Stat preview doğru hesaplıyor (side-by-side karşılaştırma)
+- [x] Stat puanı dağıtımı çalışıyor
+- [x] Envanter + karakter ekranı birleştirildi (tek sayfa)
+- [x] Emoji slot ikonları eklendi
 
 ---
 
@@ -524,11 +526,21 @@ lib/screens/upgrade_screen.dart (Demirci Kübey NPC ekranı):
 ```
 
 ### ✅ Test
-- [ ] Item +1'den +5'e kadar upgrade edilebiliyor
-- [ ] Maliyet doğru hesaplanıyor
-- [ ] Stat artışı doğru
-- [ ] Enchant çalışıyor (affix ekleniyor)
-- [ ] Başarısızlık animasyonu çalışıyor
+- [x] Item +1'den +5'e kadar upgrade edilebiliyor
+- [x] Maliyet doğru hesaplanıyor
+- [x] Stat artışı doğru
+- [x] Enchant çalışıyor (affix ekleniyor)
+- [x] Başarısızlık animasyonu çalışıyor (kırmızı titreme)
+- [x] Reroll affix çalışıyor
+- [x] L10n: affix→özellik, reroll→yenile (TR), trait (EN)
+- [x] Item drop'ta rastgele affix sayısı (enchant için boş yuva)
+
+### Ek geliştirmeler (PROMPT 3.3 ile birlikte)
+- [x] Oyun hızı kontrolü (1x/2x/5x/10x) — dengeli hero+enemy scaling
+- [x] Stage complete geri sayım (5sn) + otomatik devam
+- [x] Yenilme geri sayımı (5sn) + aynı stage tekrar
+- [x] Otomatik stat dağıtımı önizleme modu (onay gerekli)
+- [x] Debug gold +1M
 
 ---
 
