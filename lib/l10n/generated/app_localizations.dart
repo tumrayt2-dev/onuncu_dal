@@ -1087,6 +1087,108 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Karsilastirma'**
   String get comparing;
+
+  /// No description provided for @blacksmith.
+  ///
+  /// In tr, this message translates to:
+  /// **'Demirci Kubey'**
+  String get blacksmith;
+
+  /// No description provided for @upgradeItem.
+  ///
+  /// In tr, this message translates to:
+  /// **'Guclendir'**
+  String get upgradeItem;
+
+  /// No description provided for @enchantItem.
+  ///
+  /// In tr, this message translates to:
+  /// **'Buyule'**
+  String get enchantItem;
+
+  /// No description provided for @rerollAffix.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ozellik Yenile'**
+  String get rerollAffix;
+
+  /// No description provided for @upgradeCost.
+  ///
+  /// In tr, this message translates to:
+  /// **'Maliyet'**
+  String get upgradeCost;
+
+  /// No description provided for @fodderRequired.
+  ///
+  /// In tr, this message translates to:
+  /// **'Malzeme: Ayni nadirlikte 1 item'**
+  String get fodderRequired;
+
+  /// No description provided for @successRate.
+  ///
+  /// In tr, this message translates to:
+  /// **'Basari Sansi'**
+  String get successRate;
+
+  /// No description provided for @upgradeSuccess.
+  ///
+  /// In tr, this message translates to:
+  /// **'Basarili! +{level}'**
+  String upgradeSuccess(String level);
+
+  /// No description provided for @upgradeFail.
+  ///
+  /// In tr, this message translates to:
+  /// **'Basarisiz! Malzeme harcandi.'**
+  String get upgradeFail;
+
+  /// No description provided for @maxUpgrade.
+  ///
+  /// In tr, this message translates to:
+  /// **'Maksimum seviyeye ulasti'**
+  String get maxUpgrade;
+
+  /// No description provided for @noFodder.
+  ///
+  /// In tr, this message translates to:
+  /// **'Uygun malzeme yok'**
+  String get noFodder;
+
+  /// No description provided for @notEnoughGold.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeterli altin yok'**
+  String get notEnoughGold;
+
+  /// No description provided for @selectFodder.
+  ///
+  /// In tr, this message translates to:
+  /// **'Malzeme Sec'**
+  String get selectFodder;
+
+  /// No description provided for @selectItem.
+  ///
+  /// In tr, this message translates to:
+  /// **'Item Sec'**
+  String get selectItem;
+
+  /// No description provided for @enchantFull.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ozellik yuvasi dolu'**
+  String get enchantFull;
+
+  /// No description provided for @affixAdded.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yeni ozellik eklendi!'**
+  String get affixAdded;
+
+  /// No description provided for @affixRerolled.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ozellik yenilendi!'**
+  String get affixRerolled;
 }
 
 class _AppLocalizationsDelegate

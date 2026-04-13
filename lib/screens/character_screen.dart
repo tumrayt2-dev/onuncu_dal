@@ -67,8 +67,17 @@ class _CharacterScreenState extends ConsumerState<CharacterScreen> {
   }
 
   void _auto() {
-    ref.read(playerProvider.notifier).autoDistributeStats();
-    _resetPending();
+    final hero = ref.read(playerProvider);
+    if (hero == null || hero.statPoints <= 0) return;
+    final allocation = PlayerNotifier.calculateAutoAllocation(
+      hero.heroClass,
+      hero.statPoints,
+    );
+    setState(() {
+      for (final k in _pending.keys) {
+        _pending[k] = allocation[k] ?? 0;
+      }
+    });
   }
 
   void _resetAll() {

@@ -114,8 +114,9 @@ class LootService {
     // Rarity belirle
     final rarity = _rollRarity(forcedMinRarity: forcedMinRarity);
 
-    // Affix sayisi rarity'ye gore
-    final affixCount = rarity.affixCount;
+    // Affix sayisi: 0 ile rarity max arasi (enchant ile tamamlanabilir)
+    final maxAffixes = rarity.affixCount;
+    final affixCount = maxAffixes <= 1 ? _rng.nextInt(maxAffixes + 1) : 1 + _rng.nextInt(maxAffixes);
     final affixes = _generateAffixes(affixCount, stageId);
 
     // Base stat'lari iLevel ile olcekle
@@ -145,7 +146,9 @@ class LootService {
     if (base == null) return null;
 
     final rarity = _rollRarity();
-    final affixes = _generateAffixes(rarity.affixCount, stageId);
+    final maxAff = rarity.affixCount;
+    final affCount = maxAff <= 1 ? _rng.nextInt(maxAff + 1) : 1 + _rng.nextInt(maxAff);
+    final affixes = _generateAffixes(affCount, stageId);
     final scaledStats = _scaleStats(base['baseStats'] as Map<String, dynamic>, stageId);
 
     return Item(

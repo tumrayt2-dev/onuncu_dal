@@ -20,11 +20,15 @@ class FloatingTextComponent extends PositionComponent {
 
   double _elapsed = 0;
 
+  /// Oyun hiz carpani — BattleGame tarafindan set edilir
+  double gameSpeed = 1.0;
+
   @override
   void update(double dt) {
     super.update(dt);
-    _elapsed += dt;
-    position.y -= 40 * dt; // yukari kay
+    final sDt = dt * gameSpeed;
+    _elapsed += sDt;
+    position.y -= 40 * sDt;
     if (_elapsed >= duration) {
       removeFromParent();
     }

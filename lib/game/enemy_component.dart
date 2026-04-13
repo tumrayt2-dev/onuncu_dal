@@ -40,6 +40,9 @@ class EnemyComponent extends PositionComponent {
   double _deathTimer = 0;
   static const _deathDuration = 0.4;
 
+  /// Oyun hiz carpani — BattleGame tarafindan set edilir
+  double gameSpeed = 1.0;
+
   Enemy get enemyData => _enemyData;
   int get stageId => _stageId;
   Lane get lane => _lane;
@@ -150,24 +153,24 @@ class EnemyComponent extends PositionComponent {
   @override
   void update(double dt) {
     super.update(dt);
+    final sDt = dt * gameSpeed;
 
     // Saldiri animasyonu — sola atilip geri don
     if (_isAttacking) {
-      _attackAnimTimer += dt;
+      _attackAnimTimer += sDt;
       if (_attackAnimTimer < 0.1) {
-        position.x -= 150 * dt;
+        position.x -= 150 * sDt;
       } else if (_attackAnimTimer < 0.2) {
-        position.x += 150 * dt;
+        position.x += 150 * sDt;
       } else {
         _isAttacking = false;
       }
     }
 
     if (_dying) {
-      _deathTimer += dt;
+      _deathTimer += sDt;
       if (_deathTimer >= _deathDuration) {
         isDead = true;
-        // removeFromParent battle_game pool tarafindan yapilir
       }
     }
   }

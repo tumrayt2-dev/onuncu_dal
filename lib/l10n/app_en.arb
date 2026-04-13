@@ -185,5 +185,27 @@
   "sortByRarity": "Rarity",
   "sortByLevel": "Level",
   "equipped": "Equipped",
-  "comparing": "Comparison"
+  "comparing": "Comparison",
+  "blacksmith": "Blacksmith Kubey",
+  "upgradeItem": "Upgrade",
+  "enchantItem": "Enchant",
+  "rerollAffix": "Refresh Trait",
+  "upgradeCost": "Cost",
+  "fodderRequired": "Material: 1 item of same rarity",
+  "successRate": "Success Rate",
+  "upgradeSuccess": "Success! +{level}",
+  "@upgradeSuccess": {
+    "placeholders": {
+      "level": { "type": "String" }
+    }
+  },
+  "upgradeFail": "Failed! Materials consumed.",
+  "maxUpgrade": "Maximum level reached",
+  "noFodder": "No suitable material",
+  "notEnoughGold": "Not enough gold",
+  "selectFodder": "Select Material",
+  "selectItem": "Select Item",
+  "enchantFull": "No empty trait slots",
+  "affixAdded": "New trait added!",
+  "affixRerolled": "Trait refreshed!"
 }

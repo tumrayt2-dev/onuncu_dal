@@ -515,4 +515,57 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get comparing => 'Karsilastirma';
+
+  @override
+  String get blacksmith => 'Demirci Kubey';
+
+  @override
+  String get upgradeItem => 'Guclendir';
+
+  @override
+  String get enchantItem => 'Buyule';
+
+  @override
+  String get rerollAffix => 'Ozellik Yenile';
+
+  @override
+  String get upgradeCost => 'Maliyet';
+
+  @override
+  String get fodderRequired => 'Malzeme: Ayni nadirlikte 1 item';
+
+  @override
+  String get successRate => 'Basari Sansi';
+
+  @override
+  String upgradeSuccess(String level) {
+    return 'Basarili! +$level';
+  }
+
+  @override
+  String get upgradeFail => 'Basarisiz! Malzeme harcandi.';
+
+  @override
+  String get maxUpgrade => 'Maksimum seviyeye ulasti';
+
+  @override
+  String get noFodder => 'Uygun malzeme yok';
+
+  @override
+  String get notEnoughGold => 'Yeterli altin yok';
+
+  @override
+  String get selectFodder => 'Malzeme Sec';
+
+  @override
+  String get selectItem => 'Item Sec';
+
+  @override
+  String get enchantFull => 'Ozellik yuvasi dolu';
+
+  @override
+  String get affixAdded => 'Yeni ozellik eklendi!';
+
+  @override
+  String get affixRerolled => 'Ozellik yenilendi!';
 }

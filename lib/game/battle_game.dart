@@ -52,6 +52,9 @@ class BattleGame extends FlameGame with TapCallbacks {
   double _battleTimer = 0;
   bool _isPaused = false;
 
+  // Oyun hizi carpani
+  double gameSpeed = 1.0;
+
   // AFK AI
   bool afkEnabled = false;
   double _afkCheckTimer = 0;
@@ -108,17 +111,28 @@ class BattleGame extends FlameGame with TapCallbacks {
 
   @override
   void update(double dt) {
+    final scaledDt = dt * gameSpeed;
+
+    // Hiz carpanini tum component'lara yansit
+    heroComponent.gameSpeed = gameSpeed;
+    for (final enemy in children.whereType<EnemyComponent>()) {
+      enemy.gameSpeed = gameSpeed;
+    }
+    for (final ft in children.whereType<FloatingTextComponent>()) {
+      ft.gameSpeed = gameSpeed;
+    }
+
     super.update(dt);
 
     if (_isPaused || heroComponent.isDead || _stageComplete) return;
 
-    _battleTimer += dt;
-    _laneSwitchCooldown = (_laneSwitchCooldown - dt).clamp(0, _laneSwitchCooldownMax);
+    _battleTimer += scaledDt;
+    _laneSwitchCooldown = (_laneSwitchCooldown - scaledDt).clamp(0, _laneSwitchCooldownMax);
 
     // Combo + Resource guncelle
     final oldCombo = comboService.combo;
-    comboService.update(dt);
-    resourceService.update(dt);
+    comboService.update(scaledDt);
+    resourceService.update(scaledDt);
 
     // Combo sifirlaninca UI'i guncelle
     if (oldCombo > 0 && comboService.combo == 0) {
@@ -153,7 +167,7 @@ class BattleGame extends FlameGame with TapCallbacks {
     }
 
     // Dalga sistemi — yeni mob spawn (pool'dan veya yeni)
-    final newEnemy = waveService.update(dt, enemies.length);
+    final newEnemy = waveService.update(scaledDt, enemies.length);
     if (newEnemy != null) {
       final lane = waveService.randomLane();
       final pos = Vector2(size.x + 40, laneSystem.laneY(lane));
@@ -215,7 +229,7 @@ class BattleGame extends FlameGame with TapCallbacks {
 
     // AFK AI — otomatik serit degistirme (sadece aciksa)
     if (afkEnabled) {
-      _afkCheckTimer += dt;
+      _afkCheckTimer += scaledDt;
       if (_afkCheckTimer >= _afkCheckInterval && _laneSwitchCooldown <= 0) {
         _afkCheckTimer = 0;
         _autoSwitchLane(currentEnemies, bufferLane, laneCounts);
@@ -223,7 +237,7 @@ class BattleGame extends FlameGame with TapCallbacks {
     }
 
     // Hero otomatik saldiri — sadece ana serit, ekran icindeki en yakin mob
-    if (heroComponent.updateAttack(dt)) {
+    if (heroComponent.updateAttack(scaledDt)) {
       final sameLane = currentEnemies
           .where((e) => e.lane == _currentLane && e.position.x < size.x)
           .toList();
@@ -290,7 +304,7 @@ class BattleGame extends FlameGame with TapCallbacks {
     // Enemy AI — TUM seritler aktif
     for (final enemy in currentEnemies) {
       final shouldAttack =
-          enemy.updateAI(dt, heroComponent.position.x, _currentLane);
+          enemy.updateAI(scaledDt, heroComponent.position.x, _currentLane);
       if (shouldAttack) {
         final isMainLane = enemy.lane == _currentLane;
         final damageMultiplier = isMainLane ? 1.0 : 0.5;

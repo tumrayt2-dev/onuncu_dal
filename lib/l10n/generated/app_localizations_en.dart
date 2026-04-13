@@ -514,4 +514,57 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get comparing => 'Comparison';
+
+  @override
+  String get blacksmith => 'Blacksmith Kubey';
+
+  @override
+  String get upgradeItem => 'Upgrade';
+
+  @override
+  String get enchantItem => 'Enchant';
+
+  @override
+  String get rerollAffix => 'Refresh Trait';
+
+  @override
+  String get upgradeCost => 'Cost';
+
+  @override
+  String get fodderRequired => 'Material: 1 item of same rarity';
+
+  @override
+  String get successRate => 'Success Rate';
+
+  @override
+  String upgradeSuccess(String level) {
+    return 'Success! +$level';
+  }
+
+  @override
+  String get upgradeFail => 'Failed! Materials consumed.';
+
+  @override
+  String get maxUpgrade => 'Maximum level reached';
+
+  @override
+  String get noFodder => 'No suitable material';
+
+  @override
+  String get notEnoughGold => 'Not enough gold';
+
+  @override
+  String get selectFodder => 'Select Material';
+
+  @override
+  String get selectItem => 'Select Item';
+
+  @override
+  String get enchantFull => 'No empty trait slots';
+
+  @override
+  String get affixAdded => 'New trait added!';
+
+  @override
+  String get affixRerolled => 'Trait refreshed!';
 }

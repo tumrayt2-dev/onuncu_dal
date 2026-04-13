@@ -105,6 +105,15 @@ class MainGameScreen extends ConsumerWidget {
                 label: Text(l10n.character),
               ),
             ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: 200,
+              child: OutlinedButton.icon(
+                onPressed: () => context.go('/upgrade'),
+                icon: const Icon(Icons.auto_fix_high),
+                label: Text(l10n.blacksmith),
+              ),
+            ),
           ],
         ),
       ),

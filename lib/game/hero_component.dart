@@ -40,6 +40,9 @@ class HeroComponent extends PositionComponent {
   double? _targetY;
   static const _laneTransitionSpeed = 600.0;
 
+  /// Oyun hiz carpani — BattleGame tarafindan set edilir
+  double gameSpeed = 1.0;
+
   bool isDead = false;
 
   double get hpPercent => _currentHp / _maxHp;
@@ -93,18 +96,19 @@ class HeroComponent extends PositionComponent {
   @override
   void update(double dt) {
     super.update(dt);
+    final sDt = dt * gameSpeed;
 
     if (isDead) return;
 
     // Saldiri animasyonu
     if (_isAttacking) {
-      _attackAnimTimer += dt;
+      _attackAnimTimer += sDt;
       if (_attackAnimTimer < 0.1) {
-        position.x = _originX + (_attackAnimTimer / 0.1) * 20; // ileri atil
+        position.x = _originX + (_attackAnimTimer / 0.1) * 20;
       } else if (_attackAnimTimer < 0.2) {
-        position.x = _originX + (1 - (_attackAnimTimer - 0.1) / 0.1) * 20; // geri don
+        position.x = _originX + (1 - (_attackAnimTimer - 0.1) / 0.1) * 20;
       } else {
-        position.x = _originX; // tam sifirla — kayma olmaz
+        position.x = _originX;
         _isAttacking = false;
       }
     }
@@ -116,11 +120,11 @@ class HeroComponent extends PositionComponent {
         _baseY = _targetY!;
         _targetY = null;
       } else {
-        final step = _laneTransitionSpeed * dt;
+        final step = _laneTransitionSpeed * sDt;
         position.y += diff.sign * step.clamp(0, diff.abs());
       }
     } else if (!_isAttacking) {
-      _idleTimer += dt;
+      _idleTimer += sDt;
       position.y = _baseY + 3 * math.sin(_idleTimer * 3);
     }
   }

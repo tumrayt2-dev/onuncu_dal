@@ -185,5 +185,27 @@
   "sortByRarity": "Nadirlik",
   "sortByLevel": "Seviye",
   "equipped": "Giyili",
-  "comparing": "Karsilastirma"
+  "comparing": "Karsilastirma",
+  "blacksmith": "Demirci Kubey",
+  "upgradeItem": "Guclendir",
+  "enchantItem": "Buyule",
+  "rerollAffix": "Ozellik Yenile",
+  "upgradeCost": "Maliyet",
+  "fodderRequired": "Malzeme: Ayni nadirlikte 1 item",
+  "successRate": "Basari Sansi",
+  "upgradeSuccess": "Basarili! +{level}",
+  "@upgradeSuccess": {
+    "placeholders": {
+      "level": { "type": "String" }
+    }
+  },
+  "upgradeFail": "Basarisiz! Malzeme harcandi.",
+  "maxUpgrade": "Maksimum seviyeye ulasti",
+  "noFodder": "Uygun malzeme yok",
+  "notEnoughGold": "Yeterli altin yok",
+  "selectFodder": "Malzeme Sec",
+  "selectItem": "Item Sec",
+  "enchantFull": "Ozellik yuvasi dolu",
+  "affixAdded": "Yeni ozellik eklendi!",
+  "affixRerolled": "Ozellik yenilendi!"
 }

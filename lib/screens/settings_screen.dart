@@ -103,12 +103,12 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
               },
             ),
             _DebugButton(
-              label: '+1000 Gold',
+              label: '+1M Gold',
               icon: Icons.monetization_on,
               onTap: () {
-                ref.read(playerProvider.notifier).addGold(1000);
+                ref.read(playerProvider.notifier).addGold(1000000);
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('+1000 Gold')),
+                  const SnackBar(content: Text('+1.000.000 Gold')),
                 );
               },
             ),

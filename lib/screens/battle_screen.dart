@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -42,6 +44,10 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   // AFK AI toggle
   bool _afkEnabled = false;
 
+  // Oyun hizi
+  static const _speedOptions = [1.0, 2.0, 5.0, 10.0];
+  int _speedIndex = 0;
+
   // Savas boyunca biriken oduller (henuz verilmedi, savaş sonunda toplu verilir)
   int _earnedXp = 0;
   int _earnedGold = 0;
@@ -66,6 +72,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   String? _specialFlashName;
   double _specialFlashTimer = 0;
 
+  // Geri sayim
+  static const _countdownTotal = 5;
+  int _countdown = _countdownTotal;
+  Timer? _countdownTimer;
+
   // Loot popup
   String? _lootItemName;
   Color _lootColor = Colors.grey;
@@ -75,6 +86,30 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   void initState() {
     super.initState();
     _initGame();
+  }
+
+  @override
+  void dispose() {
+    _countdownTimer?.cancel();
+    super.dispose();
+  }
+
+  void _startCountdown(VoidCallback onDone) {
+    _countdownTimer?.cancel();
+    _countdown = _countdownTotal;
+    _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() {
+        _countdown--;
+        if (_countdown <= 0) {
+          timer.cancel();
+          onDone();
+        }
+      });
+    });
   }
 
   void _safeSetState(VoidCallback fn) {
@@ -106,6 +141,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       worldId: hero?.currentWorldId ?? 1,
     );
     _game.afkEnabled = _afkEnabled;
+    _game.gameSpeed = _speedOptions[_speedIndex];
     _game.onLaneChanged = (lane) {
       _safeSetState(() => _currentLane = lane);
     };
@@ -123,6 +159,12 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
     };
     _game.onHeroDied = () {
       _safeSetState(() => _isDefeated = true);
+      // Yenilgide ödülleri ver, geri sayım sonunda aynı stage tekrar
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
+        _startCountdown(() => _restartBattle());
+      });
     };
     _game.onRewardPopup = (xp, gold) {
       // Biriktir — savaş sonunda toplu verilecek
@@ -225,6 +267,8 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _leveledUp = false;
       _newLevel = updatedHero?.level ?? 1;
     });
+
+    _startCountdown(() => _restartBattle());
   }
 
   void _togglePause() {
@@ -254,7 +298,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   }
 
   void _restartBattle() {
+    _countdownTimer?.cancel();
     setState(() {
+      _countdown = _countdownTotal;
       _isDefeated = false;
       _stageComplete = false;
       _isPaused = false;
@@ -516,6 +562,41 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                               style: TextStyle(
                                 color: _afkEnabled
                                     ? const Color(0xFF4CAF50)
+                                    : AppColors.textDim,
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        // Hiz butonu
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              _speedIndex = (_speedIndex + 1) % _speedOptions.length;
+                              _game.gameSpeed = _speedOptions[_speedIndex];
+                            });
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 6, vertical: 2),
+                            decoration: BoxDecoration(
+                              color: _speedIndex > 0
+                                  ? const Color(0xFFFF9800).withValues(alpha: 0.3)
+                                  : AppColors.surface.withValues(alpha: 0.5),
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
+                                color: _speedIndex > 0
+                                    ? const Color(0xFFFF9800)
+                                    : AppColors.textDim,
+                              ),
+                            ),
+                            child: Text(
+                              '${_speedOptions[_speedIndex].toInt()}x',
+                              style: TextStyle(
+                                color: _speedIndex > 0
+                                    ? const Color(0xFFFF9800)
                                     : AppColors.textDim,
                                 fontSize: 11,
                                 fontWeight: FontWeight.bold,
@@ -943,11 +1024,10 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                       width: 200,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Yenilgide tam ödül ver, sonra yeniden başla
-                          _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
+                          _countdownTimer?.cancel();
                           _restartBattle();
                         },
-                        child: Text(l10n.retry),
+                        child: Text('${l10n.retry} ($_countdown)'),
                       ),
                     ),
                     const SizedBox(height: 12),
@@ -955,8 +1035,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                       width: 200,
                       child: OutlinedButton(
                         onPressed: () {
-                          // Yenilgide tam ödül ver, sonra menüye dön
-                          _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
+                          _countdownTimer?.cancel();
                           context.go('/game');
                         },
                         child: Text(l10n.goBack),
@@ -1033,8 +1112,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                     SizedBox(
                       width: 200,
                       child: ElevatedButton(
-                        onPressed: () => context.go('/game'),
-                        child: Text(l10n.continueText),
+                        onPressed: () {
+                          _countdownTimer?.cancel();
+                          _restartBattle();
+                        },
+                        child: Text('${l10n.continueText} ($_countdown)'),
                       ),
                     ),
                   ],
