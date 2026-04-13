@@ -59,6 +59,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   String? _specialFlashName;
   double _specialFlashTimer = 0;
 
+  // Loot popup
+  String? _lootItemName;
+  Color _lootColor = Colors.grey;
+  bool _lootIsRarePlus = false;
+
   @override
   void initState() {
     super.initState();
@@ -147,6 +152,20 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         _specialActive = specialActive;
       });
     };
+    _game.onItemDropped = (itemName, rarityColorHex, isRarePlus) {
+      _safeSetState(() {
+        _lootItemName = itemName;
+        _lootColor = Color(rarityColorHex);
+        _lootIsRarePlus = isRarePlus;
+      });
+      Future.delayed(Duration(milliseconds: isRarePlus ? 2500 : 1500), () {
+        if (mounted) {
+          setState(() {
+            _lootItemName = null;
+          });
+        }
+      });
+    };
     _game.onSpecialActivated = (name) {
       _safeSetState(() {
         _specialFlashName = name;
@@ -210,6 +229,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _specialActive = false;
       _specialFlashName = null;
       _specialFlashTimer = 0;
+      _lootItemName = null;
+      _lootColor = Colors.grey;
+      _lootIsRarePlus = false;
       _initGame();
     });
   }
@@ -220,6 +242,37 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         'ruhFirtinasi' => l10n.specialRuhFirtinasi,
         'kartalGoz' => l10n.specialKartalGoz,
         'golgeBicagi' => l10n.specialGolgeBicagi,
+        _ => key,
+      };
+
+  String _itemL10n(AppLocalizations l10n, String key) => switch (key) {
+        'itemSwordCommon' => l10n.itemSwordCommon,
+        'itemSwordUncommon' => l10n.itemSwordUncommon,
+        'itemSwordRare' => l10n.itemSwordRare,
+        'itemHelmCommon' => l10n.itemHelmCommon,
+        'itemHelmUncommon' => l10n.itemHelmUncommon,
+        'itemHelmRare' => l10n.itemHelmRare,
+        'itemChestCommon' => l10n.itemChestCommon,
+        'itemChestUncommon' => l10n.itemChestUncommon,
+        'itemChestRare' => l10n.itemChestRare,
+        'itemGlovesCommon' => l10n.itemGlovesCommon,
+        'itemGlovesUncommon' => l10n.itemGlovesUncommon,
+        'itemGlovesRare' => l10n.itemGlovesRare,
+        'itemPantsCommon' => l10n.itemPantsCommon,
+        'itemPantsUncommon' => l10n.itemPantsUncommon,
+        'itemPantsRare' => l10n.itemPantsRare,
+        'itemBootsCommon' => l10n.itemBootsCommon,
+        'itemBootsUncommon' => l10n.itemBootsUncommon,
+        'itemBootsRare' => l10n.itemBootsRare,
+        'itemRingCommon' => l10n.itemRingCommon,
+        'itemRingUncommon' => l10n.itemRingUncommon,
+        'itemRingRare' => l10n.itemRingRare,
+        'itemRing2Common' => l10n.itemRing2Common,
+        'itemRing2Uncommon' => l10n.itemRing2Uncommon,
+        'itemRing2Rare' => l10n.itemRing2Rare,
+        'itemAmuletCommon' => l10n.itemAmuletCommon,
+        'itemAmuletUncommon' => l10n.itemAmuletUncommon,
+        'itemAmuletRare' => l10n.itemAmuletRare,
         _ => key,
       };
 
@@ -636,6 +689,55 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                       shadows: const [
                         Shadow(color: Colors.amber, blurRadius: 20),
                         Shadow(color: Colors.amber, blurRadius: 40),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+          // Loot popup
+          if (_lootItemName != null)
+            Positioned(
+              bottom: 100,
+              left: 0,
+              right: 0,
+              child: IgnorePointer(
+                child: Center(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withValues(alpha: 0.8),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: _lootColor, width: 2),
+                      boxShadow: _lootIsRarePlus
+                          ? [
+                              BoxShadow(
+                                color: _lootColor.withValues(alpha: 0.6),
+                                blurRadius: 16,
+                                spreadRadius: 2,
+                              ),
+                            ]
+                          : null,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (_lootIsRarePlus)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 6),
+                            child: Icon(Icons.auto_awesome,
+                                color: _lootColor, size: 18),
+                          ),
+                        Text(
+                          _itemL10n(l10n, _lootItemName!),
+                          style: TextStyle(
+                            color: _lootColor,
+                            fontSize: _lootIsRarePlus ? 16 : 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
                   ),

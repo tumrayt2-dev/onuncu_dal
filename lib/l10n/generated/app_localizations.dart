@@ -505,6 +505,168 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Golge Bicagi'**
   String get specialGolgeBicagi;
+
+  /// No description provided for @itemSwordCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kilic'**
+  String get itemSwordCommon;
+
+  /// No description provided for @itemSwordUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Kilici'**
+  String get itemSwordUncommon;
+
+  /// No description provided for @itemSwordRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Kilici'**
+  String get itemSwordRare;
+
+  /// No description provided for @itemHelmCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Miğfer'**
+  String get itemHelmCommon;
+
+  /// No description provided for @itemHelmUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Migferi'**
+  String get itemHelmUncommon;
+
+  /// No description provided for @itemHelmRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Migferi'**
+  String get itemHelmRare;
+
+  /// No description provided for @itemChestCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gogus Zirhı'**
+  String get itemChestCommon;
+
+  /// No description provided for @itemChestUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Zirhi'**
+  String get itemChestUncommon;
+
+  /// No description provided for @itemChestRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Zirhi'**
+  String get itemChestRare;
+
+  /// No description provided for @itemGlovesCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Eldiven'**
+  String get itemGlovesCommon;
+
+  /// No description provided for @itemGlovesUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Eldiveni'**
+  String get itemGlovesUncommon;
+
+  /// No description provided for @itemGlovesRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Eldiveni'**
+  String get itemGlovesRare;
+
+  /// No description provided for @itemPantsCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Pantolon'**
+  String get itemPantsCommon;
+
+  /// No description provided for @itemPantsUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Pantolonu'**
+  String get itemPantsUncommon;
+
+  /// No description provided for @itemPantsRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Pantolonu'**
+  String get itemPantsRare;
+
+  /// No description provided for @itemBootsCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Cizme'**
+  String get itemBootsCommon;
+
+  /// No description provided for @itemBootsUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Cizmesi'**
+  String get itemBootsUncommon;
+
+  /// No description provided for @itemBootsRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Cizmesi'**
+  String get itemBootsRare;
+
+  /// No description provided for @itemRingCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yuzuk'**
+  String get itemRingCommon;
+
+  /// No description provided for @itemRingUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Yuzugu'**
+  String get itemRingUncommon;
+
+  /// No description provided for @itemRingRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Yuzugu'**
+  String get itemRingRare;
+
+  /// No description provided for @itemRing2Common.
+  ///
+  /// In tr, this message translates to:
+  /// **'Ikinci Yuzuk'**
+  String get itemRing2Common;
+
+  /// No description provided for @itemRing2Uncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Yuzugu II'**
+  String get itemRing2Uncommon;
+
+  /// No description provided for @itemRing2Rare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Yuzugu II'**
+  String get itemRing2Rare;
+
+  /// No description provided for @itemAmuletCommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Muska'**
+  String get itemAmuletCommon;
+
+  /// No description provided for @itemAmuletUncommon.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savas Muskasi'**
+  String get itemAmuletUncommon;
+
+  /// No description provided for @itemAmuletRare.
+  ///
+  /// In tr, this message translates to:
+  /// **'Usta Muskasi'**
+  String get itemAmuletRare;
 }
 
 class _AppLocalizationsDelegate

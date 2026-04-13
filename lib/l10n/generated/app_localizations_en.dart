@@ -216,4 +216,85 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get specialGolgeBicagi => 'Shadow Blade';
+
+  @override
+  String get itemSwordCommon => 'Sword';
+
+  @override
+  String get itemSwordUncommon => 'War Sword';
+
+  @override
+  String get itemSwordRare => 'Master Sword';
+
+  @override
+  String get itemHelmCommon => 'Helm';
+
+  @override
+  String get itemHelmUncommon => 'War Helm';
+
+  @override
+  String get itemHelmRare => 'Master Helm';
+
+  @override
+  String get itemChestCommon => 'Chestplate';
+
+  @override
+  String get itemChestUncommon => 'War Chestplate';
+
+  @override
+  String get itemChestRare => 'Master Chestplate';
+
+  @override
+  String get itemGlovesCommon => 'Gloves';
+
+  @override
+  String get itemGlovesUncommon => 'War Gloves';
+
+  @override
+  String get itemGlovesRare => 'Master Gloves';
+
+  @override
+  String get itemPantsCommon => 'Pants';
+
+  @override
+  String get itemPantsUncommon => 'War Pants';
+
+  @override
+  String get itemPantsRare => 'Master Pants';
+
+  @override
+  String get itemBootsCommon => 'Boots';
+
+  @override
+  String get itemBootsUncommon => 'War Boots';
+
+  @override
+  String get itemBootsRare => 'Master Boots';
+
+  @override
+  String get itemRingCommon => 'Ring';
+
+  @override
+  String get itemRingUncommon => 'War Ring';
+
+  @override
+  String get itemRingRare => 'Master Ring';
+
+  @override
+  String get itemRing2Common => 'Ring II';
+
+  @override
+  String get itemRing2Uncommon => 'War Ring II';
+
+  @override
+  String get itemRing2Rare => 'Master Ring II';
+
+  @override
+  String get itemAmuletCommon => 'Amulet';
+
+  @override
+  String get itemAmuletUncommon => 'War Amulet';
+
+  @override
+  String get itemAmuletRare => 'Master Amulet';
 }

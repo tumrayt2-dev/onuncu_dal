@@ -9,6 +9,7 @@ import '../models/enums.dart';
 import '../models/stats.dart';
 import '../services/combat_service.dart';
 import '../services/combo_service.dart';
+import '../services/loot_service.dart';
 import '../services/resource_service.dart';
 import '../services/wave_service.dart';
 import 'hero_component.dart';
@@ -24,7 +25,8 @@ class BattleGame extends FlameGame with TapCallbacks {
     this.stageId = 1,
     this.worldId = 1,
   })  : comboService = ComboService(),
-        resourceService = ResourceService(heroClass: heroClass);
+        resourceService = ResourceService(heroClass: heroClass),
+        lootService = LootService();
 
   final HeroClass heroClass;
   final Stats heroStats;
@@ -37,6 +39,7 @@ class BattleGame extends FlameGame with TapCallbacks {
   late WaveService waveService;
   final ComboService comboService;
   final ResourceService resourceService;
+  final LootService lootService;
   Lane _currentLane = Lane.middle;
 
   int _totalXp = 0;
@@ -65,6 +68,7 @@ class BattleGame extends FlameGame with TapCallbacks {
   void Function(int combo, ui.Color color, String bonusLabel)? onComboChanged;
   void Function(double current, double max, bool specialReady, bool specialActive)? onResourceChanged;
   void Function(String specialKey)? onSpecialActivated;
+  void Function(String itemName, int rarityColorHex, bool isRarePlus)? onItemDropped;
 
   Lane get currentLane => _currentLane;
   bool get isPaused => _isPaused;
@@ -403,16 +407,15 @@ class BattleGame extends FlameGame with TapCallbacks {
   }
 
   void _onEnemyKilled(EnemyComponent enemy) {
-    final loot = enemy.enemyData.lootTable;
-    final baseXp = loot.xp;
-    final baseGold = loot.goldMin +
-        (loot.goldMax > loot.goldMin
-            ? (loot.goldMin + (loot.goldMax - loot.goldMin) ~/ 2)
-            : 0);
+    final lootResult = lootService.calculateLoot(
+      enemy: enemy.enemyData,
+      stageId: stageId,
+      goldMultiplier: comboService.goldMultiplier,
+    );
 
-    // Combo bonusu uygula
+    final baseXp = enemy.enemyData.lootTable.xp;
     final xp = (baseXp * comboService.xpMultiplier).round();
-    final gold = (baseGold * comboService.goldMultiplier).round();
+    final gold = lootResult.gold;
 
     _totalXp += xp;
     _totalGold += gold;
@@ -431,6 +434,20 @@ class BattleGame extends FlameGame with TapCallbacks {
     );
 
     onRewardPopup?.call(xp, gold);
+
+    // Item drop varsa bildir
+    final item = lootResult.item;
+    if (item != null) {
+      final isRarePlus = item.rarity.index >= Rarity.rare.index;
+      // Rarity renginde floating text
+      _spawnFloatingText(
+        '[ ${item.rarity.name.toUpperCase()} ]',
+        enemy.position.clone()..y -= 10,
+        color: ui.Color(item.rarity.colorHex),
+        fontSize: isRarePlus ? 18 : 14,
+      );
+      onItemDropped?.call(item.nameKey, item.rarity.colorHex, isRarePlus);
+    }
   }
 
   void _spawnFloatingText(

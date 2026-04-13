@@ -217,4 +217,85 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get specialGolgeBicagi => 'Golge Bicagi';
+
+  @override
+  String get itemSwordCommon => 'Kilic';
+
+  @override
+  String get itemSwordUncommon => 'Savas Kilici';
+
+  @override
+  String get itemSwordRare => 'Usta Kilici';
+
+  @override
+  String get itemHelmCommon => 'Miğfer';
+
+  @override
+  String get itemHelmUncommon => 'Savas Migferi';
+
+  @override
+  String get itemHelmRare => 'Usta Migferi';
+
+  @override
+  String get itemChestCommon => 'Gogus Zirhı';
+
+  @override
+  String get itemChestUncommon => 'Savas Zirhi';
+
+  @override
+  String get itemChestRare => 'Usta Zirhi';
+
+  @override
+  String get itemGlovesCommon => 'Eldiven';
+
+  @override
+  String get itemGlovesUncommon => 'Savas Eldiveni';
+
+  @override
+  String get itemGlovesRare => 'Usta Eldiveni';
+
+  @override
+  String get itemPantsCommon => 'Pantolon';
+
+  @override
+  String get itemPantsUncommon => 'Savas Pantolonu';
+
+  @override
+  String get itemPantsRare => 'Usta Pantolonu';
+
+  @override
+  String get itemBootsCommon => 'Cizme';
+
+  @override
+  String get itemBootsUncommon => 'Savas Cizmesi';
+
+  @override
+  String get itemBootsRare => 'Usta Cizmesi';
+
+  @override
+  String get itemRingCommon => 'Yuzuk';
+
+  @override
+  String get itemRingUncommon => 'Savas Yuzugu';
+
+  @override
+  String get itemRingRare => 'Usta Yuzugu';
+
+  @override
+  String get itemRing2Common => 'Ikinci Yuzuk';
+
+  @override
+  String get itemRing2Uncommon => 'Savas Yuzugu II';
+
+  @override
+  String get itemRing2Rare => 'Usta Yuzugu II';
+
+  @override
+  String get itemAmuletCommon => 'Muska';
+
+  @override
+  String get itemAmuletUncommon => 'Savas Muskasi';
+
+  @override
+  String get itemAmuletRare => 'Usta Muskasi';
 }
