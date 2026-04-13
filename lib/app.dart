@@ -45,7 +45,7 @@ class OnuncuDalApp extends ConsumerWidget {
     final locale = ref.watch(localeProvider);
 
     return MaterialApp.router(
-      title: 'Onuncu Dal',
+      title: 'ALP: Uluğ Kayın',
       debugShowCheckedModeBanner: false,
       theme: buildAppTheme(),
       routerConfig: _router,

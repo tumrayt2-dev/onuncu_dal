@@ -6,6 +6,7 @@ import 'package:flame/game.dart';
 import 'package:flutter/painting.dart';
 
 import '../models/enums.dart';
+import '../models/item.dart';
 import '../models/stats.dart';
 import '../services/combat_service.dart';
 import '../services/combo_service.dart';
@@ -42,6 +43,9 @@ class BattleGame extends FlameGame with TapCallbacks {
   final LootService lootService;
   Lane _currentLane = Lane.middle;
 
+  // Enemy object pool
+  final List<EnemyComponent> _enemyPool = [];
+
   int _totalXp = 0;
   int _totalGold = 0;
   bool _stageComplete = false;
@@ -65,10 +69,10 @@ class BattleGame extends FlameGame with TapCallbacks {
   void Function(int newLevel)? onLevelUp;
   void Function(Map<Lane, int> counts, Lane? bufferLane)? onLaneInfoChanged;
   void Function(Lane damageLane)? onSideDamageFlash;
-  void Function(int combo, ui.Color color, String bonusLabel)? onComboChanged;
+  void Function(int combo, ui.Color color, int tier)? onComboChanged;
   void Function(double current, double max, bool specialReady, bool specialActive)? onResourceChanged;
   void Function(String specialKey)? onSpecialActivated;
-  void Function(String itemName, int rarityColorHex, bool isRarePlus)? onItemDropped;
+  void Function(Item item)? onItemDropped;
 
   Lane get currentLane => _currentLane;
   bool get isPaused => _isPaused;
@@ -118,7 +122,7 @@ class BattleGame extends FlameGame with TapCallbacks {
 
     // Combo sifirlaninca UI'i guncelle
     if (oldCombo > 0 && comboService.combo == 0) {
-      onComboChanged?.call(0, comboService.color, '');
+      onComboChanged?.call(0, comboService.color, 0);
     }
 
     onResourceChanged?.call(
@@ -138,16 +142,38 @@ class BattleGame extends FlameGame with TapCallbacks {
         .where((e) => !e.isDead)
         .toList();
 
-    // Dalga sistemi — yeni mob spawn
+    // Olu dusmanlari pool'a geri al
+    final deadEnemies = children
+        .whereType<EnemyComponent>()
+        .where((e) => e.isDead)
+        .toList();
+    for (final dead in deadEnemies) {
+      dead.removeFromParent();
+      _enemyPool.add(dead);
+    }
+
+    // Dalga sistemi — yeni mob spawn (pool'dan veya yeni)
     final newEnemy = waveService.update(dt, enemies.length);
     if (newEnemy != null) {
       final lane = waveService.randomLane();
-      add(EnemyComponent(
-        enemyData: newEnemy,
-        position: Vector2(size.x + 40, laneSystem.laneY(lane)),
-        stageId: stageId,
-        lane: lane,
-      ));
+      final pos = Vector2(size.x + 40, laneSystem.laneY(lane));
+      if (_enemyPool.isNotEmpty) {
+        final recycled = _enemyPool.removeLast();
+        recycled.reset(
+          enemyData: newEnemy,
+          pos: pos,
+          stageId: stageId,
+          lane: lane,
+        );
+        add(recycled);
+      } else {
+        add(EnemyComponent(
+          enemyData: newEnemy,
+          position: pos,
+          stageId: stageId,
+          lane: lane,
+        ));
+      }
       onWaveChanged?.call(waveService.currentWave, waveService.totalWaves);
     }
 
@@ -232,7 +258,7 @@ class BattleGame extends FlameGame with TapCallbacks {
           comboService.onHit();
           resourceService.onDealDamage();
           onComboChanged?.call(
-            comboService.combo, comboService.color, comboService.bonusLabel);
+            comboService.combo, comboService.color, comboService.tier);
 
           if (result.isCrit) {
             _spawnFloatingText(
@@ -446,7 +472,7 @@ class BattleGame extends FlameGame with TapCallbacks {
         color: ui.Color(item.rarity.colorHex),
         fontSize: isRarePlus ? 18 : 14,
       );
-      onItemDropped?.call(item.nameKey, item.rarity.colorHex, isRarePlus);
+      onItemDropped?.call(item);
     }
   }
 

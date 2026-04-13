@@ -1,4 +1,4 @@
-# Onuncu Dal — Flutter Prompt Planı v2
+# ALP: Uluğ Kayın — Flutter Prompt Planı v2
 
 ## 🎯 Kullanım Stratejisi
 
@@ -915,7 +915,7 @@ Wiki sayfalarındaki tüm detaylar referans.
 ```
 - Android APK + iOS build ayarları
 - App icon, splash screen
-- Uygulama adı: "Onuncu Dal"
+- Uygulama adı: "ALP: Uluğ Kayın"
 - Store açıklaması (TR + EN)
 - Screenshot'lar
 - Son test: tam oyun baştan sona 1 kez oyna

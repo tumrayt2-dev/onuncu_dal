@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../core/constants.dart';
+import '../data/json_loader.dart';
 import '../models/enums.dart';
 import '../providers/player_provider.dart';
 
@@ -67,15 +68,26 @@ class MainGameScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              '${l10n.hp}: ${hero.baseStats.hp.toInt()} | '
-              '${l10n.atk}: ${hero.baseStats.atk.toInt()} | '
-              '${l10n.def}: ${hero.baseStats.def.toInt()}',
-              style: const TextStyle(
-                color: AppColors.textDim,
-                fontSize: 14,
-              ),
-            ),
+            Builder(builder: (context) {
+              final heroId = switch (hero.heroClass) {
+                HeroClass.kalkanEr => 'kalkan_er',
+                HeroClass.kurtBoru => 'kurt_boru',
+                HeroClass.kam => 'kam',
+                HeroClass.yayCi => 'yay_ci',
+                HeroClass.golgeBek => 'golge_bek',
+              };
+              final perLevel = JsonLoader.instance.getHeroPerLevel(heroId);
+              final stats = hero.effectiveStats(perLevel);
+              return Text(
+                '${l10n.hp}: ${stats.hp.toInt()} | '
+                '${l10n.atk}: ${stats.atk.toInt()} | '
+                '${l10n.def}: ${stats.def.toInt()}',
+                style: const TextStyle(
+                  color: AppColors.textDim,
+                  fontSize: 14,
+                ),
+              );
+            }),
             const SizedBox(height: 32),
             SizedBox(
               width: 200,

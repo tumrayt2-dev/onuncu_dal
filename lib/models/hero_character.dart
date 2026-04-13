@@ -50,6 +50,28 @@ class HeroCharacter {
   /// Sonraki level icin gereken XP: floor(100 * pow(level, 1.6))
   int get xpToNextLevel => (100 * math.pow(level, 1.6)).floor();
 
+  /// Level bazli efektif statlar: baseStats + (level-1) * perLevel
+  /// perLevel verisi JsonLoader'dan alinir
+  Stats effectiveStats(Stats perLevel) {
+    final lvl = level - 1; // level 1'de bonus yok
+    return Stats(
+      hp: baseStats.hp + perLevel.hp * lvl,
+      mp: baseStats.mp + perLevel.mp * lvl,
+      atk: baseStats.atk + perLevel.atk * lvl,
+      def: baseStats.def + perLevel.def * lvl,
+      spd: baseStats.spd + perLevel.spd * lvl,
+      crit: baseStats.crit + perLevel.crit * lvl,
+      critDmg: baseStats.critDmg + perLevel.critDmg * lvl,
+      dodge: baseStats.dodge + perLevel.dodge * lvl,
+      block: baseStats.block + perLevel.block * lvl,
+      lifesteal: baseStats.lifesteal + perLevel.lifesteal * lvl,
+      hpRegen: baseStats.hpRegen + perLevel.hpRegen * lvl,
+      accuracy: baseStats.accuracy + perLevel.accuracy * lvl,
+      resist: baseStats.resist + perLevel.resist * lvl,
+      magicFind: baseStats.magicFind + perLevel.magicFind * lvl,
+    );
+  }
+
   HeroCharacter copyWith({
     String? id,
     String? name,

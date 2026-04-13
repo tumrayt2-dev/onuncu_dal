@@ -7,34 +7,30 @@ import '../models/enemy.dart';
 import '../models/enums.dart';
 import '../services/combat_service.dart';
 
-/// Dusman componenti — tum seritlerde hareket eder
+/// Dusman componenti — tum seritlerde hareket eder, object pool destekli
 class EnemyComponent extends PositionComponent {
   EnemyComponent({
-    required this.enemyData,
+    required Enemy enemyData,
     required Vector2 position,
-    required this.stageId,
-    required this.lane,
+    required int stageId,
+    required Lane lane,
   }) : super(
           position: position,
           size: Vector2(36, 50),
           anchor: Anchor.center,
         ) {
-    _maxHp = _calculateHp();
-    _currentHp = _maxHp;
-    _atkScaled = enemyData.baseStats.atk * math.pow(1.06, stageId - 1);
-    _defScaled = enemyData.baseStats.def * math.pow(1.04, stageId - 1);
-    _attackInterval = CombatService.attackInterval(enemyData.baseStats.spd);
+    _init(enemyData, stageId, lane);
   }
 
-  final Enemy enemyData;
-  final int stageId;
-  final Lane lane;
+  late Enemy _enemyData;
+  late int _stageId;
+  late Lane _lane;
 
-  late final double _maxHp;
+  late double _maxHp;
   late double _currentHp;
-  late final double _atkScaled;
-  late final double _defScaled;
-  late final double _attackInterval;
+  late double _atkScaled;
+  late double _defScaled;
+  late double _attackInterval;
   double _attackTimer = 0;
   bool _isAttacking = false;
   double _attackAnimTimer = 0;
@@ -43,6 +39,38 @@ class EnemyComponent extends PositionComponent {
   bool _dying = false;
   double _deathTimer = 0;
   static const _deathDuration = 0.4;
+
+  Enemy get enemyData => _enemyData;
+  int get stageId => _stageId;
+  Lane get lane => _lane;
+
+  void _init(Enemy enemy, int stage, Lane l) {
+    _enemyData = enemy;
+    _stageId = stage;
+    _lane = l;
+    _maxHp = _calculateHp();
+    _currentHp = _maxHp;
+    _atkScaled = enemy.baseStats.atk * math.pow(1.06, stage - 1);
+    _defScaled = enemy.baseStats.def * math.pow(1.04, stage - 1);
+    _attackInterval = CombatService.attackInterval(enemy.baseStats.spd);
+    _attackTimer = 0;
+    _isAttacking = false;
+    _attackAnimTimer = 0;
+    isDead = false;
+    _dying = false;
+    _deathTimer = 0;
+  }
+
+  /// Pool'dan geri cagirma — yeni verilerle sifirla
+  void reset({
+    required Enemy enemyData,
+    required Vector2 pos,
+    required int stageId,
+    required Lane lane,
+  }) {
+    position.setFrom(pos);
+    _init(enemyData, stageId, lane);
+  }
 
   /// Hareket hizi (piksel/sn)
   static const _moveSpeed = 60.0;
@@ -139,7 +167,7 @@ class EnemyComponent extends PositionComponent {
       _deathTimer += dt;
       if (_deathTimer >= _deathDuration) {
         isDead = true;
-        removeFromParent();
+        // removeFromParent battle_game pool tarafindan yapilir
       }
     }
   }

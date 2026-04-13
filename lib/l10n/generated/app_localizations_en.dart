@@ -9,7 +9,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'The Tenth Branch';
+  String get appTitle => 'ALP: The Great Tree';
 
   @override
   String get play => 'Play';
@@ -297,4 +297,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get itemAmuletRare => 'Master Amulet';
+
+  @override
+  String get combo => 'COMBO';
+
+  @override
+  String get defeatRewards => 'Rewards Earned';
+
+  @override
+  String get comboDmg => 'DMG';
+
+  @override
+  String get comboXp => 'XP';
+
+  @override
+  String get comboGold => 'GOLD';
+
+  @override
+  String get exitBattleTitle => 'Leave Battle';
+
+  @override
+  String get exitBattlePenalty =>
+      'You will lose 50% of earned gold. Items will not be kept.';
+
+  @override
+  String exitBattleReward(String xp, String gold) {
+    return 'You receive: $xp XP, $gold Gold';
+  }
+
+  @override
+  String get leaveBattle => 'Leave Battle';
 }

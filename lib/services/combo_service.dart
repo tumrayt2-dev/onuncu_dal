@@ -57,13 +57,13 @@ class ComboService {
     return const ui.Color(0xFFFFFFFF); // beyaz
   }
 
-  /// Combo etiket metni
-  String get bonusLabel {
-    if (_combo >= 50) return '+%20 DMG +%15 XP +%10 G';
-    if (_combo >= 20) return '+%15 DMG +%10 XP +%5 G';
-    if (_combo >= 10) return '+%10 DMG +%5 XP';
-    if (_combo >= 5) return '+%5 DMG';
-    return '';
+  /// Combo tier: 0=yok, 1=5+, 2=10+, 3=20+, 4=50+
+  int get tier {
+    if (_combo >= 50) return 4;
+    if (_combo >= 20) return 3;
+    if (_combo >= 10) return 2;
+    if (_combo >= 5) return 1;
+    return 0;
   }
 
   void reset() {

@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../core/constants.dart';
+import '../data/json_loader.dart';
 import '../models/enums.dart';
+import '../models/item.dart';
 import '../models/stats.dart';
 import '../providers/player_provider.dart';
 import '../game/battle_game.dart';
@@ -40,6 +42,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   // AFK AI toggle
   bool _afkEnabled = false;
 
+  // Savas boyunca biriken oduller (henuz verilmedi, savaş sonunda toplu verilir)
+  int _earnedXp = 0;
+  int _earnedGold = 0;
+  final List<Item> _earnedItems = [];
+
   // Side damage flash
   double _topFlash = 0;
   double _bottomFlash = 0;
@@ -47,7 +54,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   // Combo
   int _combo = 0;
   Color _comboColor = Colors.white;
-  String _comboBonusLabel = '';
+  int _comboTier = 0;
 
   // Resource
   double _resCurrent = 0;
@@ -78,7 +85,16 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
 
   void _initGame() {
     final hero = ref.read(playerProvider);
-    final stats = hero?.baseStats ?? const Stats(hp: 200, atk: 18, def: 15, spd: 0.8);
+    final heroId = switch (hero?.heroClass) {
+      HeroClass.kalkanEr => 'kalkan_er',
+      HeroClass.kurtBoru => 'kurt_boru',
+      HeroClass.kam => 'kam',
+      HeroClass.yayCi => 'yay_ci',
+      HeroClass.golgeBek => 'golge_bek',
+      null => 'kalkan_er',
+    };
+    final perLevel = JsonLoader.instance.getHeroPerLevel(heroId);
+    final stats = hero?.effectiveStats(perLevel) ?? const Stats(hp: 200, atk: 18, def: 15, spd: 0.8);
 
     _heroMaxHp = stats.hp;
     _heroHp = _heroMaxHp;
@@ -89,6 +105,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       stageId: hero?.currentStage ?? 1,
       worldId: hero?.currentWorldId ?? 1,
     );
+    _game.afkEnabled = _afkEnabled;
     _game.onLaneChanged = (lane) {
       _safeSetState(() => _currentLane = lane);
     };
@@ -108,9 +125,9 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _safeSetState(() => _isDefeated = true);
     };
     _game.onRewardPopup = (xp, gold) {
-      // Anlik XP + gold ver (level atlama dahil)
-      ref.read(playerProvider.notifier).addXp(xp);
-      ref.read(playerProvider.notifier).addGold(gold);
+      // Biriktir — savaş sonunda toplu verilecek
+      _earnedXp += xp;
+      _earnedGold += gold;
     };
     _game.onStageComplete = (xp, gold, hpPercent, time) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -137,11 +154,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         }
       });
     };
-    _game.onComboChanged = (combo, color, bonusLabel) {
+    _game.onComboChanged = (combo, color, tier) {
       _safeSetState(() {
         _combo = combo;
         _comboColor = Color(color.toARGB32());
-        _comboBonusLabel = bonusLabel;
+        _comboTier = tier;
       });
     };
     _game.onResourceChanged = (current, max, specialReady, specialActive) {
@@ -152,10 +169,13 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         _specialActive = specialActive;
       });
     };
-    _game.onItemDropped = (itemName, rarityColorHex, isRarePlus) {
+    _game.onItemDropped = (item) {
+      // Biriktir — savaş sonunda toplu verilecek
+      _earnedItems.add(item);
+      final isRarePlus = item.rarity.index >= Rarity.rare.index;
       _safeSetState(() {
-        _lootItemName = itemName;
-        _lootColor = Color(rarityColorHex);
+        _lootItemName = item.nameKey;
+        _lootColor = Color(item.rarity.colorHex);
         _lootIsRarePlus = isRarePlus;
       });
       Future.delayed(Duration(milliseconds: isRarePlus ? 2500 : 1500), () {
@@ -187,10 +207,10 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
     if (hpPercent >= 0.5) stars = 2;
     if (hpPercent >= 0.8) stars = 3;
 
-    // XP + gold zaten onRewardPopup'ta anlik verildi, tekrar verme
-    final updatedHero = ref.read(playerProvider);
-    final leveled = false; // Level atlama anlik takip ediliyor
+    // Birikmiş ödülleri toplu ver
+    _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
 
+    final updatedHero = ref.read(playerProvider);
     final currentStage = updatedHero?.currentStage ?? 1;
     ref.read(playerProvider.notifier).updateStage(
       currentStage + 1,
@@ -199,10 +219,10 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
 
     setState(() {
       _stageComplete = true;
-      _rewardXp = xp;
-      _rewardGold = gold;
+      _rewardXp = _earnedXp;
+      _rewardGold = _earnedGold;
       _stars = stars;
-      _leveledUp = leveled;
+      _leveledUp = false;
       _newLevel = updatedHero?.level ?? 1;
     });
   }
@@ -210,6 +230,27 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   void _togglePause() {
     _game.togglePause();
     setState(() => _isPaused = _game.isPaused);
+  }
+
+  /// Birikmiş ödülleri oyuncuya ver
+  void _grantRewards({
+    required double xpPercent,
+    required double goldPercent,
+    required bool giveItems,
+  }) {
+    final xpToGive = (_earnedXp * xpPercent).round();
+    final goldToGive = (_earnedGold * goldPercent).round();
+    if (xpToGive > 0) {
+      ref.read(playerProvider.notifier).addXp(xpToGive);
+    }
+    if (goldToGive > 0) {
+      ref.read(playerProvider.notifier).addGold(goldToGive);
+    }
+    if (giveItems) {
+      for (final item in _earnedItems) {
+        ref.read(playerProvider.notifier).addItem(item);
+      }
+    }
   }
 
   void _restartBattle() {
@@ -220,9 +261,12 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _currentWave = 1;
       _currentLane = Lane.middle;
       _leveledUp = false;
+      _earnedXp = 0;
+      _earnedGold = 0;
+      _earnedItems.clear();
       _combo = 0;
       _comboColor = Colors.white;
-      _comboBonusLabel = '';
+      _comboTier = 0;
       _resCurrent = 0;
       _resMax = 100;
       _specialReady = false;
@@ -234,6 +278,57 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _lootIsRarePlus = false;
       _initGame();
     });
+  }
+
+  void _showExitConfirmation(BuildContext context, AppLocalizations l10n) {
+    final keptGold = (_earnedGold * 0.5).round();
+
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: const Color(0xFF1A1A2E),
+        title: Text(
+          l10n.exitBattleTitle,
+          style: const TextStyle(color: AppColors.gold),
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              l10n.exitBattlePenalty,
+              style: const TextStyle(color: AppColors.textSecondary),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              l10n.exitBattleReward('$_earnedXp', '$keptGold'),
+              style: const TextStyle(
+                color: AppColors.textPrimary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: Text(l10n.cancel),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(ctx).pop();
+              // Tam XP, %50 gold, item yok
+              _grantRewards(xpPercent: 1.0, goldPercent: 0.5, giveItems: false);
+              context.go('/game');
+            },
+            child: Text(
+              l10n.leaveBattle,
+              style: const TextStyle(color: Color(0xFFFF4444)),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   String _specialL10n(AppLocalizations l10n, String key) => switch (key) {
@@ -274,6 +369,14 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         'itemAmuletUncommon' => l10n.itemAmuletUncommon,
         'itemAmuletRare' => l10n.itemAmuletRare,
         _ => key,
+      };
+
+  String _comboLabel(AppLocalizations l10n, int tier) => switch (tier) {
+        4 => '+%20 ${l10n.comboDmg} +%15 ${l10n.comboXp} +%10 ${l10n.comboGold}',
+        3 => '+%15 ${l10n.comboDmg} +%10 ${l10n.comboXp} +%5 ${l10n.comboGold}',
+        2 => '+%10 ${l10n.comboDmg} +%5 ${l10n.comboXp}',
+        1 => '+%5 ${l10n.comboDmg}',
+        _ => '',
       };
 
   String _resourceL10n(AppLocalizations l10n, String key) => switch (key) {
@@ -646,14 +749,14 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                     ),
                   ),
                   Text(
-                    'COMBO',
+                    l10n.combo,
                     style: TextStyle(
                       color: _comboColor.withValues(alpha: 0.7),
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  if (_comboBonusLabel.isNotEmpty)
+                  if (_comboTier > 0)
                     Container(
                       margin: const EdgeInsets.only(top: 4),
                       padding: const EdgeInsets.symmetric(
@@ -663,7 +766,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
-                        _comboBonusLabel,
+                        _comboLabel(l10n, _comboTier),
                         style: TextStyle(
                           color: _comboColor,
                           fontSize: 9,
@@ -776,8 +879,8 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                     SizedBox(
                       width: 200,
                       child: OutlinedButton(
-                        onPressed: () => context.go('/game'),
-                        child: Text(l10n.goBack),
+                        onPressed: () => _showExitConfirmation(context, l10n),
+                        child: Text(l10n.leaveBattle),
                       ),
                     ),
                   ],
@@ -801,11 +904,49 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 32),
+                    if (_earnedXp > 0 || _earnedGold > 0) ...[
+                      const SizedBox(height: 16),
+                      Text(
+                        l10n.defeatRewards,
+                        style: const TextStyle(
+                          color: AppColors.textSecondary,
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        margin: const EdgeInsets.symmetric(horizontal: 60),
+                        decoration: BoxDecoration(
+                          color: AppColors.surface,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Column(
+                          children: [
+                            _RewardRow(
+                              label: l10n.totalXp,
+                              value: '+$_earnedXp',
+                              color: const Color(0xFF64B5F6),
+                            ),
+                            const SizedBox(height: 6),
+                            _RewardRow(
+                              label: l10n.totalGold,
+                              value: '+$_earnedGold',
+                              color: AppColors.gold,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                    const SizedBox(height: 24),
                     SizedBox(
                       width: 200,
                       child: ElevatedButton(
-                        onPressed: _restartBattle,
+                        onPressed: () {
+                          // Yenilgide tam ödül ver, sonra yeniden başla
+                          _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
+                          _restartBattle();
+                        },
                         child: Text(l10n.retry),
                       ),
                     ),
@@ -813,7 +954,11 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
                     SizedBox(
                       width: 200,
                       child: OutlinedButton(
-                        onPressed: () => context.go('/game'),
+                        onPressed: () {
+                          // Yenilgide tam ödül ver, sonra menüye dön
+                          _grantRewards(xpPercent: 1.0, goldPercent: 1.0, giveItems: true);
+                          context.go('/game');
+                        },
                         child: Text(l10n.goBack),
                       ),
                     ),

@@ -9,7 +9,7 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'Onuncu Dal';
+  String get appTitle => 'ALP: Uluğ Kayın';
 
   @override
   String get play => 'Oyna';
@@ -298,4 +298,34 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get itemAmuletRare => 'Usta Muskasi';
+
+  @override
+  String get combo => 'KOMBO';
+
+  @override
+  String get defeatRewards => 'Kazanilan Oduller';
+
+  @override
+  String get comboDmg => 'HASAR';
+
+  @override
+  String get comboXp => 'XP';
+
+  @override
+  String get comboGold => 'ALTIN';
+
+  @override
+  String get exitBattleTitle => 'Savastan Cik';
+
+  @override
+  String get exitBattlePenalty =>
+      'Kazandigin altinin %50\'si kesilecek. Itemler verilmeyecek.';
+
+  @override
+  String exitBattleReward(String xp, String gold) {
+    return 'Alacagin: $xp XP, $gold Altin';
+  }
+
+  @override
+  String get leaveBattle => 'Savastan Cik';
 }

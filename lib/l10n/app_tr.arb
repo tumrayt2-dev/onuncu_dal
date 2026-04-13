@@ -1,6 +1,6 @@
 {
   "@@locale": "tr",
-  "appTitle": "Onuncu Dal",
+  "appTitle": "ALP: Uluğ Kayın",
   "play": "Oyna",
   "settings": "Ayarlar",
   "exit": "Cikis",
@@ -99,5 +99,20 @@
   "itemRing2Rare": "Usta Yuzugu II",
   "itemAmuletCommon": "Muska",
   "itemAmuletUncommon": "Savas Muskasi",
-  "itemAmuletRare": "Usta Muskasi"
+  "itemAmuletRare": "Usta Muskasi",
+  "combo": "KOMBO",
+  "defeatRewards": "Kazanilan Oduller",
+  "comboDmg": "HASAR",
+  "comboXp": "XP",
+  "comboGold": "ALTIN",
+  "exitBattleTitle": "Savastan Cik",
+  "exitBattlePenalty": "Kazandigin altinin %50'si kesilecek. Itemler verilmeyecek.",
+  "exitBattleReward": "Alacagin: {xp} XP, {gold} Altin",
+  "@exitBattleReward": {
+    "placeholders": {
+      "xp": { "type": "String" },
+      "gold": { "type": "String" }
+    }
+  },
+  "leaveBattle": "Savastan Cik"
 }

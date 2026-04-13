@@ -32,6 +32,7 @@ class HeroComponent extends PositionComponent {
   double _attackTimer = 0;
   bool _isAttacking = false;
   double _attackAnimTimer = 0;
+  double _originX = 0;
 
   double _idleTimer = 0;
   double _baseY = 0;
@@ -82,6 +83,7 @@ class HeroComponent extends PositionComponent {
   void onMount() {
     super.onMount();
     _baseY = position.y;
+    _originX = position.x;
   }
 
   void moveTo(double targetY) {
@@ -98,10 +100,11 @@ class HeroComponent extends PositionComponent {
     if (_isAttacking) {
       _attackAnimTimer += dt;
       if (_attackAnimTimer < 0.1) {
-        position.x += 200 * dt; // ileri atil
+        position.x = _originX + (_attackAnimTimer / 0.1) * 20; // ileri atil
       } else if (_attackAnimTimer < 0.2) {
-        position.x -= 200 * dt; // geri don
+        position.x = _originX + (1 - (_attackAnimTimer - 0.1) / 0.1) * 20; // geri don
       } else {
+        position.x = _originX; // tam sifirla — kayma olmaz
         _isAttacking = false;
       }
     }

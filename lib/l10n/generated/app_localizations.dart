@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In tr, this message translates to:
-  /// **'Onuncu Dal'**
+  /// **'ALP: Uluğ Kayın'**
   String get appTitle;
 
   /// No description provided for @play.
@@ -667,6 +667,60 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Usta Muskasi'**
   String get itemAmuletRare;
+
+  /// No description provided for @combo.
+  ///
+  /// In tr, this message translates to:
+  /// **'KOMBO'**
+  String get combo;
+
+  /// No description provided for @defeatRewards.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kazanilan Oduller'**
+  String get defeatRewards;
+
+  /// No description provided for @comboDmg.
+  ///
+  /// In tr, this message translates to:
+  /// **'HASAR'**
+  String get comboDmg;
+
+  /// No description provided for @comboXp.
+  ///
+  /// In tr, this message translates to:
+  /// **'XP'**
+  String get comboXp;
+
+  /// No description provided for @comboGold.
+  ///
+  /// In tr, this message translates to:
+  /// **'ALTIN'**
+  String get comboGold;
+
+  /// No description provided for @exitBattleTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savastan Cik'**
+  String get exitBattleTitle;
+
+  /// No description provided for @exitBattlePenalty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kazandigin altinin %50\'si kesilecek. Itemler verilmeyecek.'**
+  String get exitBattlePenalty;
+
+  /// No description provided for @exitBattleReward.
+  ///
+  /// In tr, this message translates to:
+  /// **'Alacagin: {xp} XP, {gold} Altin'**
+  String exitBattleReward(String xp, String gold);
+
+  /// No description provided for @leaveBattle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Savastan Cik'**
+  String get leaveBattle;
 }
 
 class _AppLocalizationsDelegate

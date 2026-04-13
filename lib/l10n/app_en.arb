@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "The Tenth Branch",
+  "appTitle": "ALP: The Great Tree",
   "play": "Play",
   "settings": "Settings",
   "exit": "Exit",
@@ -99,5 +99,20 @@
   "itemRing2Rare": "Master Ring II",
   "itemAmuletCommon": "Amulet",
   "itemAmuletUncommon": "War Amulet",
-  "itemAmuletRare": "Master Amulet"
+  "itemAmuletRare": "Master Amulet",
+  "combo": "COMBO",
+  "defeatRewards": "Rewards Earned",
+  "comboDmg": "DMG",
+  "comboXp": "XP",
+  "comboGold": "GOLD",
+  "exitBattleTitle": "Leave Battle",
+  "exitBattlePenalty": "You will lose 50% of earned gold. Items will not be kept.",
+  "exitBattleReward": "You receive: {xp} XP, {gold} Gold",
+  "@exitBattleReward": {
+    "placeholders": {
+      "xp": { "type": "String" },
+      "gold": { "type": "String" }
+    }
+  },
+  "leaveBattle": "Leave Battle"
 }

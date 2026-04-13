@@ -1,4 +1,4 @@
-# Onuncu Dal | Flutter Projesi
+# ALP: Uluğ Kayın | Flutter Projesi
 
 ## Proje Özeti
 Türk mitolojisinden ilham alan, Türkçe + İngilizce, offline çalışan 2D AFK idle RPG oyunu.

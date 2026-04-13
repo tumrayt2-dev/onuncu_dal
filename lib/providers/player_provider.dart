@@ -68,6 +68,15 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
     await _autoSave();
   }
 
+  /// Envantere item ekle
+  Future<void> addItem(Item item) async {
+    final hero = state;
+    if (hero == null) return;
+    final newInventory = List<Item>.from(hero.inventory)..add(item);
+    state = hero.copyWith(inventory: newInventory);
+    await _autoSave();
+  }
+
   /// Item kuşan
   Future<void> equipItem(Item item, EquipmentSlot slot) async {
     final hero = state;

@@ -1,9 +1,12 @@
+import 'dart:math' as math;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../l10n/generated/app_localizations.dart';
 import '../core/constants.dart';
 import '../providers/locale_provider.dart';
+import '../providers/player_provider.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -78,6 +81,53 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             activeTrackColor: AppColors.gold,
             onChanged: (v) => setState(() => _notifEnabled = v),
           ),
+          // Debug panel — sadece debug modda gorunur
+          if (kDebugMode) ...[
+            const SizedBox(height: AppSizes.paddingL),
+            const _SectionTitle('DEV'),
+            _DebugButton(
+              label: '+10 Level',
+              icon: Icons.trending_up,
+              onTap: () {
+                final hero = ref.read(playerProvider);
+                if (hero == null) return;
+                // Her level icin gereken XP'yi topla
+                int totalXp = 0;
+                for (int i = 0; i < 10; i++) {
+                  totalXp += (100 * math.pow(hero.level + i, 1.6)).floor();
+                }
+                ref.read(playerProvider.notifier).addXp(totalXp);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('+10 Level (Lv ${hero.level + 10})')),
+                );
+              },
+            ),
+            _DebugButton(
+              label: '+1000 Gold',
+              icon: Icons.monetization_on,
+              onTap: () {
+                ref.read(playerProvider.notifier).addGold(1000);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('+1000 Gold')),
+                );
+              },
+            ),
+            _DebugButton(
+              label: '+5 Stage',
+              icon: Icons.skip_next,
+              onTap: () {
+                final hero = ref.read(playerProvider);
+                if (hero == null) return;
+                ref.read(playerProvider.notifier).updateStage(
+                  hero.currentStage + 5,
+                  hero.currentWorldId,
+                );
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Stage ${hero.currentStage + 5}')),
+                );
+              },
+            ),
+          ],
         ],
       ),
     );
@@ -148,6 +198,29 @@ class _LanguageTile extends StatelessWidget {
       trailing: isSelected
           ? const Icon(Icons.check_circle, color: AppColors.gold)
           : null,
+      onTap: onTap,
+    );
+  }
+}
+
+class _DebugButton extends StatelessWidget {
+  const _DebugButton({
+    required this.label,
+    required this.icon,
+    required this.onTap,
+  });
+
+  final String label;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.orange, size: 24),
+      title: Text(label,
+          style: const TextStyle(color: AppColors.textPrimary)),
+      trailing: const Icon(Icons.chevron_right, color: AppColors.textDim),
       onTap: onTap,
     );
   }
