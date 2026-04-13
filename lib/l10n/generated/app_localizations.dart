@@ -455,7 +455,7 @@ abstract class AppLocalizations {
   /// No description provided for @stage.
   ///
   /// In tr, this message translates to:
-  /// **'Bolum'**
+  /// **'Bölüm'**
   String get stage;
 
   /// No description provided for @paused.

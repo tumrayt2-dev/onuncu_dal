@@ -8,6 +8,7 @@ import '../models/affix.dart';
 import '../models/enums.dart';
 import '../models/item.dart';
 import '../providers/player_provider.dart';
+import '../widgets/bottom_nav.dart';
 
 /// Demirci Kübey — Item upgrade + enchant ekranı
 class UpgradeScreen extends ConsumerStatefulWidget {
@@ -141,6 +142,7 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
           ),
         ],
       ),
+      bottomNavigationBar: const BottomNav(currentIndex: 2),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
         child: Column(

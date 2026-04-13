@@ -192,7 +192,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get wave => 'Dalga';
 
   @override
-  String get stage => 'Bolum';
+  String get stage => 'Bölüm';
 
   @override
   String get paused => 'DURAKLADI';

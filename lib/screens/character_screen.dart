@@ -9,6 +9,7 @@ import '../models/item.dart';
 import '../models/stats.dart';
 import '../providers/player_provider.dart';
 import '../services/stat_calculator.dart';
+import '../widgets/bottom_nav.dart';
 
 /// Slot emoji helper (top-level, tum widget'lar kullanabilir)
 String _slotEmoji(EquipmentSlot slot) => switch (slot) {
@@ -147,6 +148,7 @@ class _CharacterScreenState extends ConsumerState<CharacterScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: const BottomNav(currentIndex: 1),
       body: Column(
         children: [
           // Ust kisim: Ekipman + Statlar (sabit, scroll etmez)

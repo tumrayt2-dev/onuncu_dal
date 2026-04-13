@@ -7,11 +7,11 @@ import 'core/theme.dart';
 import 'providers/locale_provider.dart';
 import 'screens/main_menu_screen.dart';
 import 'screens/hero_select_screen.dart';
-import 'screens/main_game_screen.dart';
 import 'screens/settings_screen.dart';
 import 'screens/battle_screen.dart';
 import 'screens/character_screen.dart';
 import 'screens/upgrade_screen.dart';
+import 'screens/stage_map_screen.dart';
 
 final _router = GoRouter(
   initialLocation: '/',
@@ -26,7 +26,7 @@ final _router = GoRouter(
     ),
     GoRoute(
       path: '/game',
-      builder: (context, state) => const MainGameScreen(),
+      redirect: (_, _) => '/stage-map',
     ),
     GoRoute(
       path: '/settings',
@@ -43,6 +43,10 @@ final _router = GoRouter(
     GoRoute(
       path: '/upgrade',
       builder: (context, state) => const UpgradeScreen(),
+    ),
+    GoRoute(
+      path: '/stage-map',
+      builder: (context, state) => const StageMapScreen(),
     ),
   ],
 );
