@@ -5,6 +5,7 @@
     "archetype": "melee",
     "worldId": 1,
     "lane": "middle",
+    "spriteId": "skeleton",
     "baseStats": { "hp": 45, "atk": 9, "def": 2, "spd": 1.0 },
     "lootTable": { "goldMin": 4, "goldMax": 7, "xp": 6, "itemDropChance": 0.05, "specialDrops": [] },
     "specialAbility": null
@@ -15,6 +16,7 @@
     "archetype": "caster",
     "worldId": 1,
     "lane": "middle",
+    "spriteId": "mushroom",
     "baseStats": { "hp": 40, "atk": 14, "def": 1, "spd": 0.7 },
     "lootTable": { "goldMin": 6, "goldMax": 10, "xp": 10, "itemDropChance": 0.06, "specialDrops": [{ "itemId": "arcura_koksuyu", "chance": 0.03, "minStage": 5 }] },
     "specialAbility": "slow_30pct_2s"
@@ -25,6 +27,7 @@
     "archetype": "fast",
     "worldId": 1,
     "lane": "middle",
+    "spriteId": "goblin",
     "baseStats": { "hp": 30, "atk": 11, "def": 1, "spd": 1.5 },
     "lootTable": { "goldMin": 5, "goldMax": 8, "xp": 8, "itemDropChance": 0.07, "specialDrops": [] },
     "specialAbility": "lane_switch"
@@ -65,6 +68,7 @@
     "archetype": "buffer",
     "worldId": 1,
     "lane": "middle",
+    "spriteId": "flying_eye",
     "baseStats": { "hp": 50, "atk": 8, "def": 2, "spd": 0.8 },
     "lootTable": { "goldMin": 12, "goldMax": 18, "xp": 20, "itemDropChance": 0.15, "specialDrops": [] },
     "specialAbility": "buff_atk_30pct"
@@ -75,6 +79,7 @@
     "archetype": "flying",
     "worldId": 1,
     "lane": "top",
+    "spriteId": "bat",
     "baseStats": { "hp": 25, "atk": 12, "def": 1, "spd": 1.4 },
     "lootTable": { "goldMin": 5, "goldMax": 9, "xp": 9, "itemDropChance": 0.06, "specialDrops": [{ "itemId": "kara_tuy", "chance": 0.05, "minStage": 1 }] },
     "specialAbility": "flying_ranged_only"

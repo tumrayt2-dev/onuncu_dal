@@ -82,6 +82,10 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
   Color _lootColor = Colors.grey;
   bool _lootIsRarePlus = false;
 
+  // Flutter katmanı floating text
+  final List<_FloatingEntry> _floatingLabels = [];
+  int _floatingIdCounter = 0;
+
 
   @override
   void initState() {
@@ -226,6 +230,19 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         if (mounted) setState(() => _lootItemName = null);
       });
     };
+    _game.onFloatingText = (text, pos, color, fontSize) {
+      if (!mounted) return;
+      setState(() {
+        _floatingLabels.add(_FloatingEntry(
+          id: _floatingIdCounter++,
+          text: text,
+          position: Offset(pos.dx, pos.dy),
+          color: Color(color.toARGB32()),
+          fontSize: fontSize,
+        ));
+        if (_floatingLabels.length > 20) _floatingLabels.removeAt(0);
+      });
+    };
     _game.onSpecialActivated = (name) {
       _safeSetState(() {
         _specialFlashName = name;
@@ -320,6 +337,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       _lootItemName = null;
       _lootColor = Colors.grey;
       _lootIsRarePlus = false;
+      _floatingLabels.clear();
       _initGame();
     });
   }
@@ -449,6 +467,25 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
         children: [
           // Flame oyun
           GameWidget(game: _game),
+
+          // Flutter floating text overlay — crisp metin
+          if (_floatingLabels.isNotEmpty)
+            Positioned.fill(
+              child: IgnorePointer(
+                child: Stack(
+                  children: _floatingLabels.map((e) => _FloatingLabel(
+                    key: ValueKey(e.id),
+                    entry: e,
+                    onDone: () {
+                      if (mounted) {
+                        setState(() => _floatingLabels.removeWhere(
+                            (x) => x.id == e.id));
+                      }
+                    },
+                  )).toList(),
+                ),
+              ),
+            ),
 
           // Yan serit hasar flash — ust
           if (_topFlash > 0)
@@ -1221,6 +1258,99 @@ class _RewardRow extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// ── Floating text veri modeli ────────────────────────────────────────────────
+
+class _FloatingEntry {
+  const _FloatingEntry({
+    required this.id,
+    required this.text,
+    required this.position,
+    required this.color,
+    required this.fontSize,
+  });
+
+  final int id;
+  final String text;
+  final Offset position;
+  final Color color;
+  final double fontSize;
+}
+
+// ── Floating label widget ────────────────────────────────────────────────────
+
+class _FloatingLabel extends StatefulWidget {
+  const _FloatingLabel({
+    required super.key,
+    required this.entry,
+    required this.onDone,
+  });
+
+  final _FloatingEntry entry;
+  final VoidCallback onDone;
+
+  @override
+  State<_FloatingLabel> createState() => _FloatingLabelState();
+}
+
+class _FloatingLabelState extends State<_FloatingLabel>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _ctrl;
+  late final Animation<double> _opacity;
+  late final Animation<double> _dy;
+
+  @override
+  void initState() {
+    super.initState();
+    _ctrl = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 900),
+    );
+    _opacity = Tween(begin: 1.0, end: 0.0).animate(
+      CurvedAnimation(parent: _ctrl, curve: const Interval(0.4, 1.0)),
+    );
+    _dy = Tween(begin: 0.0, end: -55.0).animate(
+      CurvedAnimation(parent: _ctrl, curve: Curves.easeOut),
+    );
+    _ctrl.forward().whenComplete(widget.onDone);
+  }
+
+  @override
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final e = widget.entry;
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (_, __) => Positioned(
+        left: e.position.dx - 50,
+        top: e.position.dy + _dy.value,
+        width: 100,
+        child: Opacity(
+          opacity: _opacity.value.clamp(0.0, 1.0),
+          child: Text(
+            e.text,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: e.color,
+              fontSize: e.fontSize,
+              fontWeight: FontWeight.w900,
+              height: 1.0,
+              shadows: const [
+                Shadow(color: Colors.black, blurRadius: 4, offset: Offset(1, 1)),
+                Shadow(color: Colors.black, blurRadius: 2, offset: Offset(-1, -1)),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

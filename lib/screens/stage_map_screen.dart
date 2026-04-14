@@ -189,6 +189,10 @@ class _StageMapScreenState extends ConsumerState<StageMapScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new, color: AppColors.gold, size: 20),
+          onPressed: () => context.go('/'),
+        ),
         title: Row(
           children: [
             // Dünya seçici (şimdilik sadece D1)

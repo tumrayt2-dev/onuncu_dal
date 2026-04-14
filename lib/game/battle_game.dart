@@ -15,7 +15,6 @@ import '../services/resource_service.dart';
 import '../services/wave_service.dart';
 import 'hero_component.dart';
 import 'enemy_component.dart';
-import 'floating_text_component.dart';
 import 'background_component.dart';
 import 'lane_system.dart';
 
@@ -80,6 +79,7 @@ class BattleGame extends FlameGame with TapCallbacks {
   void Function(double current, double max, bool specialReady, bool specialActive)? onResourceChanged;
   void Function(String specialKey)? onSpecialActivated;
   void Function(Item item)? onItemDropped;
+  void Function(String text, ui.Offset pos, ui.Color color, double fontSize)? onFloatingText;
 
   Lane get currentLane => _currentLane;
   bool get isPaused => _isPaused;
@@ -129,9 +129,7 @@ class BattleGame extends FlameGame with TapCallbacks {
     for (final enemy in children.whereType<EnemyComponent>()) {
       enemy.gameSpeed = gameSpeed;
     }
-    for (final ft in children.whereType<FloatingTextComponent>()) {
-      ft.gameSpeed = gameSpeed;
-    }
+
 
     super.update(dt);
 
@@ -247,8 +245,9 @@ class BattleGame extends FlameGame with TapCallbacks {
       }
     }
 
-    // Hero otomatik saldiri — sadece ana serit, ekran icindeki en yakin mob
-    if (heroComponent.updateAttack(scaledDt)) {
+    // Hero otomatik saldiri — animasyon başlat, son frame'de damage uygula
+    heroComponent.updateAttack(scaledDt);
+    if (heroComponent.consumeAttackHit()) {
       final sameLane = currentEnemies
           .where((e) => e.lane == _currentLane && e.position.x < size.x)
           .toList();
@@ -507,12 +506,12 @@ class BattleGame extends FlameGame with TapCallbacks {
     ui.Color color = const ui.Color(0xFFFFFFFF),
     double fontSize = 16,
   }) {
-    add(FloatingTextComponent(
-      text: text,
-      position: origin.clone()..y -= 30,
-      textColor: color,
-      fontSize: fontSize,
-    ));
+    onFloatingText?.call(
+      text,
+      ui.Offset(origin.x, origin.y - 30),
+      color,
+      fontSize,
+    );
   }
 
   @override

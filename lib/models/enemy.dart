@@ -95,6 +95,7 @@ class Enemy {
     required this.lootTable,
     this.lane = Lane.middle,
     this.specialAbility,
+    this.spriteId,
   });
 
   final String id;
@@ -105,6 +106,8 @@ class Enemy {
   final LootTable lootTable;
   final Lane lane;
   final String? specialAbility;
+  /// Sprite klasör adı — null ise programatik çizim kullanılır
+  final String? spriteId;
 
   Enemy copyWith({
     String? id,
@@ -115,6 +118,7 @@ class Enemy {
     LootTable? lootTable,
     Lane? lane,
     String? specialAbility,
+    String? spriteId,
   }) {
     return Enemy(
       id: id ?? this.id,
@@ -125,6 +129,7 @@ class Enemy {
       lootTable: lootTable ?? this.lootTable,
       lane: lane ?? this.lane,
       specialAbility: specialAbility ?? this.specialAbility,
+      spriteId: spriteId ?? this.spriteId,
     );
   }
 
@@ -138,6 +143,7 @@ class Enemy {
       'lootTable': lootTable.toJson(),
       'lane': lane.name,
       'specialAbility': specialAbility,
+      'spriteId': spriteId,
     };
   }
 
@@ -151,6 +157,7 @@ class Enemy {
       lootTable: LootTable.fromJson(json['lootTable'] as Map<String, dynamic>),
       lane: Lane.values.byName(json['lane'] as String? ?? 'middle'),
       specialAbility: json['specialAbility'] as String?,
+      spriteId: json['spriteId'] as String?,
     );
   }
 
