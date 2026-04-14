@@ -78,12 +78,17 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
       _selectedFodder = null;
     }
 
-    // Fodder adaylari: envanterdeki ayni rarity itemler (secili item haric)
+    // Milestone seviyeleri (5,10,15,20): aynı slot + aynı rarity gerekli
+    final isMilestoneUpgrade = _selectedItem != null &&
+        (_selectedItem!.upgradeLevel + 1) % 5 == 0;
+
+    // Fodder adaylari
     final fodderCandidates = _selectedItem != null
         ? hero.inventory
             .where((i) =>
                 i.rarity == _selectedItem!.rarity &&
-                i.id != _selectedItem!.id)
+                i.id != _selectedItem!.id &&
+                (!isMilestoneUpgrade || i.slot == _selectedItem!.slot))
             .toList()
         : <Item>[];
 
@@ -231,7 +236,7 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
 
               // Upgrade bolumu
               _buildUpgradeSection(
-                  l10n, cost, rate, canUpgrade, fodderCandidates),
+                  l10n, cost, rate, canUpgrade, isMilestoneUpgrade, fodderCandidates),
               const SizedBox(height: 12),
 
               // Enchant bolumu
@@ -319,7 +324,7 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
   }
 
   Widget _buildUpgradeSection(AppLocalizations l10n, int cost, double rate,
-      bool canUpgrade, List<Item> fodderCandidates) {
+      bool canUpgrade, bool isMilestoneUpgrade, List<Item> fodderCandidates) {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -359,15 +364,43 @@ class _UpgradeScreenState extends ConsumerState<UpgradeScreen>
           ),
           const SizedBox(height: 6),
 
-          // Fodder sec
-          Text(l10n.selectFodder,
-              style:
-                  const TextStyle(color: AppColors.textSecondary, fontSize: 11)),
+          // Malzeme gereksinimleri
+          Row(
+            children: [
+              Text(l10n.selectFodder,
+                  style: const TextStyle(
+                      color: AppColors.textSecondary, fontSize: 11)),
+              const SizedBox(width: 6),
+              if (isMilestoneUpgrade)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFF9800).withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(
+                        color: const Color(0xFFFF9800).withValues(alpha: 0.5)),
+                  ),
+                  child: Text(
+                    '⚠ Aynı tür gerekli (${_slotEmoji(_selectedItem!.slot)})',
+                    style: const TextStyle(
+                        color: Color(0xFFFF9800), fontSize: 10),
+                  ),
+                )
+              else
+                Text(
+                  '— Aynı nadirlikte 1 item',
+                  style: const TextStyle(
+                      color: AppColors.textDim, fontSize: 10),
+                ),
+            ],
+          ),
           const SizedBox(height: 4),
           if (fodderCandidates.isEmpty)
-            Text(l10n.noFodder,
-                style:
-                    const TextStyle(color: AppColors.textDim, fontSize: 11))
+            Text(
+              isMilestoneUpgrade
+                  ? 'Aynı tür (${_slotEmoji(_selectedItem!.slot)}) ve nadirlikte item yok'
+                  : l10n.noFodder,
+              style: const TextStyle(color: AppColors.textDim, fontSize: 11))
           else
             SizedBox(
               height: 44,

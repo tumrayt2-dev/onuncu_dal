@@ -38,7 +38,7 @@ class _StageMapScreenState extends ConsumerState<StageMapScreen> {
   void _scrollToActive() {
     final hero = ref.read(playerProvider);
     if (hero == null) return;
-    final activeStage = hero.currentStage.clamp(1, 50);
+    final activeStage = hero.maxStage.clamp(1, 50);
     // Her item ~90px, aktif stage'i ekranın üst kısmında göster (2 item üstte)
     final offset = ((activeStage - 3) * 90.0).clamp(0.0, double.infinity);
     if (_scrollController.hasClients) {
@@ -182,6 +182,7 @@ class _StageMapScreenState extends ConsumerState<StageMapScreen> {
     }
 
     final currentStage = hero.currentStage.clamp(1, 50);
+    final maxStage = hero.maxStage.clamp(1, 50);
 
     return Scaffold(
       backgroundColor: AppColors.background,
@@ -247,18 +248,21 @@ class _StageMapScreenState extends ConsumerState<StageMapScreen> {
         itemCount: 50,
         itemBuilder: (context, index) {
           final stage = index + 1; // 1'den 50'ye
-          final isCompleted = stage < currentStage;
+          final isCompleted = stage < maxStage;
           final isActive = stage == currentStage;
-          final isLocked = stage > currentStage;
+          final isLocked = stage > maxStage;
 
           final isBoss = stage == 50;
           final isMiniBoss = stage % 10 == 0 && stage != 50;
-          final canFight = isCompleted || isActive;
+          final canFight = !isLocked;
+
+          final isMaxStage = stage == maxStage;
 
           return _StageCard(
             stage: stage,
             isCompleted: isCompleted,
             isActive: isActive,
+            isMaxStage: isMaxStage,
             isLocked: isLocked,
             isBoss: isBoss,
             isMiniBoss: isMiniBoss,
@@ -290,6 +294,7 @@ class _StageCard extends StatelessWidget {
     required this.stage,
     required this.isCompleted,
     required this.isActive,
+    required this.isMaxStage,
     required this.isLocked,
     required this.isBoss,
     required this.isMiniBoss,
@@ -300,6 +305,7 @@ class _StageCard extends StatelessWidget {
   final int stage;
   final bool isCompleted;
   final bool isActive;
+  final bool isMaxStage;
   final bool isLocked;
   final bool isBoss;
   final bool isMiniBoss;
@@ -473,9 +479,17 @@ class _StageCard extends StatelessWidget {
                   ),
                   if (isActive)
                     const Text(
-                      '▶ Aktif',
+                      '▶ Seçili',
                       style: TextStyle(
                         color: AppColors.gold,
+                        fontSize: 11,
+                      ),
+                    )
+                  else if (isMaxStage)
+                    const Text(
+                      '▶ Son',
+                      style: TextStyle(
+                        color: Color(0xFF4CAF50),
                         fontSize: 11,
                       ),
                     ),

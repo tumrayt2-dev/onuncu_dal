@@ -324,13 +324,19 @@ class PlayerNotifier extends StateNotifier<HeroCharacter?> {
     };
   }
 
-  /// Item upgrade: altın + fodder item (aynı rarity) gerekli
+  /// Milestone upgrade mi? (5,10,15,20. seviyeler)
+  static bool isMilestoneUpgrade(Item item) =>
+      (item.upgradeLevel + 1) % 5 == 0;
+
+  /// Item upgrade: altın + fodder item gerekli
+  /// Milestone seviyelerde aynı slot zorunlu
   /// Döndürür: true = başarı, false = başarısızlık
   Future<bool> upgradeItem(Item item, Item fodder) async {
     final hero = state;
     if (hero == null) return false;
     if (item.upgradeLevel >= 20) return false;
     if (fodder.rarity != item.rarity) return false;
+    if (isMilestoneUpgrade(item) && fodder.slot != item.slot) return false;
 
     final cost = upgradeCost(item);
     if (hero.gold < cost) return false;
