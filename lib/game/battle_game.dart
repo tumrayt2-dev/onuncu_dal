@@ -26,7 +26,9 @@ class BattleGame extends FlameGame with TapCallbacks {
     required this.heroStats,
     this.stageId = 1,
     this.worldId = 1,
-  })  : comboService = ComboService(),
+    Map<EquipmentSlot, Item>? equipment,
+  })  : equipment = equipment ?? {},
+        comboService = ComboService(),
         resourceService = ResourceService(heroClass: heroClass),
         lootService = LootService();
 
@@ -34,6 +36,7 @@ class BattleGame extends FlameGame with TapCallbacks {
   final Stats heroStats;
   final int stageId;
   final int worldId;
+  final Map<EquipmentSlot, Item> equipment;
 
   late LaneSystem laneSystem;
   late _LaneIndicator _laneIndicator;
@@ -108,6 +111,7 @@ class BattleGame extends FlameGame with TapCallbacks {
       heroClass: heroClass,
       heroStats: heroStats,
       position: Vector2(80, laneSystem.laneY(Lane.middle)),
+      equipment: equipment,
     );
     add(heroComponent);
 

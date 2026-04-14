@@ -140,6 +140,7 @@ class _BattleScreenState extends ConsumerState<BattleScreen> {
       heroStats: stats,
       stageId: hero?.currentStage ?? 1,
       worldId: hero?.currentWorldId ?? 1,
+      equipment: hero?.equipment ?? {},
     );
     _game.afkEnabled = _afkEnabled;
     _game.gameSpeed = _speedOptions[_speedIndex];
