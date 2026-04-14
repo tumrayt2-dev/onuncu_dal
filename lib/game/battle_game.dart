@@ -16,6 +16,7 @@ import '../services/wave_service.dart';
 import 'hero_component.dart';
 import 'enemy_component.dart';
 import 'floating_text_component.dart';
+import 'background_component.dart';
 import 'lane_system.dart';
 
 /// Flame tabanli savas sahnesi — 3 serit aktif sistem
@@ -99,7 +100,7 @@ class BattleGame extends FlameGame with TapCallbacks {
 
     laneSystem = LaneSystem(gameHeight: size.y);
 
-    add(_BackgroundComponent(gameSize: size));
+    add(BackgroundComponent(gameSize: size, worldId: worldId));
     _laneIndicator = _LaneIndicator(laneSystem: laneSystem, gameSize: size);
     add(_laneIndicator);
 
@@ -526,29 +527,6 @@ class BattleGame extends FlameGame with TapCallbacks {
   }
 }
 
-/// Arka plan gradient
-class _BackgroundComponent extends PositionComponent {
-  _BackgroundComponent({required this.gameSize})
-      : super(size: gameSize, position: Vector2.zero());
-
-  final Vector2 gameSize;
-
-  @override
-  void render(ui.Canvas canvas) {
-    final rect = ui.Rect.fromLTWH(0, 0, gameSize.x, gameSize.y);
-    final gradient = ui.Gradient.linear(
-      ui.Offset(gameSize.x / 2, 0),
-      ui.Offset(gameSize.x / 2, gameSize.y),
-      [
-        const ui.Color(0xFF1A2A1A),
-        const ui.Color(0xFF0F1A0F),
-        const ui.Color(0xFF0A120A),
-      ],
-      [0.0, 0.5, 1.0],
-    );
-    canvas.drawRect(rect, ui.Paint()..shader = gradient);
-  }
-}
 
 /// Serit gostergesi + mob baloncuklari + aktif serit efekti
 class _LaneIndicator extends PositionComponent {
